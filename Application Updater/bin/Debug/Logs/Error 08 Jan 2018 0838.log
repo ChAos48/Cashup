@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<DingoException xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ErrorMessage>Authenticate as SSL client failed. You might be connecting to non SSL port.</ErrorMessage>
+  <StackTrace>   at Limilabs.FTP.Client.TcpTextClient.&#x2;()
+   at Limilabs.FTP.Client.TcpTextClient.&#x5;()
+   at Limilabs.FTP.Client.TcpTextClient.Connect(String host, Int32 port, Boolean useSSL)
+   at Application_Updater.UpdateFile.DownloadFile(String url, String Username, String Password) in E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\Rehab.cs:line 429</StackTrace>
+  <InnerExceptions>
+    <string>The handshake failed due to an unexpected packet format.</string>
+    <string />
+    <string />
+  </InnerExceptions>
+</DingoException>

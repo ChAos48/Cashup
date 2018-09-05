@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Keygen
+{
+    class Program
+    {
+        [STAThread]
+        static void Main(string[] args) {
+            Start:
+            int length = 32;
+
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider()) {
+                byte[] uintBuffer = new byte[sizeof(uint)];
+
+                while (length-- > 0) {
+                    rng.GetBytes(uintBuffer);
+                    uint num = BitConverter.ToUInt32(uintBuffer, 0);
+                    res.Append(valid[(int)(num % (uint)valid.Length)]);
+                }
+            }
+
+            byte[] byt = System.Text.Encoding.UTF8.GetBytes(res.ToString());
+            var key = Convert.ToBase64String(byt);
+            Console.WriteLine(key);
+            Clipboard.SetText(key);
+            Console.WriteLine("Key generated, and copied to clipboard.");
+            Console.WriteLine("please press Enter to continue");
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Please select an option below");
+            Console.WriteLine("#########################");
+            Console.WriteLine("## 1. Generate new key.##");
+            Console.WriteLine("## 2. Exit             ##");
+            Console.WriteLine("#########################");
+            switch (Console.ReadLine()) {
+
+                case "1":
+                    Console.Clear();
+                    goto Start;
+
+                case "2":
+                    goto exit;
+
+            }
+            exit:
+            Console.WriteLine("");
+
+        }
+    }
+}

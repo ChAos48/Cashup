@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="Microsoft.ReportingServices.ReportViewerControl.WebForms" version="140.802.134" targetFramework="net40" />
+  <package id="Microsoft.ReportingServices.ReportViewerControl.Winforms" version="140.340.80" targetFramework="net40" />
+  <package id="Microsoft.SqlServer.Types" version="14.0.314.76" targetFramework="net40" />
+  <package id="SKGL" version="2.0.5.3" targetFramework="net40" />
+</packages>

@@ -1,0 +1,10 @@
+C:\Users\Pro009214\source\Application Updater\obj\Release\Application_Updater.Form1.resources
+C:\Users\Pro009214\source\Application Updater\obj\Release\Application_Updater.Properties.Resources.resources
+C:\Users\Pro009214\source\Application Updater\obj\Release\Application Updater.csproj.GenerateResource.Cache
+C:\Users\Pro009214\source\Application Updater\obj\Release\Application Updater.csproj.CoreCompileInputs.cache
+C:\Users\Pro009214\source\Application Updater\bin\Release\Ftp.dll
+C:\Users\Pro009214\source\Application Updater\bin\Release\System.ServiceModel.Web.dll
+C:\Users\Pro009214\source\Application Updater\bin\Release\Hounding Updater.exe
+C:\Users\Pro009214\source\Application Updater\bin\Release\Hounding Updater.pdb
+C:\Users\Pro009214\source\Application Updater\obj\Release\Hounding Updater.exe
+C:\Users\Pro009214\source\Application Updater\obj\Release\Hounding Updater.pdb

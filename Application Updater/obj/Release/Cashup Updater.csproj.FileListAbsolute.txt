@@ -1,0 +1,9 @@
+C:\Users\Pro009214\Documents\Releases\Cashup\CashUp Updater.exe
+C:\Users\Pro009214\Documents\Releases\Cashup\CashUp Updater.pdb
+C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Release\Cashup Updater.csprojResolveAssemblyReference.cache
+C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Release\Application_Updater.Form1.resources
+C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Release\Application_Updater.Properties.Resources.resources
+C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Release\Cashup Updater.csproj.GenerateResource.Cache
+C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Release\Cashup Updater.csproj.CoreCompileInputs.cache
+C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Release\CashUp Updater.exe
+C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Release\CashUp Updater.pdb

@@ -1,0 +1,150 @@
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\OOP_Cashup.exe.config
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\OOP_Cashup.exe
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\OOP_Cashup.pdb
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.Form1.resources
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.Properties.Resources.resources
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.csproj.GenerateResource.Cache
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.csproj.CoreCompileInputs.cache
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.exe
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.pdb
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\ChAos\documents\visual studio 2017\Projects\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.frmPrintPreview.resources
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.WebDesign.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\EnvDTE.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\stdole.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\EnvDTE.xml
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.Form1.resources
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.frmPrintPreview.resources
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.Properties.Resources.resources
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.csproj.GenerateResource.Cache
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.csproj.CoreCompileInputs.cache
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\OOP_Cashup.csprojResolveAssemblyReference.cache
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Cashup.exe.config
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Cashup.exe
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Cashup.pdb
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\Cashup.exe
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\Cashup.pdb

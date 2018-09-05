@@ -1,0 +1,36 @@
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\bin\Debug\Application Updater.exe
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\bin\Debug\Application Updater.pdb
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\bin\Debug\System.ServiceModel.Web.dll
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\obj\Debug\Application Updater.csprojResolveAssemblyReference.cache
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\obj\Debug\Application_Updater.Form1.resources
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\obj\Debug\Application_Updater.Properties.Resources.resources
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\obj\Debug\Application Updater.csproj.GenerateResource.Cache
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\obj\Debug\Application Updater.exe
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\obj\Debug\Application Updater.pdb
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\bin\Debug\Ftp.dll
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\bin\Debug\Ftp.xml
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\bin\Debug\Application Updater.exe.CodeAnalysisLog.xml
+C:\Users\Protea393\Documents\Development\Dingo\Application Updater\bin\Debug\Application Updater.exe.lastcodeanalysissucceeded
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.exe
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.pdb
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Application Updater.exe
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Application Updater.pdb
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Ftp.dll
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\System.ServiceModel.Web.dll
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Ftp.xml
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application_Updater.Form1.resources
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application_Updater.Properties.Resources.resources
+C:\Users\User\Documents\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.csproj.GenerateResource.Cache
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Application Updater.exe
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Application Updater.pdb
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Ftp.dll
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\System.ServiceModel.Web.dll
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\bin\Debug\Ftp.xml
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.csprojResolveAssemblyReference.cache
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application_Updater.Form1.resources
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application_Updater.Properties.Resources.resources
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.csproj.GenerateResource.Cache
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.csproj.CoreCompileInputs.cache
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.exe
+E:\_Source Code\Dingo Projects\Dingo_desktop\Application Updater\obj\Debug\Application Updater.pdb
