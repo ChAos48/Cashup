@@ -8,8 +8,12 @@ using System.Drawing.Printing;
 using System.Drawing.Imaging;
 using System.Drawing;
 using Microsoft.Reporting.WinForms;
-using System.Reflection;
 
+
+/*TODO
+ * make propertiess for all DropAMT Variables and TillAMT Variables
+ */
+ 
 namespace OOP_Cashup {
     class Cashup {
 
@@ -379,13 +383,13 @@ namespace OOP_Cashup {
         }
 
         /// <summary>
-        /// starts the update loop on a timmer to update every 20ms
+        /// starts the update loop on a timmer to update every 10ms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void On_Cashup_Load(object sender, EventArgs e) {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = (20); // 20 milisecs
+            timer.Interval = (20); // 10 milisecs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
@@ -405,7 +409,6 @@ namespace OOP_Cashup {
             rv.LocalReport.DataSources.Add(new ReportDataSource("Cashup", new BindingSource(this, null)));
 
             Export(rv.LocalReport);
-            printPdf(rv.LocalReport);
             Print();
 
         }
@@ -478,69 +481,9 @@ namespace OOP_Cashup {
                 printDoc.Print();
             }
 
-            
+            #endregion
             
         }
-
-        private void printPdf(LocalReport report) {
-            Warning[] warnings;
-            string[] streamids;
-            string mimeType;
-            string encoding;
-            string filenameExtension;
-            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            byte[] bytes = report.Render("PDF", null, out mimeType, out encoding, out filenameExtension,
-                out streamids, out warnings);
-
-
-            
-            if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
-
-                Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
-
-            } else {
-                Console.WriteLine("WHAT?");
-            }
-
-            using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive/" + date + ".pdf"),
-                FileMode.Create)) {
-
-                fs.Write(bytes, 0, bytes.Length);
-
-            }
-        }
-        #endregion
-
-        public void ClearDrop() {
-            this.R200Amt = 0;
-            this.R100Amt = 0;
-            this.R50Amt = 0;
-            this.R20Amt = 0;
-            this.R10Amt = 0;
-            this.R5Amt = 0;
-            this.R2Amt = 0;
-            this.R1Amt = 0;
-            this.c50Amt = 0;
-            this.c20Amt = 0;
-            this.c10Amt = 0;
-            this.c5Amt = 0;
-
-            R200Drop = 0;
-            R100Drop = 0;
-            R50Drop = 0;
-            R20Drop = 0;
-            R10Drop = 0;
-            R5Drop = 0;
-            R2Drop = 0;
-            R1Drop = 0;
-            c50Drop = 0;
-            c20Drop = 0;
-            c10Drop = 0;
-            c5Drop = 0;
-
-        }
-
         
     }
 }
