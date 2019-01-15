@@ -330,4 +330,4 @@ ASALocalRun/
 .mfractor/
 
 #anything that is in the bin folder
-./OOP_Cashup/bin/*
+OOP_Cashup/bin/*
