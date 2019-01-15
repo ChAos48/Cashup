@@ -9,9 +9,14 @@ using System.Drawing.Imaging;
 using System.Drawing;
 using Microsoft.Reporting.WinForms;
 using System.Reflection;
+using System.Data.Odbc;
+using Hounds;
 
 namespace OOP_Cashup {
     class Cashup {
+
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         #region variables
 
@@ -122,6 +127,7 @@ namespace OOP_Cashup {
         /// Default Constructor
         /// </summary>
         public Cashup() {
+
             On_Cashup_Load(this, null);
             date = DateTime.Today.ToString("dddd  dd MMMM yyyy");
 
@@ -174,6 +180,7 @@ namespace OOP_Cashup {
             this.droppedTotal = 0.00M;
             correction = 0.0M;
 
+            log.Debug("cashup object created. with default constructor.");
         }
 
         /// <summary>
@@ -197,6 +204,9 @@ namespace OOP_Cashup {
             int amt2, int amt1, int amt50c, int amt20c, int amt10c, int amt5c, Decimal DroppedTotal,
             string Register) {
             On_Cashup_Load(this, null);
+
+            log.Debug("cashup object timer started.");
+
             date = DateTime.Today.ToString("dddd  dd MMMM yyyy");
 
             R200Amt = amt200;
@@ -236,6 +246,8 @@ namespace OOP_Cashup {
             this.dropTotal = DroppedTotal + ChecksValue;
 
             tillNum = Register;
+
+            log.Debug("cashup object created using constructor 1(value initiation)");
 
         }
 
@@ -296,7 +308,7 @@ namespace OOP_Cashup {
 
             Total = subTotal - drop;
             tillNum = Register;
-
+            log.Debug("cashup object created using constructor 1(drop total and register number)");
         }
 
         //Summary Drop Calculation
@@ -304,7 +316,7 @@ namespace OOP_Cashup {
         //remove from the till in order to make the next days float
         //
         private int Drop(decimal amt, int dropAmt, int actualAmt,ref bool flagerror) {
-            
+            log.Debug("dropping R" + amt);
             while ((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
                 dropAmt++;
                 dropTemp -= amt;
@@ -339,6 +351,7 @@ namespace OOP_Cashup {
                 c5Drop = Drop(0.05M, c5Drop, c5Amt, ref errorFlag);
                 if (errorFlag) {
                     MessageBox.Show("Error trying to drop something when its not available.", "Manual Intervention Required");
+                    log.Error("error dropping");
                     break;
                 }
                 Update();
@@ -388,6 +401,7 @@ namespace OOP_Cashup {
             timer.Interval = (20); // 20 milisecs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
+            log.Debug("cashup object timer started");
         }
 
         private void timer_Tick(object sender, EventArgs e) {
@@ -407,6 +421,7 @@ namespace OOP_Cashup {
             Export(rv.LocalReport);
             printPdf(rv.LocalReport);
             Print();
+            log.Info("Document Printed");
 
         }
 
@@ -471,11 +486,13 @@ namespace OOP_Cashup {
             printDoc.PrinterSettings = pd.PrinterSettings;
             if (!printDoc.PrinterSettings.IsValid) {
                 MessageBox.Show("Printer Settings Not Found");
+                log.Error("printer settings not Found.");
 
             } else {
                 printDoc.PrintPage += new PrintPageEventHandler(PrintPage);
                 m_currentPageIndex = 0;
                 printDoc.Print();
+                log.Debug("printing");
             }
 
             
@@ -483,6 +500,9 @@ namespace OOP_Cashup {
         }
 
         private void printPdf(LocalReport report) {
+
+            log.Info("creating PDF");
+
             Warning[] warnings;
             string[] streamids;
             string mimeType;
@@ -497,10 +517,11 @@ namespace OOP_Cashup {
             
             if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
 
+                log.Info("archive does not exist creating");
                 Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
 
             } else {
-                Console.WriteLine("WHAT?");
+                log.Debug("archive folder exists");
             }
 
             using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive/" + date + ".pdf"),
@@ -509,6 +530,9 @@ namespace OOP_Cashup {
                 fs.Write(bytes, 0, bytes.Length);
 
             }
+
+            log.Info("pdf saved");
+
         }
         #endregion
 
@@ -541,6 +565,20 @@ namespace OOP_Cashup {
 
         }
 
-        
+        #region DB Stuff
+
+        public void SaveToDB() {
+            using( OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
+                try {
+                    con.Open();
+                }catch(Exception ex) {
+                    MessageBox.Show("Could not connect to the Database");
+                    log.Error("cannot connect to Database.");
+                }
+                
+            }
+        }
+
+        #endregion
     }
 }

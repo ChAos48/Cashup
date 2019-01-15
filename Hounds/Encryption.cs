@@ -10,8 +10,8 @@ namespace Hounds
         // This constant string is used as a "salt" value for the PasswordDeriveBytes function calls.
         // This size of the IV (in bytes) must = (keysize / 8).  Default keysize is 256, so the IV must be
         // 32 bytes long.  Using a 16 character string here gives us 32 bytes when converted to a byte array.
-        private static readonly byte[] initVectorBytes = Encoding.ASCII.GetBytes("DomHasAHuge3==D~~");//Protea IT "Penises are for security"
-        private static string passPhrase = "R3ckon1ng#$%";
+        private static readonly byte[] initVectorBytes = Encoding.ASCII.GetBytes("HereBeDragons(V);,,,;(V)");//Protea IT "Penises are for security"
+        private static string passPhrase = "Sm@rtN0tH@rd";
         // This constant is used to determine the keysize of the encryption algorithm.
         private const int keysize = 256;
 

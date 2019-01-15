@@ -17,6 +17,9 @@ namespace OOP_Cashup
     {
     public partial class Form1: Form {
 
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region Variables
 
         #region amount variables
@@ -286,15 +289,20 @@ namespace OOP_Cashup
             if (combxRegister.SelectedIndex == 4) {
                 txtbFloat.Text = "5000";
                 this.cashFloat = 5000.00M;
+                log.Info("Till 5 float set to R5000");
+                
             } else if (combxRegister.SelectedIndex == 8 || combxRegister.SelectedIndex == 7) {
                 txtbFloat.Text = "3000";
                 this.cashFloat = 3000.00M;
+                log.Info("Night staff float set to R5000");
             } else if (combxRegister.SelectedIndex == 5) {
                 txtbFloat.Text = "10000";
                 this.cashFloat = 10000.00M;
+                log.Info("Till 6 float set to R1000.00");
             } else {
                 txtbFloat.Text = "3000";
                 this.cashFloat = 3000.00M;
+                log.Info("float set to R3000");
 
             }
             cu.CashFloat = this.cashFloat;
@@ -314,6 +322,7 @@ namespace OOP_Cashup
                 return;
 
             } else {
+                log.Info("printing");
 
                 cu.btnPrint_Click(sender, e);
                 Clear();
@@ -323,9 +332,9 @@ namespace OOP_Cashup
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
-
+            
             Clear();
-
+            log.Info("data cleared");
         }
 
         /// <summary>
@@ -333,6 +342,7 @@ namespace OOP_Cashup
         /// </summary>
         private void Clear() {
 
+            log.Info("clearing till data.");
             txtbR200.Text = "0";
             txtbR100.Text = "0";
             txtbR50.Text = "0";
@@ -365,6 +375,8 @@ namespace OOP_Cashup
         }
 
         private void ClearDrop() {
+
+            log.Info("Clearing Drop data");
             Update();
             txtbxR200Drop.Text = "0";
             txtbxR100Drop.Text = "0";
@@ -407,6 +419,7 @@ namespace OOP_Cashup
             timer.Interval = (10); // 10 milisecs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
+            log.Debug("update tick started");
 
 
         }

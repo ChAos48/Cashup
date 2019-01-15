@@ -13,39 +13,44 @@ using System.Reflection;
 
 namespace OOP_Cashup {
     static class Program {
+
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            #region Log code(changes Console.write line to write to file)
-            if (!Directory.Exists(@"./Logs")) {
-                Directory.CreateDirectory(@"./Logs");
-                Console.WriteLine(DateTime.Now + ": Created Log dir.");
-            }
 
-            FileStream ostrm;
-            StreamWriter writer;
-            TextWriter oldOut = Console.Out;
-            try {
-                string logFile = Environment.CurrentDirectory  + "\\Logs\\" + DateTime.Now.ToFileTime().ToString() + ".log";
-                ostrm = new FileStream(logFile, FileMode.OpenOrCreate, FileAccess.Write);
-                writer = new StreamWriter(ostrm);
-            } catch (Exception e) {
-                Console.WriteLine(DateTime.Now +": Cannot open log file for writing");
-                Console.WriteLine(e.Message);
-                return;
-            }
+            log.Info("Started application");
 
-            Console.SetOut(writer);
+            #region old Log code(changes Console.write line to write to file)
+            //if (!Directory.Exists(@"./Logs")) {
+            //    Directory.CreateDirectory(@"./Logs");
+            //    Console.WriteLine(DateTime.Now + ": Created Log dir.");
+            //}
+
+            //FileStream ostrm;
+            //StreamWriter writer;
+            //TextWriter oldOut = Console.Out;
+            //try {
+            //    string logFile = Environment.CurrentDirectory  + "\\Logs\\" + DateTime.Now.ToFileTime().ToString() + ".log";
+            //    ostrm = new FileStream(logFile, FileMode.OpenOrCreate, FileAccess.Write);
+            //    writer = new StreamWriter(ostrm);
+            //} catch (Exception e) {
+            //    Console.WriteLine(DateTime.Now +": Cannot open log file for writing");
+            //    Console.WriteLine(e.Message);
+            //    return;
+            //}
+
+            //Console.SetOut(writer);
 #endregion
-            Console.WriteLine("{0}: Started application", DateTime.Now.ToString());
 
 #if DEBUG
-            Console.WriteLine("in debug mode skipping update");
+            log.Debug("in debug mode skipping update");
             goto skipupdate;
 
 #endif
@@ -54,8 +59,8 @@ namespace OOP_Cashup {
             string online_hash = GetOnlineHash(tFile);
             string local_hash = GetHash();
 
-            Console.WriteLine(DateTime.Now + ": Online Hash = " + online_hash);
-            Console.WriteLine(DateTime.Now + ": Online Hash = " + local_hash);
+            log.Debug("Online Hash = " + online_hash);
+            log.Debug("Online Hash = " + local_hash);
 
             var temp = online_hash == local_hash;
 //#if DEBUG
@@ -64,11 +69,11 @@ namespace OOP_Cashup {
 //#endif
             if (temp) {
 
-                Console.WriteLine(DateTime.Now + ": no update required");
+                log.Info("no update required");
 
             } else if(canPing()) {
 
-                Console.WriteLine(DateTime.Now + ": Update Required");
+                log.Info("Update Required");
                 Process proc = new Process();
                 proc.StartInfo.FileName = Path.Combine(Path.GetDirectoryName(
                     Assembly.GetExecutingAssembly().Location), "Cashup Updater.exe");
@@ -78,11 +83,11 @@ namespace OOP_Cashup {
                 Application.Exit();
 
             } else {
-                Console.WriteLine("cannot contact Protea.dedicated.co.za skipping up");
+                log.Warn("cannot contact Protea.dedicated.co.za skipping update");
                 goto skipupdate;
             }
             string hashAfterUpdate = GetHash();
-            Console.WriteLine(DateTime.Now + ": New Local Hash = " + hashAfterUpdate);
+            log.Debug("New Local Hash = " + hashAfterUpdate);
             goto skipupdate;
 
             skipupdate:
@@ -90,10 +95,7 @@ namespace OOP_Cashup {
             goto Finish;
 
             Finish:
-            Console.SetOut(oldOut);
-            writer.Close();
-            ostrm.Close();
-            Console.WriteLine("Done");
+            log.Info("Done");
 
         }
 
