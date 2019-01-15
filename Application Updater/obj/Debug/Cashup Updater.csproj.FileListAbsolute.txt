@@ -7,3 +7,4 @@ C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Debug\CashUp 
 C:\Users\Pro009214\source\repos\OOP_Cashup\Application Updater\obj\Debug\CashUp Updater.pdb
 C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\CashUp Updater.exe
 C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\CashUp Updater.pdb
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\CashUp Updater.exe.config
