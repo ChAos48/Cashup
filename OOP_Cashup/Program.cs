@@ -10,9 +10,14 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Xml;
+using Hounds;
+using System.Globalization;
 
-namespace OOP_Cashup {
-    static class Program {
+namespace OOP_Cashup
+{
+    static class Program
+    {
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger
             (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -26,7 +31,7 @@ namespace OOP_Cashup {
             Application.SetCompatibleTextRenderingDefault(false);
 
             log.Info("Started application");
-
+            LoadSettings();
             #region old Log code(changes Console.write line to write to file)
             //if (!Directory.Exists(@"./Logs")) {
             //    Directory.CreateDirectory(@"./Logs");
@@ -47,7 +52,7 @@ namespace OOP_Cashup {
             //}
 
             //Console.SetOut(writer);
-#endregion
+            #endregion
 
 #if DEBUG
             log.Debug("in debug mode skipping update");
@@ -63,15 +68,15 @@ namespace OOP_Cashup {
             log.Debug("Online Hash = " + local_hash);
 
             var temp = online_hash == local_hash;
-//#if DEBUG
-//            temp = true;
-//            goto skipupdate;
-//#endif
+            //#if DEBUG
+            //            temp = true;
+            //            goto skipupdate;
+            //#endif
             if (temp) {
 
                 log.Info("no update required");
 
-            } else if(canPing()) {
+            } else if (canPing()) {
 
                 log.Info("Update Required");
                 Process proc = new Process();
@@ -162,5 +167,33 @@ namespace OOP_Cashup {
             }
         }
 
+        static void LoadSettings() {
+            
+            if (File.Exists("./Settings.cfg")) {
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load("./Settings.cfg");
+                XmlNodeList LocalSettings = xDoc.GetElementsByTagName("settings");
+
+                var server = Encryption.Decrypt(LocalSettings[0].ChildNodes[0].InnerText);
+                var Username = Encryption.Decrypt(LocalSettings[0].ChildNodes[1].InnerText);
+                var Password = Encryption.Decrypt(LocalSettings[0].ChildNodes[2].InnerText);
+                var dbName = Encryption.Decrypt(LocalSettings[0].ChildNodes[3].InnerText);
+                var _driver = LocalSettings[0].ChildNodes[4].InnerText;
+
+                var DriverProvider = String.Format("Driver={0};provider=ODBC", _driver);
+                string ConString = string.Format(CultureInfo.InvariantCulture, "{4};server={0};port=3306;option=67108864;database={3};uid={1};pwd={2};", server, Username, Password, dbName, DriverProvider);
+                RuntimeSettings.conString = ConString;
+
+            } else if (!File.Exists("./Settings.cfg")) {
+
+                frmSettings settings = new frmSettings();
+
+                if (DialogResult.OK == settings.ShowDialog()) {
+
+                    LoadSettings();
+
+                }
+            }
+        }
     }
 }

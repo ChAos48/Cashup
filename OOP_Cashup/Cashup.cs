@@ -573,7 +573,7 @@ namespace OOP_Cashup {
                     con.Open();
                 }catch(Exception ex) {
                     MessageBox.Show("Could not connect to the Database");
-                    log.Error("cannot connect to Database.");
+                    log.Error("cannot connect to Database.", ex);
                 }
                 
             }

@@ -148,3 +148,6 @@ C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Cashup.exe
 C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\Cashup.pdb
 C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\Cashup.exe
 C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\obj\Debug\Cashup.pdb
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\log4net.config
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\log4net.dll
+C:\Users\Pro009214\source\repos\OOP_Cashup\OOP_Cashup\bin\Debug\log4net.xml
