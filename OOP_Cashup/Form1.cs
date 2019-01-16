@@ -91,8 +91,8 @@ namespace OOP_Cashup
                 lblRegisterNum.Text = combxRegister.Text;
                 lblRegisterNum1.Text = combxRegister.Text;
                 txtbxFloat1.Text = txtbFloat.Text;
-                lblName0.Text = txtbxName.Text;
-                lblName1.Text = txtbxName.Text;
+                lblName0.Text = txtbNameLeft.Text;
+                lblName1.Text = txtbNameLeft.Text;
                 txtbChequesValue.Text = txtbxCheques.Text;
                 cu.NumChecks = int.Parse(this.txtbNumCheques.Text);
                 cu.ChecksValue = Decimal.Parse(txtbChequesValue.Text);
@@ -153,7 +153,7 @@ namespace OOP_Cashup
                 this.total = cu.total;
                 txtbxSubTotal.Text = this.subTotal.ToString();
                 txtbxCashDrop.Text = this.drop.ToString();
-                cu.Name = this.txtbxName.Text;
+                cu.Name = this.txtbNameLeft.Text;
                 cu.TillNum = combxRegister.Text;
 
 
@@ -311,7 +311,7 @@ namespace OOP_Cashup
 
         void btnPrint_Click(object sender, EventArgs e) {
 
-            if (txtbxName.Text == "" || txtbxName.Text == "Name" || txtbxName.Text == null) {
+            if (txtbNameLeft.Text == "" || txtbNameLeft.Text == "Name" || txtbNameLeft.Text == null) {
 
                 MessageBox.Show("Please enter your name befor printing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -361,7 +361,7 @@ namespace OOP_Cashup
 
             ClearDrop();
 
-            txtbxName.Text = "Name";
+            txtbNameLeft.Text = "Name";
             combxRegister.Text = "Register#";
             txtbNumCheques.Text = "0";
 
