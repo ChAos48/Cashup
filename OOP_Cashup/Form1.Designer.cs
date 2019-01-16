@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         protected void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtbR200 = new System.Windows.Forms.TextBox();
             this.lblR200 = new System.Windows.Forms.Label();
@@ -151,6 +152,15 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiSavePDFOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiPrintOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsiSaveToDBOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtbR200
@@ -1384,6 +1394,68 @@
             this.label24.TabIndex = 49;
             this.label24.Text = "Total (R)";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(789, 24);
+            this.menuStrip1.TabIndex = 137;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiLoad,
+            this.tsiSavePDFOnly,
+            this.tsiPrintOnly,
+            this.tsiSaveToDBOnly});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // tsiLoad
+            // 
+            this.tsiLoad.Name = "tsiLoad";
+            this.tsiLoad.Size = new System.Drawing.Size(180, 22);
+            this.tsiLoad.Text = "Load";
+            this.tsiLoad.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // tsiSavePDFOnly
+            // 
+            this.tsiSavePDFOnly.Name = "tsiSavePDFOnly";
+            this.tsiSavePDFOnly.Size = new System.Drawing.Size(180, 22);
+            this.tsiSavePDFOnly.Text = "Save pdf";
+            this.tsiSavePDFOnly.Click += new System.EventHandler(this.savePdfToolStripMenuItem_Click);
+            // 
+            // tsiPrintOnly
+            // 
+            this.tsiPrintOnly.Name = "tsiPrintOnly";
+            this.tsiPrintOnly.Size = new System.Drawing.Size(180, 22);
+            this.tsiPrintOnly.Text = "Print Only";
+            this.tsiPrintOnly.Click += new System.EventHandler(this.printOnlyToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // tsiSaveToDBOnly
+            // 
+            this.tsiSaveToDBOnly.Name = "tsiSaveToDBOnly";
+            this.tsiSaveToDBOnly.Size = new System.Drawing.Size(180, 22);
+            this.tsiSaveToDBOnly.Text = "Save to Database";
+            this.tsiSaveToDBOnly.Click += new System.EventHandler(this.saveToDatabaseToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1507,14 +1579,18 @@
             this.Controls.Add(this.lblR100);
             this.Controls.Add(this.lblR200);
             this.Controls.Add(this.txtbR200);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(780, 726);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CashUp";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1648,6 +1724,14 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsiLoad;
+        private System.Windows.Forms.ToolStripMenuItem tsiSavePDFOnly;
+        private System.Windows.Forms.ToolStripMenuItem tsiPrintOnly;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsiSaveToDBOnly;
     }
 }
 
