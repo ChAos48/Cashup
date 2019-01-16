@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         protected void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtbR200 = new System.Windows.Forms.TextBox();
             this.lblR200 = new System.Windows.Forms.Label();
             this.lblR100 = new System.Windows.Forms.Label();
@@ -1432,6 +1433,7 @@
             this.Controls.Add(this.txtbR200);
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(780, 726);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
