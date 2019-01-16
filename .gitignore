@@ -328,3 +328,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+Application Updater/obj/Debug Application Updater/obj/Release Application Updater/obj/x64 Key_manager/obj/Debug Key_manager/obj/Key_manager.csproj.nuget.cache Key_manager/obj/Key_manager.csproj.nuget.g.props Key_manager/obj/Key_manager.csproj.nuget.g.targets Key_manager/obj/project.assets.json Keygen/obj/Debug Keygen/obj/Release OOP_Cashup/obj/Debug OOP_Cashup/obj/Release OOP_Cashup/obj/x64 OOP_Cashup/obj/x86
+*/obj/*
+.vs/*
+.svn/
