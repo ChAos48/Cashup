@@ -132,7 +132,7 @@ namespace OOP_Cashup
         public Cashup() {
 
             On_Cashup_Load(this, null);
-            date = DateTime.Today.ToString("dddd  dd MMMM yyyy");
+            date = DateTime.Now.ToString("dddd  dd MMMM yyyy");
 
             R200Amt = 0;
             R100Amt = 0;
@@ -210,7 +210,7 @@ namespace OOP_Cashup
 
             log.Debug("cashup object timer started.");
 
-            date = DateTime.Today.ToString("dddd  dd MMMM yyyy");
+            date = DateTime.Now.ToString("dddd  dd MMMM yyyy");
 
             R200Amt = amt200;
             R100Amt = amt100;
@@ -329,6 +329,8 @@ namespace OOP_Cashup
             if (dropTemp == amt && actualAmt == 0)
                 flagerror = true;
 
+            log.Debug("calculated amount to drop for R" + amt + " is " + dropAmt);
+            log.Debug("amount left to drop: R" + dropTemp);
             return dropAmt;
 
         }
@@ -425,21 +427,23 @@ namespace OOP_Cashup
             printPdf(rv.LocalReport);
             Print();
             SaveToDB();
-            log.Info("Document Printed");
 
         }
 
         #region Printing
-
-
+        
         private Stream CreateStream(string name, string fileNameExtension, Encoding encoding, string mimeType, bool willSeek) {
             Stream stream = new MemoryStream();
             m_streams.Add(stream);
             return stream;
         }
 
-        // Export the given report as an EMF (Enhanced Metafile) file.
+        /// <summary>
+        /// Export the given report as an EMF (Enhanced Metafile) file.
+        /// </summary>
+        /// <param name="report"></param>
         private void Export(LocalReport report) {
+            log.Debug("exporting data to EMF file for printing");
             string deviceInfo =
               @"<DeviceInfo>
                 <OutputFormat>EMF</OutputFormat>
@@ -497,6 +501,7 @@ namespace OOP_Cashup
                 m_currentPageIndex = 0;
                 printDoc.Print();
                 log.Debug("printing");
+                log.Info("Document Printed");
             }
 
 
@@ -566,56 +571,43 @@ namespace OOP_Cashup
             c20Drop = 0;
             c10Drop = 0;
             c5Drop = 0;
-
+            log.Debug("drop data cleared.");
         }
-
-        #region DB Stuff
+        
         private void SaveToDB() {
+            log.Info("saving data to Database");
             using (OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
                 try {
                     con.Open();
+                    log.Debug("opened connection to DB");
                 } catch (Exception ex) {
                     MessageBox.Show("Could not connect to the Database");
                     log.Error("cannot connect to Database.", ex);
                 }
-                //INSERT INTO `Cashup_test`.`Cashup_data` (`cashup_ID`, `cashup_TillNum`, `cashup_CashierName`, 
-                //`cashup_Date`, `cashup_float`, `cashup_R200Value`, `cashup_R100Value`, `cashup_R50Value`,
-                //`cashup_R20Value`, `cashup_R10Value`, `cashup_R5Value`, `cashup_R2Value`, `cashup_R1Value`,
-                //`cashup_50cValue`, `cashup_20cValue`, `cashup_10cValue`, `cashup_5cValue`, `cashup_R200Amount`,
-                //`cashup_R100Amount`, `cashup_R50Amount`, `cashup_R20Amount`, `cashup_R10Amount`, `cashup_R5Amount`,
-                //`cashup_R2Amount`, `cashup_R1Amount`, `cashup_50cAmount`, `cashup_20cAmount`, `cashup_10cAmount`,
-                //`cashup_5cAmount`, `cashup_R200DropValue`, `cashup_R100DropValue`, `cashup_R50DropValue`,
-                //`cashup_R20DropValue`, `cashup_R10DropValue`, `cashup_R5DropValue`, `cashup_R2DropValue`, 
-                //`cashup_R1DropValue`, `cashup_50cDropValue`, `cashup_20cDropValue`, `cashup_10cDropValue`,
-                //`cashup_5cDropValue`, `cashup_R200DropAmount`, `cashup_R100DropAmount`, `cashup_R50DropAmount`,
-                //`cashup_R20DropAmount`, `cashup_R10DropAmount`, `cashup_R5DropAmount`, `cashup_R2DropAmount`,
-                //`cashup_R1DropAmount`, `cashup_50cDropAmount`, `cashup_20cDropAmount`, `cashup_10cDropAmount`,
-                //`cashup_5cDropAmount`, `cashup_NumCheques`, `cashup_ChequesValue`) 
-                //VALUES('1', 'josh', '0000-00-00 00:00:00', '5000', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-                //'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-                //'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-                //'0');
-
 
                 string query = string.Format(@"INSERT INTO `Cashup_test`.`Cashup_data`(`cashup_TillNum`, `cashup_CashierName`,`cashup_Date`, `cashup_float`,`cashup_R200Value`,`cashup_R100Value`, `cashup_R50Value`,`cashup_R20Value`,`cashup_R10Value`, `cashup_R5Value`,`cashup_R2Value`, `cashup_R1Value`,`cashup_50cValue`, `cashup_20cValue`, `cashup_10cValue`,`cashup_5cValue`, `cashup_R200Amount`, `cashup_R100Amount`, `cashup_R50Amount`, `cashup_R20Amount`,`cashup_R10Amount`, `cashup_R5Amount`, `cashup_R2Amount`, `cashup_R1Amount`, `cashup_50cAmount`,`cashup_20cAmount`, `cashup_10cAmount`, `cashup_5cAmount`, `cashup_R200DropValue`,`cashup_R100DropValue`, `cashup_R50DropValue`, `cashup_R20DropValue`, `cashup_R10DropValue`,`cashup_R5DropValue`, `cashup_R2DropValue`, `cashup_R1DropValue`, `cashup_50cDropValue`, `cashup_20cDropValue`, `cashup_10cDropValue`, `cashup_5cDropValue`, `cashup_R200DropAmount`, `cashup_R100DropAmount`, `cashup_R50DropAmount`, `cashup_R20DropAmount`, `cashup_R10DropAmount`, `cashup_R5DropAmount`, `cashup_R2DropAmount`, `cashup_R1DropAmount`, `cashup_50cDropAmount`,`cashup_20cDropAmount`, `cashup_10cDropAmount`, `cashup_5cDropAmount`, `cashup_NumCheques`,`cashup_ChequesValue`)VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22},{23},{24},{25},{26},{27},{28},{29},{30},{31},{32},{33},{34},{35},{36},{37},{38},{39},{40},{41},{42},{43},{44},{45},{46},{47},{48},{49},{50},{51},{52},{53});",
-tillNum.Replace("Register #",""), "\"" + name + "\"", "\"" + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + "\"", cashFloat, R200, R100, R50, R20, R10, R5,
-R2, R1, c50, c20, c10, c5,R200Amt, R100Amt, R50Amt, R20Amt, R10Amt, R5Amt, R2Amt, R1Amt, c50Amt,
-c20Amt, c10Amt, c5Amt, R200DropTotal,R100DropTotal, R50DropTotal, R20DropTotal, R10DropTotal,
-R5DropTotal, R2DropTotal, R1DropTotal, c50DropTotal,c20DropTotal, c10DropTotal, c5DropTotal,
-R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop,c50Drop, c20Drop, c10Drop,
+tillNum.Replace("Register #", ""), "\"" + name + "\"", "\"" + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + "\"", cashFloat, R200, R100, R50, R20, R10, R5,
+R2, R1, c50, c20, c10, c5, R200Amt, R100Amt, R50Amt, R20Amt, R10Amt, R5Amt, R2Amt, R1Amt, c50Amt,
+c20Amt, c10Amt, c5Amt, R200DropTotal, R100DropTotal, R50DropTotal, R20DropTotal, R10DropTotal,
+R5DropTotal, R2DropTotal, R1DropTotal, c50DropTotal, c20DropTotal, c10DropTotal, c5DropTotal,
+R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop, c50Drop, c20Drop, c10Drop,
 c5Drop, NumChecks, ChecksValue);
 
                 log.Debug("sql Query: " + query);
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 try {
+
                     cmd.ExecuteNonQuery();
-                }catch (Exception ex) {
+                    log.Debug("successfully excecuted mysql query.");
+
+                } catch (Exception ex) {
                     log.Error("could not write to DB", ex);
                 }
                 con.Close();
+                log.Debug("Closed Connection to DB");
+
             }
         }
-
-        #endregion
+        
     }
 }
