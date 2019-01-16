@@ -36,6 +36,9 @@
             this.txtbFloatTop = new System.Windows.Forms.TextBox();
             this.dtpTop = new System.Windows.Forms.DateTimePicker();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtbRegisterLeft = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -91,7 +94,6 @@
             this.lblR100 = new System.Windows.Forms.Label();
             this.lblR200 = new System.Windows.Forms.Label();
             this.txtbR200 = new System.Windows.Forms.TextBox();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -142,11 +144,9 @@
             this.txtbNumCheques = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.lblNumCheques = new System.Windows.Forms.Label();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtbTotal_Drop = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -247,6 +247,33 @@
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderWidth = 2;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 280;
+            this.lineShape4.X2 = 589;
+            this.lineShape4.Y1 = 648;
+            this.lineShape4.Y2 = 648;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderWidth = 2;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 280;
+            this.lineShape3.X2 = 589;
+            this.lineShape3.Y1 = 564;
+            this.lineShape3.Y2 = 564;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 281;
+            this.lineShape2.X2 = 281;
+            this.lineShape2.Y1 = 90;
+            this.lineShape2.Y2 = 716;
+            // 
             // lineShape1
             // 
             this.lineShape1.BorderWidth = 2;
@@ -332,6 +359,7 @@
             this.txtbxSkimmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxSkimmed.Location = new System.Drawing.Point(174, 594);
             this.txtbxSkimmed.Name = "txtbxSkimmed";
+            this.txtbxSkimmed.ReadOnly = true;
             this.txtbxSkimmed.Size = new System.Drawing.Size(100, 23);
             this.txtbxSkimmed.TabIndex = 129;
             this.txtbxSkimmed.Text = "0.00";
@@ -351,6 +379,7 @@
             this.txtbxCheques.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxCheques.Location = new System.Drawing.Point(175, 568);
             this.txtbxCheques.Name = "txtbxCheques";
+            this.txtbxCheques.ReadOnly = true;
             this.txtbxCheques.Size = new System.Drawing.Size(100, 23);
             this.txtbxCheques.TabIndex = 127;
             this.txtbxCheques.Text = "0.00";
@@ -370,6 +399,7 @@
             this.txtbxSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxSubTotal.Location = new System.Drawing.Point(176, 516);
             this.txtbxSubTotal.Name = "txtbxSubTotal";
+            this.txtbxSubTotal.ReadOnly = true;
             this.txtbxSubTotal.Size = new System.Drawing.Size(100, 23);
             this.txtbxSubTotal.TabIndex = 125;
             this.txtbxSubTotal.Text = "0.00";
@@ -389,6 +419,7 @@
             this.txtbxCashDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxCashDrop.Location = new System.Drawing.Point(176, 542);
             this.txtbxCashDrop.Name = "txtbxCashDrop";
+            this.txtbxCashDrop.ReadOnly = true;
             this.txtbxCashDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxCashDrop.TabIndex = 123;
             this.txtbxCashDrop.Text = "0.00";
@@ -408,6 +439,7 @@
             this.txtbTotal5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotal5c.Location = new System.Drawing.Point(175, 490);
             this.txtbTotal5c.Name = "txtbTotal5c";
+            this.txtbTotal5c.ReadOnly = true;
             this.txtbTotal5c.Size = new System.Drawing.Size(100, 23);
             this.txtbTotal5c.TabIndex = 121;
             this.txtbTotal5c.Text = "0.00";
@@ -417,6 +449,7 @@
             this.txtbTotal10c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotal10c.Location = new System.Drawing.Point(175, 464);
             this.txtbTotal10c.Name = "txtbTotal10c";
+            this.txtbTotal10c.ReadOnly = true;
             this.txtbTotal10c.Size = new System.Drawing.Size(100, 23);
             this.txtbTotal10c.TabIndex = 120;
             this.txtbTotal10c.Text = "0.00";
@@ -426,6 +459,7 @@
             this.txtbTotal20c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotal20c.Location = new System.Drawing.Point(175, 438);
             this.txtbTotal20c.Name = "txtbTotal20c";
+            this.txtbTotal20c.ReadOnly = true;
             this.txtbTotal20c.Size = new System.Drawing.Size(100, 23);
             this.txtbTotal20c.TabIndex = 119;
             this.txtbTotal20c.Text = "0.00";
@@ -435,6 +469,7 @@
             this.txtbTotal50c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotal50c.Location = new System.Drawing.Point(175, 412);
             this.txtbTotal50c.Name = "txtbTotal50c";
+            this.txtbTotal50c.ReadOnly = true;
             this.txtbTotal50c.Size = new System.Drawing.Size(100, 23);
             this.txtbTotal50c.TabIndex = 118;
             this.txtbTotal50c.Text = "0.00";
@@ -444,6 +479,7 @@
             this.txtbTotalR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR1.Location = new System.Drawing.Point(175, 385);
             this.txtbTotalR1.Name = "txtbTotalR1";
+            this.txtbTotalR1.ReadOnly = true;
             this.txtbTotalR1.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR1.TabIndex = 117;
             this.txtbTotalR1.Text = "0.00";
@@ -453,6 +489,7 @@
             this.txtbTotalR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR2.Location = new System.Drawing.Point(175, 358);
             this.txtbTotalR2.Name = "txtbTotalR2";
+            this.txtbTotalR2.ReadOnly = true;
             this.txtbTotalR2.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR2.TabIndex = 116;
             this.txtbTotalR2.Text = "0.00";
@@ -462,6 +499,7 @@
             this.txtbTotalR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR5.Location = new System.Drawing.Point(175, 332);
             this.txtbTotalR5.Name = "txtbTotalR5";
+            this.txtbTotalR5.ReadOnly = true;
             this.txtbTotalR5.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR5.TabIndex = 115;
             this.txtbTotalR5.Text = "0.00";
@@ -471,6 +509,7 @@
             this.txtbTotalR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR10.Location = new System.Drawing.Point(175, 306);
             this.txtbTotalR10.Name = "txtbTotalR10";
+            this.txtbTotalR10.ReadOnly = true;
             this.txtbTotalR10.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR10.TabIndex = 114;
             this.txtbTotalR10.Text = "0.00";
@@ -480,6 +519,7 @@
             this.txtbTotalR20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR20.Location = new System.Drawing.Point(175, 278);
             this.txtbTotalR20.Name = "txtbTotalR20";
+            this.txtbTotalR20.ReadOnly = true;
             this.txtbTotalR20.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR20.TabIndex = 113;
             this.txtbTotalR20.Text = "0.00";
@@ -489,6 +529,7 @@
             this.txtbTotalR50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR50.Location = new System.Drawing.Point(175, 252);
             this.txtbTotalR50.Name = "txtbTotalR50";
+            this.txtbTotalR50.ReadOnly = true;
             this.txtbTotalR50.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR50.TabIndex = 112;
             this.txtbTotalR50.Text = "0.00";
@@ -508,6 +549,7 @@
             this.txtbTotalR100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR100.Location = new System.Drawing.Point(175, 226);
             this.txtbTotalR100.Name = "txtbTotalR100";
+            this.txtbTotalR100.ReadOnly = true;
             this.txtbTotalR100.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR100.TabIndex = 110;
             this.txtbTotalR100.Text = "0.00";
@@ -517,6 +559,7 @@
             this.txtbTotalR200.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTotalR200.Location = new System.Drawing.Point(175, 200);
             this.txtbTotalR200.Name = "txtbTotalR200";
+            this.txtbTotalR200.ReadOnly = true;
             this.txtbTotalR200.Size = new System.Drawing.Size(100, 23);
             this.txtbTotalR200.TabIndex = 109;
             this.txtbTotalR200.Text = "0.00";
@@ -526,6 +569,7 @@
             this.txtb5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb5c.Location = new System.Drawing.Point(70, 490);
             this.txtb5c.Name = "txtb5c";
+            this.txtb5c.ReadOnly = true;
             this.txtb5c.Size = new System.Drawing.Size(100, 23);
             this.txtb5c.TabIndex = 108;
             this.txtb5c.Text = "0";
@@ -535,6 +579,7 @@
             this.txtb10c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb10c.Location = new System.Drawing.Point(70, 464);
             this.txtb10c.Name = "txtb10c";
+            this.txtb10c.ReadOnly = true;
             this.txtb10c.Size = new System.Drawing.Size(100, 23);
             this.txtb10c.TabIndex = 107;
             this.txtb10c.Text = "0";
@@ -544,6 +589,7 @@
             this.txtb20c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb20c.Location = new System.Drawing.Point(70, 438);
             this.txtb20c.Name = "txtb20c";
+            this.txtb20c.ReadOnly = true;
             this.txtb20c.Size = new System.Drawing.Size(100, 23);
             this.txtb20c.TabIndex = 106;
             this.txtb20c.Text = "0";
@@ -553,6 +599,7 @@
             this.txtb50c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb50c.Location = new System.Drawing.Point(70, 412);
             this.txtb50c.Name = "txtb50c";
+            this.txtb50c.ReadOnly = true;
             this.txtb50c.Size = new System.Drawing.Size(100, 23);
             this.txtb50c.TabIndex = 105;
             this.txtb50c.Text = "0";
@@ -562,6 +609,7 @@
             this.txtbR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbR1.Location = new System.Drawing.Point(70, 385);
             this.txtbR1.Name = "txtbR1";
+            this.txtbR1.ReadOnly = true;
             this.txtbR1.Size = new System.Drawing.Size(100, 23);
             this.txtbR1.TabIndex = 104;
             this.txtbR1.Text = "0";
@@ -571,6 +619,7 @@
             this.txtbR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbR2.Location = new System.Drawing.Point(70, 358);
             this.txtbR2.Name = "txtbR2";
+            this.txtbR2.ReadOnly = true;
             this.txtbR2.Size = new System.Drawing.Size(100, 23);
             this.txtbR2.TabIndex = 103;
             this.txtbR2.Text = "0";
@@ -580,6 +629,7 @@
             this.txtbR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbR5.Location = new System.Drawing.Point(70, 332);
             this.txtbR5.Name = "txtbR5";
+            this.txtbR5.ReadOnly = true;
             this.txtbR5.Size = new System.Drawing.Size(100, 23);
             this.txtbR5.TabIndex = 102;
             this.txtbR5.Text = "0";
@@ -589,6 +639,7 @@
             this.txtbR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbR10.Location = new System.Drawing.Point(70, 306);
             this.txtbR10.Name = "txtbR10";
+            this.txtbR10.ReadOnly = true;
             this.txtbR10.Size = new System.Drawing.Size(100, 23);
             this.txtbR10.TabIndex = 101;
             this.txtbR10.Text = "0";
@@ -598,6 +649,7 @@
             this.txtbR20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbR20.Location = new System.Drawing.Point(70, 278);
             this.txtbR20.Name = "txtbR20";
+            this.txtbR20.ReadOnly = true;
             this.txtbR20.Size = new System.Drawing.Size(100, 23);
             this.txtbR20.TabIndex = 100;
             this.txtbR20.Text = "0";
@@ -607,6 +659,7 @@
             this.txtbR50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbR50.Location = new System.Drawing.Point(70, 252);
             this.txtbR50.Name = "txtbR50";
+            this.txtbR50.ReadOnly = true;
             this.txtbR50.Size = new System.Drawing.Size(100, 23);
             this.txtbR50.TabIndex = 99;
             this.txtbR50.Text = "0";
@@ -726,6 +779,7 @@
             this.txtbR100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbR100.Location = new System.Drawing.Point(70, 226);
             this.txtbR100.Name = "txtbR100";
+            this.txtbR100.ReadOnly = true;
             this.txtbR100.Size = new System.Drawing.Size(100, 23);
             this.txtbR100.TabIndex = 87;
             this.txtbR100.Text = "0";
@@ -760,15 +814,6 @@
             this.txtbR200.Size = new System.Drawing.Size(100, 23);
             this.txtbR200.TabIndex = 84;
             this.txtbR200.Text = "0";
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 281;
-            this.lineShape2.X2 = 281;
-            this.lineShape2.Y1 = 90;
-            this.lineShape2.Y2 = 716;
             // 
             // label12
             // 
@@ -895,6 +940,7 @@
             this.txtbDropTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbDropTotal.Location = new System.Drawing.Point(453, 527);
             this.txtbDropTotal.Name = "txtbDropTotal";
+            this.txtbDropTotal.ReadOnly = true;
             this.txtbDropTotal.Size = new System.Drawing.Size(100, 23);
             this.txtbDropTotal.TabIndex = 158;
             this.txtbDropTotal.Text = "0.00";
@@ -924,6 +970,7 @@
             this.txtbxc5TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc5TotalDrop.Location = new System.Drawing.Point(453, 502);
             this.txtbxc5TotalDrop.Name = "txtbxc5TotalDrop";
+            this.txtbxc5TotalDrop.ReadOnly = true;
             this.txtbxc5TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxc5TotalDrop.TabIndex = 155;
             this.txtbxc5TotalDrop.Text = "0.00";
@@ -933,6 +980,7 @@
             this.txtbxc10TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc10TotalDrop.Location = new System.Drawing.Point(453, 476);
             this.txtbxc10TotalDrop.Name = "txtbxc10TotalDrop";
+            this.txtbxc10TotalDrop.ReadOnly = true;
             this.txtbxc10TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxc10TotalDrop.TabIndex = 154;
             this.txtbxc10TotalDrop.Text = "0.00";
@@ -942,6 +990,7 @@
             this.txtbxc20TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc20TotalDrop.Location = new System.Drawing.Point(453, 450);
             this.txtbxc20TotalDrop.Name = "txtbxc20TotalDrop";
+            this.txtbxc20TotalDrop.ReadOnly = true;
             this.txtbxc20TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxc20TotalDrop.TabIndex = 153;
             this.txtbxc20TotalDrop.Text = "0.00";
@@ -951,6 +1000,7 @@
             this.txtbxc50TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc50TotalDrop.Location = new System.Drawing.Point(453, 424);
             this.txtbxc50TotalDrop.Name = "txtbxc50TotalDrop";
+            this.txtbxc50TotalDrop.ReadOnly = true;
             this.txtbxc50TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxc50TotalDrop.TabIndex = 152;
             this.txtbxc50TotalDrop.Text = "0.00";
@@ -960,6 +1010,7 @@
             this.txtbxR1TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR1TotalDrop.Location = new System.Drawing.Point(453, 397);
             this.txtbxR1TotalDrop.Name = "txtbxR1TotalDrop";
+            this.txtbxR1TotalDrop.ReadOnly = true;
             this.txtbxR1TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR1TotalDrop.TabIndex = 151;
             this.txtbxR1TotalDrop.Text = "0.00";
@@ -969,6 +1020,7 @@
             this.txtbxR2TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR2TotalDrop.Location = new System.Drawing.Point(453, 370);
             this.txtbxR2TotalDrop.Name = "txtbxR2TotalDrop";
+            this.txtbxR2TotalDrop.ReadOnly = true;
             this.txtbxR2TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR2TotalDrop.TabIndex = 150;
             this.txtbxR2TotalDrop.Text = "0.00";
@@ -978,6 +1030,7 @@
             this.txtbxR5TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR5TotalDrop.Location = new System.Drawing.Point(453, 344);
             this.txtbxR5TotalDrop.Name = "txtbxR5TotalDrop";
+            this.txtbxR5TotalDrop.ReadOnly = true;
             this.txtbxR5TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR5TotalDrop.TabIndex = 149;
             this.txtbxR5TotalDrop.Text = "0.00";
@@ -987,6 +1040,7 @@
             this.txtbxR10TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR10TotalDrop.Location = new System.Drawing.Point(453, 318);
             this.txtbxR10TotalDrop.Name = "txtbxR10TotalDrop";
+            this.txtbxR10TotalDrop.ReadOnly = true;
             this.txtbxR10TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR10TotalDrop.TabIndex = 148;
             this.txtbxR10TotalDrop.Text = "0.00";
@@ -996,6 +1050,7 @@
             this.txtbxR20TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR20TotalDrop.Location = new System.Drawing.Point(453, 290);
             this.txtbxR20TotalDrop.Name = "txtbxR20TotalDrop";
+            this.txtbxR20TotalDrop.ReadOnly = true;
             this.txtbxR20TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR20TotalDrop.TabIndex = 147;
             this.txtbxR20TotalDrop.Text = "0.00";
@@ -1005,6 +1060,7 @@
             this.txtbxR50TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR50TotalDrop.Location = new System.Drawing.Point(453, 264);
             this.txtbxR50TotalDrop.Name = "txtbxR50TotalDrop";
+            this.txtbxR50TotalDrop.ReadOnly = true;
             this.txtbxR50TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR50TotalDrop.TabIndex = 146;
             this.txtbxR50TotalDrop.Text = "0.00";
@@ -1024,6 +1080,7 @@
             this.txtbxR100TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR100TotalDrop.Location = new System.Drawing.Point(453, 238);
             this.txtbxR100TotalDrop.Name = "txtbxR100TotalDrop";
+            this.txtbxR100TotalDrop.ReadOnly = true;
             this.txtbxR100TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR100TotalDrop.TabIndex = 144;
             this.txtbxR100TotalDrop.Text = "0.00";
@@ -1033,6 +1090,7 @@
             this.txtbxR200TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR200TotalDrop.Location = new System.Drawing.Point(453, 212);
             this.txtbxR200TotalDrop.Name = "txtbxR200TotalDrop";
+            this.txtbxR200TotalDrop.ReadOnly = true;
             this.txtbxR200TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR200TotalDrop.TabIndex = 143;
             this.txtbxR200TotalDrop.Text = "0.00";
@@ -1042,6 +1100,7 @@
             this.txtbxc5Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc5Drop.Location = new System.Drawing.Point(381, 502);
             this.txtbxc5Drop.Name = "txtbxc5Drop";
+            this.txtbxc5Drop.ReadOnly = true;
             this.txtbxc5Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxc5Drop.TabIndex = 142;
             this.txtbxc5Drop.Text = "0";
@@ -1051,6 +1110,7 @@
             this.txtbxc10Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc10Drop.Location = new System.Drawing.Point(381, 476);
             this.txtbxc10Drop.Name = "txtbxc10Drop";
+            this.txtbxc10Drop.ReadOnly = true;
             this.txtbxc10Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxc10Drop.TabIndex = 141;
             this.txtbxc10Drop.Text = "0";
@@ -1060,6 +1120,7 @@
             this.txtbxc20Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc20Drop.Location = new System.Drawing.Point(381, 450);
             this.txtbxc20Drop.Name = "txtbxc20Drop";
+            this.txtbxc20Drop.ReadOnly = true;
             this.txtbxc20Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxc20Drop.TabIndex = 140;
             this.txtbxc20Drop.Text = "0";
@@ -1069,6 +1130,7 @@
             this.txtbxc50Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxc50Drop.Location = new System.Drawing.Point(381, 424);
             this.txtbxc50Drop.Name = "txtbxc50Drop";
+            this.txtbxc50Drop.ReadOnly = true;
             this.txtbxc50Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxc50Drop.TabIndex = 139;
             this.txtbxc50Drop.Text = "0";
@@ -1078,6 +1140,7 @@
             this.txtbxR1Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR1Drop.Location = new System.Drawing.Point(381, 397);
             this.txtbxR1Drop.Name = "txtbxR1Drop";
+            this.txtbxR1Drop.ReadOnly = true;
             this.txtbxR1Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR1Drop.TabIndex = 138;
             this.txtbxR1Drop.Text = "0";
@@ -1087,6 +1150,7 @@
             this.txtbxR2Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR2Drop.Location = new System.Drawing.Point(381, 370);
             this.txtbxR2Drop.Name = "txtbxR2Drop";
+            this.txtbxR2Drop.ReadOnly = true;
             this.txtbxR2Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR2Drop.TabIndex = 137;
             this.txtbxR2Drop.Text = "0";
@@ -1096,6 +1160,7 @@
             this.txtbxR5Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR5Drop.Location = new System.Drawing.Point(381, 344);
             this.txtbxR5Drop.Name = "txtbxR5Drop";
+            this.txtbxR5Drop.ReadOnly = true;
             this.txtbxR5Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR5Drop.TabIndex = 136;
             this.txtbxR5Drop.Text = "0";
@@ -1105,6 +1170,7 @@
             this.txtbxR10Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR10Drop.Location = new System.Drawing.Point(381, 318);
             this.txtbxR10Drop.Name = "txtbxR10Drop";
+            this.txtbxR10Drop.ReadOnly = true;
             this.txtbxR10Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR10Drop.TabIndex = 135;
             this.txtbxR10Drop.Text = "0";
@@ -1114,6 +1180,7 @@
             this.txtbxR20Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR20Drop.Location = new System.Drawing.Point(381, 290);
             this.txtbxR20Drop.Name = "txtbxR20Drop";
+            this.txtbxR20Drop.ReadOnly = true;
             this.txtbxR20Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR20Drop.TabIndex = 134;
             this.txtbxR20Drop.Text = "0";
@@ -1123,6 +1190,7 @@
             this.txtbxR50Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR50Drop.Location = new System.Drawing.Point(381, 264);
             this.txtbxR50Drop.Name = "txtbxR50Drop";
+            this.txtbxR50Drop.ReadOnly = true;
             this.txtbxR50Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR50Drop.TabIndex = 133;
             this.txtbxR50Drop.Text = "0";
@@ -1132,6 +1200,7 @@
             this.txtbxR100Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR100Drop.Location = new System.Drawing.Point(381, 238);
             this.txtbxR100Drop.Name = "txtbxR100Drop";
+            this.txtbxR100Drop.ReadOnly = true;
             this.txtbxR100Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR100Drop.TabIndex = 132;
             this.txtbxR100Drop.Text = "0";
@@ -1142,6 +1211,7 @@
             this.txtbxR200Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxR200Drop.Location = new System.Drawing.Point(381, 212);
             this.txtbxR200Drop.Name = "txtbxR200Drop";
+            this.txtbxR200Drop.ReadOnly = true;
             this.txtbxR200Drop.Size = new System.Drawing.Size(35, 23);
             this.txtbxR200Drop.TabIndex = 131;
             this.txtbxR200Drop.Text = "0";
@@ -1204,6 +1274,7 @@
             // 
             this.txtbChequesValue.Location = new System.Drawing.Point(453, 615);
             this.txtbChequesValue.Name = "txtbChequesValue";
+            this.txtbChequesValue.ReadOnly = true;
             this.txtbChequesValue.ShortcutsEnabled = false;
             this.txtbChequesValue.Size = new System.Drawing.Size(100, 20);
             this.txtbChequesValue.TabIndex = 178;
@@ -1213,6 +1284,7 @@
             // 
             this.txtbNumCheques.Location = new System.Drawing.Point(453, 589);
             this.txtbNumCheques.Name = "txtbNumCheques";
+            this.txtbNumCheques.ReadOnly = true;
             this.txtbNumCheques.Size = new System.Drawing.Size(100, 20);
             this.txtbNumCheques.TabIndex = 177;
             this.txtbNumCheques.Text = "0";
@@ -1238,19 +1310,11 @@
             this.lblNumCheques.TabIndex = 175;
             this.lblNumCheques.Text = "Number of Cheques";
             // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderWidth = 2;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 280;
-            this.lineShape3.X2 = 589;
-            this.lineShape3.Y1 = 564;
-            this.lineShape3.Y2 = 564;
-            // 
             // txtbTotal_Drop
             // 
             this.txtbTotal_Drop.Location = new System.Drawing.Point(477, 686);
             this.txtbTotal_Drop.Name = "txtbTotal_Drop";
+            this.txtbTotal_Drop.ReadOnly = true;
             this.txtbTotal_Drop.Size = new System.Drawing.Size(100, 20);
             this.txtbTotal_Drop.TabIndex = 182;
             // 
@@ -1273,15 +1337,6 @@
             this.label30.Size = new System.Drawing.Size(46, 15);
             this.label30.TabIndex = 180;
             this.label30.Text = "Totals";
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderWidth = 2;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 280;
-            this.lineShape4.X2 = 589;
-            this.lineShape4.Y1 = 648;
-            this.lineShape4.Y2 = 648;
             // 
             // button1
             // 

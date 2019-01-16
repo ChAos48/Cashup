@@ -320,13 +320,13 @@ namespace OOP_Cashup
         //
         private int Drop(decimal amt, int dropAmt, int actualAmt, ref bool flagerror) {
             log.Debug("dropping R" + amt);
-            while ((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
+            while((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
                 dropAmt++;
                 dropTemp -= amt;
                 Thread.Sleep(0);
             }
 
-            if (dropTemp == amt && actualAmt == 0)
+            if(dropTemp == amt && actualAmt == 0)
                 flagerror = true;
 
             log.Debug("calculated amount to drop for R" + amt + " is " + dropAmt);
@@ -340,7 +340,7 @@ namespace OOP_Cashup
         public void Drop() {
             bool errorFlag = false;//if this is false there are no errors.
             Update();
-            while (drop > droppedTotal) {
+            while(drop > droppedTotal) {
 
                 R200Drop = Drop(200, R200Drop, R200Amt, ref errorFlag);
                 R100Drop = Drop(100, R100Drop, R100Amt, ref errorFlag);
@@ -354,7 +354,7 @@ namespace OOP_Cashup
                 c20Drop = Drop(0.20M, c20Drop, c20Amt, ref errorFlag);
                 c10Drop = Drop(0.10M, c10Drop, c10Amt, ref errorFlag);
                 c5Drop = Drop(0.05M, c5Drop, c5Amt, ref errorFlag);
-                if (errorFlag) {
+                if(errorFlag) {
                     MessageBox.Show("Error trying to drop something when its not available.", "Manual Intervention Required");
                     log.Error("error dropping");
                     break;
@@ -413,6 +413,11 @@ namespace OOP_Cashup
             Update();
         }
 
+        /// <summary>
+        /// Prints the Document, saves a PDF of the Document and writes all the properties of the object to the DB.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnPrint_Click(object sender, EventArgs e) {
 
             frmPrintPreview rpt = new frmPrintPreview();
@@ -430,8 +435,43 @@ namespace OOP_Cashup
 
         }
 
+        /// <summary>
+        /// Only Prints the Document.
+        /// </summary>
+        public void PrintOnly() {
+
+            frmPrintPreview rpt = new frmPrintPreview();
+            ReportViewer rv = rpt.reportViewer1;
+            rv.SetDisplayMode(DisplayMode.PrintLayout);
+            rv.ZoomMode = ZoomMode.PageWidth;
+            rv.LocalReport.ReportPath = "CashupReport.rdlc";
+
+            rv.LocalReport.DataSources.Add(new ReportDataSource("Cashup", new BindingSource(this, null)));
+
+            Export(rv.LocalReport);
+            Print();
+
+        }
+
+        /// <summary>
+        /// Only Saves the PDF.
+        /// </summary>
+        public void SavePDF() {
+
+            frmPrintPreview rpt = new frmPrintPreview();
+            ReportViewer rv = rpt.reportViewer1;
+            rv.SetDisplayMode(DisplayMode.PrintLayout);
+            rv.ZoomMode = ZoomMode.PageWidth;
+            rv.LocalReport.ReportPath = "CashupReport.rdlc";
+
+            rv.LocalReport.DataSources.Add(new ReportDataSource("Cashup", new BindingSource(this, null)));
+
+            printPdf(rv.LocalReport);
+
+        }
+
         #region Printing
-        
+
         private Stream CreateStream(string name, string fileNameExtension, Encoding encoding, string mimeType, bool willSeek) {
             Stream stream = new MemoryStream();
             m_streams.Add(stream);
@@ -458,7 +498,7 @@ namespace OOP_Cashup
             m_streams = new List<Stream>();
             report.Render("Image", deviceInfo, CreateStream,
                out warnings);
-            foreach (Stream stream in m_streams)
+            foreach(Stream stream in m_streams)
                 stream.Position = 0;
         }
 
@@ -468,8 +508,8 @@ namespace OOP_Cashup
 
             // Adjust rectangular area with printer margins.
             Rectangle adjustedRect = new Rectangle(
-                ev.PageBounds.Left - (int)ev.PageSettings.HardMarginX,
-                ev.PageBounds.Top - (int)ev.PageSettings.HardMarginY,
+                ev.PageBounds.Left - (int) ev.PageSettings.HardMarginX,
+                ev.PageBounds.Top - (int) ev.PageSettings.HardMarginY,
                 ev.PageBounds.Width,
                 ev.PageBounds.Height);
 
@@ -485,14 +525,14 @@ namespace OOP_Cashup
         }
 
         private void Print() {
-            if (m_streams == null || m_streams.Count == 0)
+            if(m_streams == null || m_streams.Count == 0)
                 throw new Exception("Error: no stream to print.");
             PrintDocument printDoc = new PrintDocument();
             PrintDialog pd = new PrintDialog();
             var result = pd.ShowDialog();
-            if (result == System.Windows.Forms.DialogResult.Cancel || result == System.Windows.Forms.DialogResult.No) { return; }
+            if(result == System.Windows.Forms.DialogResult.Cancel || result == System.Windows.Forms.DialogResult.No) { return; }
             printDoc.PrinterSettings = pd.PrinterSettings;
-            if (!printDoc.PrinterSettings.IsValid) {
+            if(!printDoc.PrinterSettings.IsValid) {
                 MessageBox.Show("Printer Settings Not Found");
                 log.Error("printer settings not Found.");
 
@@ -507,7 +547,11 @@ namespace OOP_Cashup
 
 
         }
-
+        
+        /// <summary>
+        /// saves the report as a pdf.
+        /// </summary>
+        /// <param name="report">local report  of document to be saved as PDF.</param>
         private void printPdf(LocalReport report) {
 
             log.Info("creating PDF");
@@ -524,7 +568,7 @@ namespace OOP_Cashup
 
 
 
-            if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
+            if(!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
 
                 log.Info("archive does not exist creating");
                 Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
@@ -533,7 +577,7 @@ namespace OOP_Cashup
                 log.Debug("archive folder exists");
             }
 
-            using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive/" + date + ".pdf"),
+            using(FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive/" + date + ".pdf"),
                 FileMode.Create)) {
 
                 fs.Write(bytes, 0, bytes.Length);
@@ -573,14 +617,17 @@ namespace OOP_Cashup
             c5Drop = 0;
             log.Debug("drop data cleared.");
         }
-        
-        private void SaveToDB() {
+
+        /// <summary>
+        /// saves all the properties of this object to a DB specified in the settings.
+        /// </summary>
+        public void SaveToDB() {
             log.Info("saving data to Database");
-            using (OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
+            using(OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
                 try {
                     con.Open();
                     log.Debug("opened connection to DB");
-                } catch (Exception ex) {
+                } catch(Exception ex) {
                     MessageBox.Show("Could not connect to the Database");
                     log.Error("cannot connect to Database.", ex);
                 }
@@ -600,7 +647,7 @@ c5Drop, NumChecks, ChecksValue);
                     cmd.ExecuteNonQuery();
                     log.Debug("successfully excecuted mysql query.");
 
-                } catch (Exception ex) {
+                } catch(Exception ex) {
                     log.Error("could not write to DB", ex);
                 }
                 con.Close();
@@ -608,6 +655,13 @@ c5Drop, NumChecks, ChecksValue);
 
             }
         }
-        
+
+        public bool LoadFromDB() {
+
+
+
+            return true;
+        }
+
     }
 }

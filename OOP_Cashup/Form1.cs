@@ -433,6 +433,25 @@ namespace OOP_Cashup
             Update();
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void savePdfToolStripMenuItem_Click(object sender, EventArgs e) {
+            cu.SavePDF();
+        }
+
+        private void printOnlyToolStripMenuItem_Click(object sender, EventArgs e) {
+            cu.PrintOnly();
+        }
+
+        private void saveToDatabaseToolStripMenuItem_Click(object sender, EventArgs e) {
+            cu.SaveToDB();
+        }
     }
 }
 
