@@ -28,13 +28,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
-            this.tabPageChangeLog = new System.Windows.Forms.TabPage();
-            this.tabPageFAQ = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabPageLisence = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPageChangeLog = new System.Windows.Forms.TabPage();
             this.rtxtbChangelog = new System.Windows.Forms.RichTextBox();
+            this.tabPageFAQ = new System.Windows.Forms.TabPage();
+            this.tabPageLisence = new System.Windows.Forms.TabPage();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
             this.tabPageChangeLog.SuspendLayout();
@@ -49,7 +50,7 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 447);
+            this.tabControl1.Size = new System.Drawing.Size(800, 421);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPageAbout
@@ -60,10 +61,37 @@
             this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAbout.Size = new System.Drawing.Size(792, 421);
+            this.tabPageAbout.Size = new System.Drawing.Size(792, 395);
             this.tabPageAbout.TabIndex = 0;
             this.tabPageAbout.Text = "About";
             this.tabPageAbout.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(8, 89);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(778, 303);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(291, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Authored by: Joshua Smith";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(281, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 56);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CashUp";
             // 
             // tabPageChangeLog
             // 
@@ -76,6 +104,14 @@
             this.tabPageChangeLog.Text = "Change Log";
             this.tabPageChangeLog.UseVisualStyleBackColor = true;
             // 
+            // rtxtbChangelog
+            // 
+            this.rtxtbChangelog.Location = new System.Drawing.Point(0, 0);
+            this.rtxtbChangelog.Name = "rtxtbChangelog";
+            this.rtxtbChangelog.Size = new System.Drawing.Size(792, 421);
+            this.rtxtbChangelog.TabIndex = 0;
+            this.rtxtbChangelog.Text = "Changelog goes here from file.";
+            // 
             // tabPageFAQ
             // 
             this.tabPageFAQ.Location = new System.Drawing.Point(4, 22);
@@ -84,25 +120,6 @@
             this.tabPageFAQ.TabIndex = 2;
             this.tabPageFAQ.Text = "FAQ";
             this.tabPageFAQ.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(281, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 56);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CashUp";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(291, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Authored by: Joshua Smith";
             // 
             // tabPageLisence
             // 
@@ -113,27 +130,22 @@
             this.tabPageLisence.Text = "Lisence";
             this.tabPageLisence.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // btnClose
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(8, 89);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(778, 326);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // rtxtbChangelog
-            // 
-            this.rtxtbChangelog.Location = new System.Drawing.Point(0, 0);
-            this.rtxtbChangelog.Name = "rtxtbChangelog";
-            this.rtxtbChangelog.Size = new System.Drawing.Size(792, 421);
-            this.rtxtbChangelog.TabIndex = 0;
-            this.rtxtbChangelog.Text = "Changelog goes here from file.";
+            this.btnClose.Location = new System.Drawing.Point(5, 429);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(792, 27);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 459);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmAbout";
             this.Text = "frmAbout";
@@ -157,5 +169,6 @@
         private System.Windows.Forms.TabPage tabPageFAQ;
         private System.Windows.Forms.TabPage tabPageLisence;
         private System.Windows.Forms.RichTextBox rtxtbChangelog;
+        private System.Windows.Forms.Button btnClose;
     }
 }

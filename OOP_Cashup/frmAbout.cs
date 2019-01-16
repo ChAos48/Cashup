@@ -19,5 +19,9 @@ namespace OOP_Cashup
         private void frmAbout_Load(object sender, EventArgs e) {
             rtxtbChangelog.Text = File.ReadAllText(System.Reflection.Assembly.GetExecutingAssembly().Location + "ChangeLog.txt");
         }
+
+        private void btnClose_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }
