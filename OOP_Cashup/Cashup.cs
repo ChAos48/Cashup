@@ -422,7 +422,7 @@ namespace OOP_Cashup
 
             frmPrintPreview rpt = new frmPrintPreview();
             ReportViewer rv = rpt.reportViewer1;
-            rv.SetDisplayMode(DisplayMode.PrintLayout);
+            rv.SetDisplayMode(DisplayMode.Printayout);
             rv.ZoomMode = ZoomMode.PageWidth;
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
 
@@ -442,7 +442,7 @@ namespace OOP_Cashup
 
             frmPrintPreview rpt = new frmPrintPreview();
             ReportViewer rv = rpt.reportViewer1;
-            rv.SetDisplayMode(DisplayMode.PrintLayout);
+            rv.SetDisplayMode(DisplayMode.Printayout);
             rv.ZoomMode = ZoomMode.PageWidth;
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
 
@@ -460,7 +460,7 @@ namespace OOP_Cashup
 
             frmPrintPreview rpt = new frmPrintPreview();
             ReportViewer rv = rpt.reportViewer1;
-            rv.SetDisplayMode(DisplayMode.PrintLayout);
+            rv.SetDisplayMode(DisplayMode.Printayout);
             rv.ZoomMode = ZoomMode.PageWidth;
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
 
