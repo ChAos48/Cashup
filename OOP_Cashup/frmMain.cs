@@ -438,7 +438,14 @@ namespace OOP_Cashup
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            using(frmView view = new frmView()) {
+                if(view.ShowDialog() == DialogResult.OK) {
+                    log.Info("viewing Done");
+                } else {
+                    log.Info("no item selected.");
+                    MessageBox.Show("no Items selected.");
+                }
+            }
         }
 
         private void savePdfToolStripMenuItem_Click(object sender, EventArgs e) {

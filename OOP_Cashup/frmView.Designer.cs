@@ -1357,6 +1357,7 @@
             this.button2.TabIndex = 184;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmView
             // 
@@ -1485,6 +1486,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmView";
             this.Text = "View Old Sheet";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmView_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

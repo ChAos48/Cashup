@@ -183,6 +183,7 @@ namespace OOP_Cashup
                 var DriverProvider = String.Format("Driver={0};provider=ODBC", _driver);
                 string ConString = string.Format(CultureInfo.InvariantCulture, "{4};server={0};port=3306;option=67108864;database={3};uid={1};pwd={2};", server, Username, Password, dbName, DriverProvider);
                 RuntimeSettings.conString = ConString;
+                RuntimeSettings.dbName = dbName;
 
             } else if (!File.Exists("./Settings.cfg")) {
 
