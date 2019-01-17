@@ -36,9 +36,11 @@
             this.tabPageFAQ = new System.Windows.Forms.TabPage();
             this.tabPageLisence = new System.Windows.Forms.TabPage();
             this.btnClose = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
             this.tabPageChangeLog.SuspendLayout();
+            this.tabPageLisence.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,7 +101,7 @@
             this.tabPageChangeLog.Location = new System.Drawing.Point(4, 22);
             this.tabPageChangeLog.Name = "tabPageChangeLog";
             this.tabPageChangeLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageChangeLog.Size = new System.Drawing.Size(792, 421);
+            this.tabPageChangeLog.Size = new System.Drawing.Size(792, 395);
             this.tabPageChangeLog.TabIndex = 1;
             this.tabPageChangeLog.Text = "Change Log";
             this.tabPageChangeLog.UseVisualStyleBackColor = true;
@@ -116,16 +118,17 @@
             // 
             this.tabPageFAQ.Location = new System.Drawing.Point(4, 22);
             this.tabPageFAQ.Name = "tabPageFAQ";
-            this.tabPageFAQ.Size = new System.Drawing.Size(792, 421);
+            this.tabPageFAQ.Size = new System.Drawing.Size(792, 395);
             this.tabPageFAQ.TabIndex = 2;
             this.tabPageFAQ.Text = "FAQ";
             this.tabPageFAQ.UseVisualStyleBackColor = true;
             // 
             // tabPageLisence
             // 
+            this.tabPageLisence.Controls.Add(this.richTextBox2);
             this.tabPageLisence.Location = new System.Drawing.Point(4, 22);
             this.tabPageLisence.Name = "tabPageLisence";
-            this.tabPageLisence.Size = new System.Drawing.Size(792, 421);
+            this.tabPageLisence.Size = new System.Drawing.Size(792, 395);
             this.tabPageLisence.TabIndex = 3;
             this.tabPageLisence.Text = "Lisence";
             this.tabPageLisence.UseVisualStyleBackColor = true;
@@ -139,6 +142,14 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(4, 4);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(785, 388);
+            this.richTextBox2.TabIndex = 0;
+            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
             // 
             // frmAbout
             // 
@@ -154,6 +165,7 @@
             this.tabPageAbout.ResumeLayout(false);
             this.tabPageAbout.PerformLayout();
             this.tabPageChangeLog.ResumeLayout(false);
+            this.tabPageLisence.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -170,5 +182,6 @@
         private System.Windows.Forms.TabPage tabPageLisence;
         private System.Windows.Forms.RichTextBox rtxtbChangelog;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
