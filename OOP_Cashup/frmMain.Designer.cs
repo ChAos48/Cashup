@@ -1,5 +1,5 @@
 ﻿namespace OOP_Cashup {
-    partial class Form1 {
+    partial class frmMain {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,7 +24,7 @@
         /// </summary>
         protected void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txtbR200 = new System.Windows.Forms.TextBox();
             this.lblR200 = new System.Windows.Forms.Label();
             this.lblR100 = new System.Windows.Forms.Label();
@@ -154,12 +154,12 @@
             this.label24 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSavePDFOnly = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiPrintOnly = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsiSaveToDBOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1177,6 +1177,7 @@
             // 
             // rectangleShape2
             // 
+            this.rectangleShape2.BorderWidth = 2;
             this.rectangleShape2.Enabled = false;
             this.rectangleShape2.Location = new System.Drawing.Point(433, 79);
             this.rectangleShape2.Name = "rectangleShape2";
@@ -1184,6 +1185,7 @@
             // 
             // rectangleShape1
             // 
+            this.rectangleShape1.BorderWidth = 2;
             this.rectangleShape1.Enabled = false;
             this.rectangleShape1.Location = new System.Drawing.Point(-9, 79);
             this.rectangleShape1.Name = "rectangleShape1";
@@ -1416,6 +1418,34 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // tsiLoad
+            // 
+            this.tsiLoad.Name = "tsiLoad";
+            this.tsiLoad.Size = new System.Drawing.Size(163, 22);
+            this.tsiLoad.Text = "Load";
+            this.tsiLoad.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // tsiSavePDFOnly
+            // 
+            this.tsiSavePDFOnly.Name = "tsiSavePDFOnly";
+            this.tsiSavePDFOnly.Size = new System.Drawing.Size(163, 22);
+            this.tsiSavePDFOnly.Text = "Save pdf";
+            this.tsiSavePDFOnly.Click += new System.EventHandler(this.savePdfToolStripMenuItem_Click);
+            // 
+            // tsiPrintOnly
+            // 
+            this.tsiPrintOnly.Name = "tsiPrintOnly";
+            this.tsiPrintOnly.Size = new System.Drawing.Size(163, 22);
+            this.tsiPrintOnly.Text = "Print Only";
+            this.tsiPrintOnly.Click += new System.EventHandler(this.printOnlyToolStripMenuItem_Click);
+            // 
+            // tsiSaveToDBOnly
+            // 
+            this.tsiSaveToDBOnly.Name = "tsiSaveToDBOnly";
+            this.tsiSaveToDBOnly.Size = new System.Drawing.Size(163, 22);
+            this.tsiSaveToDBOnly.Text = "Save to Database";
+            this.tsiSaveToDBOnly.Click += new System.EventHandler(this.saveToDatabaseToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -1423,40 +1453,12 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // tsiLoad
-            // 
-            this.tsiLoad.Name = "tsiLoad";
-            this.tsiLoad.Size = new System.Drawing.Size(180, 22);
-            this.tsiLoad.Text = "Load";
-            this.tsiLoad.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
-            // 
-            // tsiSavePDFOnly
-            // 
-            this.tsiSavePDFOnly.Name = "tsiSavePDFOnly";
-            this.tsiSavePDFOnly.Size = new System.Drawing.Size(180, 22);
-            this.tsiSavePDFOnly.Text = "Save pdf";
-            this.tsiSavePDFOnly.Click += new System.EventHandler(this.savePdfToolStripMenuItem_Click);
-            // 
-            // tsiPrintOnly
-            // 
-            this.tsiPrintOnly.Name = "tsiPrintOnly";
-            this.tsiPrintOnly.Size = new System.Drawing.Size(180, 22);
-            this.tsiPrintOnly.Text = "Print Only";
-            this.tsiPrintOnly.Click += new System.EventHandler(this.printOnlyToolStripMenuItem_Click);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // tsiSaveToDBOnly
-            // 
-            this.tsiSaveToDBOnly.Name = "tsiSaveToDBOnly";
-            this.tsiSaveToDBOnly.Size = new System.Drawing.Size(180, 22);
-            this.tsiSaveToDBOnly.Text = "Save to Database";
-            this.tsiSaveToDBOnly.Click += new System.EventHandler(this.saveToDatabaseToolStripMenuItem_Click);
-            // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
@@ -1585,7 +1587,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(780, 726);
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CashUp";
             this.Load += new System.EventHandler(this.Form1_Load);

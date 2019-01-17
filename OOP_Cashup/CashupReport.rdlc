@@ -208,6 +208,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -2299,6 +2300,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -3837,6 +3839,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4018,6 +4021,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4030,6 +4034,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4082,6 +4087,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4137,6 +4143,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4271,6 +4278,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>

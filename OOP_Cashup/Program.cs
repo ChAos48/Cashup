@@ -96,7 +96,7 @@ namespace OOP_Cashup
             goto skipupdate;
 
             skipupdate:
-            Application.Run(new Form1());
+            Application.Run(new frmMain());
             goto Finish;
 
             Finish:

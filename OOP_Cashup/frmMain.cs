@@ -15,7 +15,7 @@ using System.Drawing.Imaging;
 
 namespace OOP_Cashup
     {
-    public partial class Form1: Form {
+    public partial class frmMain: Form {
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger
             (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -71,7 +71,7 @@ namespace OOP_Cashup
 
         #endregion Variables
 
-        public Form1() {
+        public frmMain() {
             InitializeComponent();
             cu = new Cashup();
 
