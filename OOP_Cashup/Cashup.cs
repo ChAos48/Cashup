@@ -422,7 +422,7 @@ namespace OOP_Cashup
 
             frmPrintPreview rpt = new frmPrintPreview();
             ReportViewer rv = rpt.reportViewer1;
-            rv.SetDisplayMode(DisplayMode.Printayout);
+            rv.SetDisplayMode(DisplayMode.PrintLayout);
             rv.ZoomMode = ZoomMode.PageWidth;
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
 
@@ -442,7 +442,7 @@ namespace OOP_Cashup
 
             frmPrintPreview rpt = new frmPrintPreview();
             ReportViewer rv = rpt.reportViewer1;
-            rv.SetDisplayMode(DisplayMode.Printayout);
+            rv.SetDisplayMode(DisplayMode.PrintLayout);
             rv.ZoomMode = ZoomMode.PageWidth;
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
 
@@ -460,7 +460,7 @@ namespace OOP_Cashup
 
             frmPrintPreview rpt = new frmPrintPreview();
             ReportViewer rv = rpt.reportViewer1;
-            rv.SetDisplayMode(DisplayMode.Printayout);
+            rv.SetDisplayMode(DisplayMode.PrintLayout);
             rv.ZoomMode = ZoomMode.PageWidth;
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
 
@@ -656,9 +656,85 @@ c5Drop, NumChecks, ChecksValue);
             }
         }
 
-        public bool LoadFromDB() {
+        public bool LoadFromDB(string ID) {
 
+            OdbcDataReader rdr = null;
 
+            using(OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
+
+                try {
+                    con.Open();
+                } catch(Exception ex) {
+                    log.Error("Cannot connect to DB", ex);
+                    return false;
+                }
+
+                string query = "SELECT * WHERE cashup_ID = \"" + ID + "\"";
+                OdbcCommand cmd = new OdbcCommand(query, con);
+
+                rdr = cmd.ExecuteReader();
+
+                while(rdr.Read()) {
+                    this.R200Amt = int.Parse(rdr["cashup_R200Amount"].ToString());
+                    this.R100Amt = int.Parse(rdr["cashup_R100Amount"].ToString());
+                    this.R50Amt = int.Parse(rdr["cashup_R50Amount"].ToString());
+                    this.R20Amt = int.Parse(rdr["cashup_R20Amount"].ToString());
+                    this.R10Amt = int.Parse(rdr["cashup_R10Amount"].ToString());
+                    this.R5Amt = int.Parse(rdr["cashup_R5Amount"].ToString());
+                    this.R2Amt = int.Parse(rdr["cashup_R2Amount"].ToString());
+                    this.R1Amt = int.Parse(rdr["cashup_R1Amount"].ToString());
+                    this.c50Amt = int.Parse(rdr["cashup_50cAmount"].ToString());
+                    this.c20Amt = int.Parse(rdr["cashup_20cAmount"].ToString());
+                    this.c10Amt = int.Parse(rdr["cashup_10cAmount"].ToString());
+                    this.c5Amt = int.Parse(rdr["cashup_5cAmount"].ToString());
+
+                    this.CashFloat = decimal.Parse(rdr["cashup_float"].ToString());
+                    this.TillNum = "Register #" + rdr["cashup_TillNum"].ToString();
+                    this.Name = rdr["cashup_CashierName"].ToString();
+                    date = rdr["cashup_date"].ToString();
+
+                    this.R200 = int.Parse(rdr["cashup_R200Value"].ToString());
+                    this.R100 = int.Parse(rdr["cashup_R100Value"].ToString());
+                    this.R50 = int.Parse(rdr["cashup_R50Value"].ToString());
+                    this.R20 = int.Parse(rdr["cashup_R20Value"].ToString());
+                    this.R10 = int.Parse(rdr["cashup_R10Value"].ToString());
+                    this.R5 = int.Parse(rdr["cashup_R5Value"].ToString());
+                    this.R2 = int.Parse(rdr["cashup_R2Value"].ToString());
+                    this.R1 = int.Parse(rdr["cashup_R1Value"].ToString());
+                    this.c50 = int.Parse(rdr["cashup_50cValue"].ToString());
+                    this.c20 = int.Parse(rdr["cashup_20cValue"].ToString());
+                    this.c10 = int.Parse(rdr["cashup_10cValue"].ToString());
+                    this.c5 = int.Parse(rdr["cashup_5cValue"].ToString());
+
+                    this.R200Drop = int.Parse(rdr["cashup_R200Value"].ToString());
+                    this.R100Drop = int.Parse(rdr["cashup_R100Value"].ToString());
+                    this.R50Drop = int.Parse(rdr["cashup_R50Value"].ToString());
+                    this.R20Drop = int.Parse(rdr["cashup_R20Value"].ToString());
+                    this.R10Drop = int.Parse(rdr["cashup_R10Value"].ToString());
+                    this.R5Drop = int.Parse(rdr["cashup_R5Value"].ToString());
+                    this.R2Drop = int.Parse(rdr["cashup_R2Value"].ToString());
+                    this.R1Drop = int.Parse(rdr["cashup_R1Value"].ToString());
+                    this.c50Drop = int.Parse(rdr["cashup_50cValue"].ToString());
+                    this.c20Drop = int.Parse(rdr["cashup_20cValue"].ToString());
+                    this.c10Drop = int.Parse(rdr["cashup_10cValue"].ToString());
+                    this.c5Drop = int.Parse(rdr["cashup_5cValue"].ToString());
+
+                    this.R200DropTotal = int.Parse(rdr["cashup_R200DropValue"].ToString());
+                    this.R100DropTotal = int.Parse(rdr["cashup_R100DropValue"].ToString());
+                    this.R50DropTotal = int.Parse(rdr["cashup_R50DropValue"].ToString());
+                    this.R20DropTotal = int.Parse(rdr["cashup_R20DropValue"].ToString());
+                    this.R10DropTotal = int.Parse(rdr["cashup_R10DropValue"].ToString());
+                    this.R5DropTotal = int.Parse(rdr["cashup_R5DropValue"].ToString());
+                    this.R2DropTotal = int.Parse(rdr["cashup_R2DropValue"].ToString());
+                    this.R1DropTotal = int.Parse(rdr["cashup_R1DropValue"].ToString());
+                    this.c50DropTotal = int.Parse(rdr["cashup_50cDropValue"].ToString());
+                    this.c20DropTotal = int.Parse(rdr["cashup_20cDropValue"].ToString());
+                    this.c10DropTotal = int.Parse(rdr["cashup_10cDropValue"].ToString());
+                    this.c5DropTotal = int.Parse(rdr["cashup_5cDropValue"].ToString());
+
+                }
+
+            }
 
             return true;
         }
