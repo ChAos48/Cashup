@@ -34,13 +34,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbNameTop = new System.Windows.Forms.TextBox();
+            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtbFloatTop = new System.Windows.Forms.TextBox();
             this.dtpTop = new System.Windows.Forms.DateTimePicker();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtbRegisterLeft = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtbFloatLeft = new System.Windows.Forms.TextBox();
@@ -57,29 +53,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtbxCashDrop = new System.Windows.Forms.TextBox();
             this.lblCashDrop = new System.Windows.Forms.Label();
-            this.txtbTotal5c = new System.Windows.Forms.TextBox();
-            this.txtbTotal10c = new System.Windows.Forms.TextBox();
-            this.txtbTotal20c = new System.Windows.Forms.TextBox();
-            this.txtbTotal50c = new System.Windows.Forms.TextBox();
-            this.txtbTotalR1 = new System.Windows.Forms.TextBox();
-            this.txtbTotalR2 = new System.Windows.Forms.TextBox();
-            this.txtbTotalR5 = new System.Windows.Forms.TextBox();
-            this.txtbTotalR10 = new System.Windows.Forms.TextBox();
-            this.txtbTotalR20 = new System.Windows.Forms.TextBox();
-            this.txtbTotalR50 = new System.Windows.Forms.TextBox();
             this.lblTotal1 = new System.Windows.Forms.Label();
-            this.txtbTotalR100 = new System.Windows.Forms.TextBox();
-            this.txtbTotalR200 = new System.Windows.Forms.TextBox();
-            this.txtb5c = new System.Windows.Forms.TextBox();
-            this.txtb10c = new System.Windows.Forms.TextBox();
-            this.txtb20c = new System.Windows.Forms.TextBox();
-            this.txtb50c = new System.Windows.Forms.TextBox();
-            this.txtbR1 = new System.Windows.Forms.TextBox();
-            this.txtbR2 = new System.Windows.Forms.TextBox();
-            this.txtbR5 = new System.Windows.Forms.TextBox();
-            this.txtbR10 = new System.Windows.Forms.TextBox();
-            this.txtbR20 = new System.Windows.Forms.TextBox();
-            this.txtbR50 = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lbl5c = new System.Windows.Forms.Label();
             this.lbl10c = new System.Windows.Forms.Label();
@@ -91,10 +65,8 @@
             this.lblR10 = new System.Windows.Forms.Label();
             this.lblR20 = new System.Windows.Forms.Label();
             this.lblR50 = new System.Windows.Forms.Label();
-            this.txtbR100 = new System.Windows.Forms.TextBox();
             this.lblR100 = new System.Windows.Forms.Label();
             this.lblR200 = new System.Windows.Forms.Label();
-            this.txtbR200 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -150,7 +122,35 @@
             this.label30 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.txtbR200 = new System.Windows.Forms.TextBox();
+            this.txtbR100 = new System.Windows.Forms.TextBox();
+            this.txtbR50 = new System.Windows.Forms.TextBox();
+            this.txtbR20 = new System.Windows.Forms.TextBox();
+            this.txtbR10 = new System.Windows.Forms.TextBox();
+            this.txtbR5 = new System.Windows.Forms.TextBox();
+            this.txtbR2 = new System.Windows.Forms.TextBox();
+            this.txtbR1 = new System.Windows.Forms.TextBox();
+            this.txtb50c = new System.Windows.Forms.TextBox();
+            this.txtb20c = new System.Windows.Forms.TextBox();
+            this.txtb10c = new System.Windows.Forms.TextBox();
+            this.txtb5c = new System.Windows.Forms.TextBox();
+            this.txtbTotalR200 = new System.Windows.Forms.TextBox();
+            this.txtbTotalR100 = new System.Windows.Forms.TextBox();
+            this.txtbTotalR50 = new System.Windows.Forms.TextBox();
+            this.txtbTotalR20 = new System.Windows.Forms.TextBox();
+            this.txtbTotalR10 = new System.Windows.Forms.TextBox();
+            this.txtbTotalR5 = new System.Windows.Forms.TextBox();
+            this.txtbTotalR2 = new System.Windows.Forms.TextBox();
+            this.txtbTotalR1 = new System.Windows.Forms.TextBox();
+            this.txtbTotal50c = new System.Windows.Forms.TextBox();
+            this.txtbTotal20c = new System.Windows.Forms.TextBox();
+            this.txtbTotal10c = new System.Windows.Forms.TextBox();
+            this.txtbTotal5c = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -221,6 +221,10 @@
             this.txtbNameTop.TabIndex = 8;
             this.txtbNameTop.Text = "Name";
             // 
+            // cashupBindingSource
+            // 
+            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
+            // 
             // txtbFloatTop
             // 
             this.txtbFloatTop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "CashFloat", true));
@@ -238,56 +242,6 @@
             this.dtpTop.Name = "dtpTop";
             this.dtpTop.Size = new System.Drawing.Size(200, 20);
             this.dtpTop.TabIndex = 10;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape4,
-            this.lineShape3,
-            this.lineShape2,
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(589, 718);
-            this.shapeContainer1.TabIndex = 11;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderWidth = 2;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 280;
-            this.lineShape4.X2 = 589;
-            this.lineShape4.Y1 = 648;
-            this.lineShape4.Y2 = 648;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderWidth = 2;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 280;
-            this.lineShape3.X2 = 589;
-            this.lineShape3.Y1 = 564;
-            this.lineShape3.Y2 = 564;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 281;
-            this.lineShape2.X2 = 281;
-            this.lineShape2.Y1 = 90;
-            this.lineShape2.Y2 = 716;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderWidth = 2;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 589;
-            this.lineShape1.Y1 = 89;
-            this.lineShape1.Y2 = 89;
             // 
             // txtbRegisterLeft
             // 
@@ -448,116 +402,6 @@
             this.lblCashDrop.TabIndex = 122;
             this.lblCashDrop.Text = "Cash Drop";
             // 
-            // txtbTotal5c
-            // 
-            this.txtbTotal5c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5", true));
-            this.txtbTotal5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotal5c.Location = new System.Drawing.Point(175, 490);
-            this.txtbTotal5c.Name = "txtbTotal5c";
-            this.txtbTotal5c.ReadOnly = true;
-            this.txtbTotal5c.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotal5c.TabIndex = 121;
-            this.txtbTotal5c.Text = "0.00";
-            // 
-            // txtbTotal10c
-            // 
-            this.txtbTotal10c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10", true));
-            this.txtbTotal10c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotal10c.Location = new System.Drawing.Point(175, 464);
-            this.txtbTotal10c.Name = "txtbTotal10c";
-            this.txtbTotal10c.ReadOnly = true;
-            this.txtbTotal10c.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotal10c.TabIndex = 120;
-            this.txtbTotal10c.Text = "0.00";
-            // 
-            // txtbTotal20c
-            // 
-            this.txtbTotal20c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c20", true));
-            this.txtbTotal20c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotal20c.Location = new System.Drawing.Point(175, 438);
-            this.txtbTotal20c.Name = "txtbTotal20c";
-            this.txtbTotal20c.ReadOnly = true;
-            this.txtbTotal20c.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotal20c.TabIndex = 119;
-            this.txtbTotal20c.Text = "0.00";
-            // 
-            // txtbTotal50c
-            // 
-            this.txtbTotal50c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c50", true));
-            this.txtbTotal50c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotal50c.Location = new System.Drawing.Point(175, 412);
-            this.txtbTotal50c.Name = "txtbTotal50c";
-            this.txtbTotal50c.ReadOnly = true;
-            this.txtbTotal50c.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotal50c.TabIndex = 118;
-            this.txtbTotal50c.Text = "0.00";
-            // 
-            // txtbTotalR1
-            // 
-            this.txtbTotalR1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R1", true));
-            this.txtbTotalR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR1.Location = new System.Drawing.Point(175, 385);
-            this.txtbTotalR1.Name = "txtbTotalR1";
-            this.txtbTotalR1.ReadOnly = true;
-            this.txtbTotalR1.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR1.TabIndex = 117;
-            this.txtbTotalR1.Text = "0.00";
-            // 
-            // txtbTotalR2
-            // 
-            this.txtbTotalR2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R2", true));
-            this.txtbTotalR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR2.Location = new System.Drawing.Point(175, 358);
-            this.txtbTotalR2.Name = "txtbTotalR2";
-            this.txtbTotalR2.ReadOnly = true;
-            this.txtbTotalR2.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR2.TabIndex = 116;
-            this.txtbTotalR2.Text = "0.00";
-            // 
-            // txtbTotalR5
-            // 
-            this.txtbTotalR5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R5", true));
-            this.txtbTotalR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR5.Location = new System.Drawing.Point(175, 332);
-            this.txtbTotalR5.Name = "txtbTotalR5";
-            this.txtbTotalR5.ReadOnly = true;
-            this.txtbTotalR5.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR5.TabIndex = 115;
-            this.txtbTotalR5.Text = "0.00";
-            // 
-            // txtbTotalR10
-            // 
-            this.txtbTotalR10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R10", true));
-            this.txtbTotalR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR10.Location = new System.Drawing.Point(175, 306);
-            this.txtbTotalR10.Name = "txtbTotalR10";
-            this.txtbTotalR10.ReadOnly = true;
-            this.txtbTotalR10.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR10.TabIndex = 114;
-            this.txtbTotalR10.Text = "0.00";
-            // 
-            // txtbTotalR20
-            // 
-            this.txtbTotalR20.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R20", true));
-            this.txtbTotalR20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR20.Location = new System.Drawing.Point(175, 278);
-            this.txtbTotalR20.Name = "txtbTotalR20";
-            this.txtbTotalR20.ReadOnly = true;
-            this.txtbTotalR20.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR20.TabIndex = 113;
-            this.txtbTotalR20.Text = "0.00";
-            // 
-            // txtbTotalR50
-            // 
-            this.txtbTotalR50.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R50", true));
-            this.txtbTotalR50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR50.Location = new System.Drawing.Point(175, 252);
-            this.txtbTotalR50.Name = "txtbTotalR50";
-            this.txtbTotalR50.ReadOnly = true;
-            this.txtbTotalR50.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR50.TabIndex = 112;
-            this.txtbTotalR50.Text = "0.00";
-            // 
             // lblTotal1
             // 
             this.lblTotal1.AutoSize = true;
@@ -567,138 +411,6 @@
             this.lblTotal1.Size = new System.Drawing.Size(69, 16);
             this.lblTotal1.TabIndex = 111;
             this.lblTotal1.Text = "Total (R)";
-            // 
-            // txtbTotalR100
-            // 
-            this.txtbTotalR100.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R100", true));
-            this.txtbTotalR100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR100.Location = new System.Drawing.Point(175, 226);
-            this.txtbTotalR100.Name = "txtbTotalR100";
-            this.txtbTotalR100.ReadOnly = true;
-            this.txtbTotalR100.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR100.TabIndex = 110;
-            this.txtbTotalR100.Text = "0.00";
-            // 
-            // txtbTotalR200
-            // 
-            this.txtbTotalR200.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R200", true));
-            this.txtbTotalR200.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotalR200.Location = new System.Drawing.Point(175, 200);
-            this.txtbTotalR200.Name = "txtbTotalR200";
-            this.txtbTotalR200.ReadOnly = true;
-            this.txtbTotalR200.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotalR200.TabIndex = 109;
-            this.txtbTotalR200.Text = "0.00";
-            // 
-            // txtb5c
-            // 
-            this.txtb5c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5Amt", true));
-            this.txtb5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtb5c.Location = new System.Drawing.Point(70, 490);
-            this.txtb5c.Name = "txtb5c";
-            this.txtb5c.ReadOnly = true;
-            this.txtb5c.Size = new System.Drawing.Size(100, 23);
-            this.txtb5c.TabIndex = 108;
-            this.txtb5c.Text = "0";
-            // 
-            // txtb10c
-            // 
-            this.txtb10c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10Amt", true));
-            this.txtb10c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtb10c.Location = new System.Drawing.Point(70, 464);
-            this.txtb10c.Name = "txtb10c";
-            this.txtb10c.ReadOnly = true;
-            this.txtb10c.Size = new System.Drawing.Size(100, 23);
-            this.txtb10c.TabIndex = 107;
-            this.txtb10c.Text = "0";
-            // 
-            // txtb20c
-            // 
-            this.txtb20c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c20Amt", true));
-            this.txtb20c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtb20c.Location = new System.Drawing.Point(70, 438);
-            this.txtb20c.Name = "txtb20c";
-            this.txtb20c.ReadOnly = true;
-            this.txtb20c.Size = new System.Drawing.Size(100, 23);
-            this.txtb20c.TabIndex = 106;
-            this.txtb20c.Text = "0";
-            // 
-            // txtb50c
-            // 
-            this.txtb50c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c50Amt", true));
-            this.txtb50c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtb50c.Location = new System.Drawing.Point(70, 412);
-            this.txtb50c.Name = "txtb50c";
-            this.txtb50c.ReadOnly = true;
-            this.txtb50c.Size = new System.Drawing.Size(100, 23);
-            this.txtb50c.TabIndex = 105;
-            this.txtb50c.Text = "0";
-            // 
-            // txtbR1
-            // 
-            this.txtbR1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R1Amt", true));
-            this.txtbR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR1.Location = new System.Drawing.Point(70, 385);
-            this.txtbR1.Name = "txtbR1";
-            this.txtbR1.ReadOnly = true;
-            this.txtbR1.Size = new System.Drawing.Size(100, 23);
-            this.txtbR1.TabIndex = 104;
-            this.txtbR1.Text = "0";
-            // 
-            // txtbR2
-            // 
-            this.txtbR2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R2Amt", true));
-            this.txtbR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR2.Location = new System.Drawing.Point(70, 358);
-            this.txtbR2.Name = "txtbR2";
-            this.txtbR2.ReadOnly = true;
-            this.txtbR2.Size = new System.Drawing.Size(100, 23);
-            this.txtbR2.TabIndex = 103;
-            this.txtbR2.Text = "0";
-            // 
-            // txtbR5
-            // 
-            this.txtbR5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R5Amt", true));
-            this.txtbR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR5.Location = new System.Drawing.Point(70, 332);
-            this.txtbR5.Name = "txtbR5";
-            this.txtbR5.ReadOnly = true;
-            this.txtbR5.Size = new System.Drawing.Size(100, 23);
-            this.txtbR5.TabIndex = 102;
-            this.txtbR5.Text = "0";
-            // 
-            // txtbR10
-            // 
-            this.txtbR10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R10Amt", true));
-            this.txtbR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR10.Location = new System.Drawing.Point(70, 306);
-            this.txtbR10.Name = "txtbR10";
-            this.txtbR10.ReadOnly = true;
-            this.txtbR10.Size = new System.Drawing.Size(100, 23);
-            this.txtbR10.TabIndex = 101;
-            this.txtbR10.Text = "0";
-            // 
-            // txtbR20
-            // 
-            this.txtbR20.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R20Amt", true));
-            this.txtbR20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR20.Location = new System.Drawing.Point(70, 278);
-            this.txtbR20.Name = "txtbR20";
-            this.txtbR20.ReadOnly = true;
-            this.txtbR20.Size = new System.Drawing.Size(100, 23);
-            this.txtbR20.TabIndex = 100;
-            this.txtbR20.Text = "0";
-            // 
-            // txtbR50
-            // 
-            this.txtbR50.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R50Amt", true));
-            this.txtbR50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR50.Location = new System.Drawing.Point(70, 252);
-            this.txtbR50.Name = "txtbR50";
-            this.txtbR50.ReadOnly = true;
-            this.txtbR50.Size = new System.Drawing.Size(100, 23);
-            this.txtbR50.TabIndex = 99;
-            this.txtbR50.Text = "0";
             // 
             // lblAmount
             // 
@@ -810,17 +522,6 @@
             this.lblR50.TabIndex = 88;
             this.lblR50.Text = "R50";
             // 
-            // txtbR100
-            // 
-            this.txtbR100.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R100Amt", true));
-            this.txtbR100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR100.Location = new System.Drawing.Point(70, 226);
-            this.txtbR100.Name = "txtbR100";
-            this.txtbR100.ReadOnly = true;
-            this.txtbR100.Size = new System.Drawing.Size(100, 23);
-            this.txtbR100.TabIndex = 87;
-            this.txtbR100.Text = "0";
-            // 
             // lblR100
             // 
             this.lblR100.AutoSize = true;
@@ -840,18 +541,6 @@
             this.lblR200.Size = new System.Drawing.Size(42, 17);
             this.lblR200.TabIndex = 85;
             this.lblR200.Text = "R200";
-            // 
-            // txtbR200
-            // 
-            this.txtbR200.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.txtbR200.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R200Amt", true));
-            this.txtbR200.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbR200.Location = new System.Drawing.Point(70, 200);
-            this.txtbR200.Name = "txtbR200";
-            this.txtbR200.ReadOnly = true;
-            this.txtbR200.Size = new System.Drawing.Size(100, 23);
-            this.txtbR200.TabIndex = 84;
-            this.txtbR200.Text = "0";
             // 
             // label12
             // 
@@ -1428,9 +1117,324 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // cashupBindingSource
+            // lineShape4
             // 
-            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
+            this.lineShape4.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.lineShape4.BorderWidth = 2;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 280;
+            this.lineShape4.X2 = 589;
+            this.lineShape4.Y1 = 648;
+            this.lineShape4.Y2 = 648;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.lineShape3.BorderWidth = 2;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 280;
+            this.lineShape3.X2 = 589;
+            this.lineShape3.Y1 = 564;
+            this.lineShape3.Y2 = 564;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 281;
+            this.lineShape2.X2 = 281;
+            this.lineShape2.Y1 = 90;
+            this.lineShape2.Y2 = 716;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 0;
+            this.lineShape1.X2 = 589;
+            this.lineShape1.Y1 = 89;
+            this.lineShape1.Y2 = 89;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape4,
+            this.lineShape3,
+            this.lineShape2,
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(589, 718);
+            this.shapeContainer1.TabIndex = 11;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // txtbR200
+            // 
+            this.txtbR200.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.txtbR200.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R200Amt", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtbR200.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR200.Location = new System.Drawing.Point(70, 200);
+            this.txtbR200.Name = "txtbR200";
+            this.txtbR200.ReadOnly = true;
+            this.txtbR200.Size = new System.Drawing.Size(100, 23);
+            this.txtbR200.TabIndex = 84;
+            this.txtbR200.Text = "0";
+            // 
+            // txtbR100
+            // 
+            this.txtbR100.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R100Amt", true));
+            this.txtbR100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR100.Location = new System.Drawing.Point(70, 226);
+            this.txtbR100.Name = "txtbR100";
+            this.txtbR100.ReadOnly = true;
+            this.txtbR100.Size = new System.Drawing.Size(100, 23);
+            this.txtbR100.TabIndex = 87;
+            this.txtbR100.Text = "0";
+            // 
+            // txtbR50
+            // 
+            this.txtbR50.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R50Amt", true));
+            this.txtbR50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR50.Location = new System.Drawing.Point(70, 252);
+            this.txtbR50.Name = "txtbR50";
+            this.txtbR50.ReadOnly = true;
+            this.txtbR50.Size = new System.Drawing.Size(100, 23);
+            this.txtbR50.TabIndex = 99;
+            this.txtbR50.Text = "0";
+            // 
+            // txtbR20
+            // 
+            this.txtbR20.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R20Amt", true));
+            this.txtbR20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR20.Location = new System.Drawing.Point(70, 278);
+            this.txtbR20.Name = "txtbR20";
+            this.txtbR20.ReadOnly = true;
+            this.txtbR20.Size = new System.Drawing.Size(100, 23);
+            this.txtbR20.TabIndex = 100;
+            this.txtbR20.Text = "0";
+            // 
+            // txtbR10
+            // 
+            this.txtbR10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R10Amt", true));
+            this.txtbR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR10.Location = new System.Drawing.Point(70, 306);
+            this.txtbR10.Name = "txtbR10";
+            this.txtbR10.ReadOnly = true;
+            this.txtbR10.Size = new System.Drawing.Size(100, 23);
+            this.txtbR10.TabIndex = 101;
+            this.txtbR10.Text = "0";
+            // 
+            // txtbR5
+            // 
+            this.txtbR5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R5Amt", true));
+            this.txtbR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR5.Location = new System.Drawing.Point(70, 332);
+            this.txtbR5.Name = "txtbR5";
+            this.txtbR5.ReadOnly = true;
+            this.txtbR5.Size = new System.Drawing.Size(100, 23);
+            this.txtbR5.TabIndex = 102;
+            this.txtbR5.Text = "0";
+            // 
+            // txtbR2
+            // 
+            this.txtbR2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R2Amt", true));
+            this.txtbR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR2.Location = new System.Drawing.Point(70, 358);
+            this.txtbR2.Name = "txtbR2";
+            this.txtbR2.ReadOnly = true;
+            this.txtbR2.Size = new System.Drawing.Size(100, 23);
+            this.txtbR2.TabIndex = 103;
+            this.txtbR2.Text = "0";
+            // 
+            // txtbR1
+            // 
+            this.txtbR1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R1Amt", true));
+            this.txtbR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbR1.Location = new System.Drawing.Point(70, 385);
+            this.txtbR1.Name = "txtbR1";
+            this.txtbR1.ReadOnly = true;
+            this.txtbR1.Size = new System.Drawing.Size(100, 23);
+            this.txtbR1.TabIndex = 104;
+            this.txtbR1.Text = "0";
+            // 
+            // txtb50c
+            // 
+            this.txtb50c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c50Amt", true));
+            this.txtb50c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtb50c.Location = new System.Drawing.Point(70, 412);
+            this.txtb50c.Name = "txtb50c";
+            this.txtb50c.ReadOnly = true;
+            this.txtb50c.Size = new System.Drawing.Size(100, 23);
+            this.txtb50c.TabIndex = 105;
+            this.txtb50c.Text = "0";
+            // 
+            // txtb20c
+            // 
+            this.txtb20c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c20Amt", true));
+            this.txtb20c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtb20c.Location = new System.Drawing.Point(70, 438);
+            this.txtb20c.Name = "txtb20c";
+            this.txtb20c.ReadOnly = true;
+            this.txtb20c.Size = new System.Drawing.Size(100, 23);
+            this.txtb20c.TabIndex = 106;
+            this.txtb20c.Text = "0";
+            // 
+            // txtb10c
+            // 
+            this.txtb10c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10Amt", true));
+            this.txtb10c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtb10c.Location = new System.Drawing.Point(70, 464);
+            this.txtb10c.Name = "txtb10c";
+            this.txtb10c.ReadOnly = true;
+            this.txtb10c.Size = new System.Drawing.Size(100, 23);
+            this.txtb10c.TabIndex = 107;
+            this.txtb10c.Text = "0";
+            // 
+            // txtb5c
+            // 
+            this.txtb5c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5Amt", true));
+            this.txtb5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtb5c.Location = new System.Drawing.Point(70, 490);
+            this.txtb5c.Name = "txtb5c";
+            this.txtb5c.ReadOnly = true;
+            this.txtb5c.Size = new System.Drawing.Size(100, 23);
+            this.txtb5c.TabIndex = 108;
+            this.txtb5c.Text = "0";
+            // 
+            // txtbTotalR200
+            // 
+            this.txtbTotalR200.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R200", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtbTotalR200.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR200.Location = new System.Drawing.Point(175, 200);
+            this.txtbTotalR200.Name = "txtbTotalR200";
+            this.txtbTotalR200.ReadOnly = true;
+            this.txtbTotalR200.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR200.TabIndex = 109;
+            this.txtbTotalR200.Text = "0.00";
+            // 
+            // txtbTotalR100
+            // 
+            this.txtbTotalR100.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R100", true));
+            this.txtbTotalR100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR100.Location = new System.Drawing.Point(175, 226);
+            this.txtbTotalR100.Name = "txtbTotalR100";
+            this.txtbTotalR100.ReadOnly = true;
+            this.txtbTotalR100.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR100.TabIndex = 110;
+            this.txtbTotalR100.Text = "0.00";
+            // 
+            // txtbTotalR50
+            // 
+            this.txtbTotalR50.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R50", true));
+            this.txtbTotalR50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR50.Location = new System.Drawing.Point(175, 252);
+            this.txtbTotalR50.Name = "txtbTotalR50";
+            this.txtbTotalR50.ReadOnly = true;
+            this.txtbTotalR50.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR50.TabIndex = 112;
+            this.txtbTotalR50.Text = "0.00";
+            // 
+            // txtbTotalR20
+            // 
+            this.txtbTotalR20.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R20", true));
+            this.txtbTotalR20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR20.Location = new System.Drawing.Point(175, 278);
+            this.txtbTotalR20.Name = "txtbTotalR20";
+            this.txtbTotalR20.ReadOnly = true;
+            this.txtbTotalR20.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR20.TabIndex = 113;
+            this.txtbTotalR20.Text = "0.00";
+            // 
+            // txtbTotalR10
+            // 
+            this.txtbTotalR10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R10", true));
+            this.txtbTotalR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR10.Location = new System.Drawing.Point(175, 306);
+            this.txtbTotalR10.Name = "txtbTotalR10";
+            this.txtbTotalR10.ReadOnly = true;
+            this.txtbTotalR10.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR10.TabIndex = 114;
+            this.txtbTotalR10.Text = "0.00";
+            // 
+            // txtbTotalR5
+            // 
+            this.txtbTotalR5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R5", true));
+            this.txtbTotalR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR5.Location = new System.Drawing.Point(175, 332);
+            this.txtbTotalR5.Name = "txtbTotalR5";
+            this.txtbTotalR5.ReadOnly = true;
+            this.txtbTotalR5.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR5.TabIndex = 115;
+            this.txtbTotalR5.Text = "0.00";
+            // 
+            // txtbTotalR2
+            // 
+            this.txtbTotalR2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R2", true));
+            this.txtbTotalR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR2.Location = new System.Drawing.Point(175, 358);
+            this.txtbTotalR2.Name = "txtbTotalR2";
+            this.txtbTotalR2.ReadOnly = true;
+            this.txtbTotalR2.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR2.TabIndex = 116;
+            this.txtbTotalR2.Text = "0.00";
+            // 
+            // txtbTotalR1
+            // 
+            this.txtbTotalR1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R1", true));
+            this.txtbTotalR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalR1.Location = new System.Drawing.Point(175, 385);
+            this.txtbTotalR1.Name = "txtbTotalR1";
+            this.txtbTotalR1.ReadOnly = true;
+            this.txtbTotalR1.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotalR1.TabIndex = 117;
+            this.txtbTotalR1.Text = "0.00";
+            // 
+            // txtbTotal50c
+            // 
+            this.txtbTotal50c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c50", true));
+            this.txtbTotal50c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotal50c.Location = new System.Drawing.Point(175, 412);
+            this.txtbTotal50c.Name = "txtbTotal50c";
+            this.txtbTotal50c.ReadOnly = true;
+            this.txtbTotal50c.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotal50c.TabIndex = 118;
+            this.txtbTotal50c.Text = "0.00";
+            // 
+            // txtbTotal20c
+            // 
+            this.txtbTotal20c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c20", true));
+            this.txtbTotal20c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotal20c.Location = new System.Drawing.Point(175, 438);
+            this.txtbTotal20c.Name = "txtbTotal20c";
+            this.txtbTotal20c.ReadOnly = true;
+            this.txtbTotal20c.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotal20c.TabIndex = 119;
+            this.txtbTotal20c.Text = "0.00";
+            // 
+            // txtbTotal10c
+            // 
+            this.txtbTotal10c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10", true));
+            this.txtbTotal10c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotal10c.Location = new System.Drawing.Point(175, 464);
+            this.txtbTotal10c.Name = "txtbTotal10c";
+            this.txtbTotal10c.ReadOnly = true;
+            this.txtbTotal10c.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotal10c.TabIndex = 120;
+            this.txtbTotal10c.Text = "0.00";
+            // 
+            // txtbTotal5c
+            // 
+            this.txtbTotal5c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5", true));
+            this.txtbTotal5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotal5c.Location = new System.Drawing.Point(175, 490);
+            this.txtbTotal5c.Name = "txtbTotal5c";
+            this.txtbTotal5c.ReadOnly = true;
+            this.txtbTotal5c.Size = new System.Drawing.Size(100, 23);
+            this.txtbTotal5c.TabIndex = 121;
+            this.txtbTotal5c.Text = "0.00";
             // 
             // frmView
             // 
@@ -1578,8 +1582,6 @@
         private System.Windows.Forms.TextBox txtbNameTop;
         private System.Windows.Forms.TextBox txtbFloatTop;
         private System.Windows.Forms.DateTimePicker dtpTop;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TextBox txtbRegisterLeft;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtbFloatLeft;
@@ -1588,7 +1590,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpLeft;
         private System.Windows.Forms.Label label9;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.TextBox txtbxSkimmed;
         private System.Windows.Forms.Label lblSkimmed;
         private System.Windows.Forms.TextBox txtbxCheques;
@@ -1597,29 +1598,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtbxCashDrop;
         private System.Windows.Forms.Label lblCashDrop;
-        private System.Windows.Forms.TextBox txtbTotal5c;
-        private System.Windows.Forms.TextBox txtbTotal10c;
-        private System.Windows.Forms.TextBox txtbTotal20c;
-        private System.Windows.Forms.TextBox txtbTotal50c;
-        private System.Windows.Forms.TextBox txtbTotalR1;
-        private System.Windows.Forms.TextBox txtbTotalR2;
-        private System.Windows.Forms.TextBox txtbTotalR5;
-        private System.Windows.Forms.TextBox txtbTotalR10;
-        private System.Windows.Forms.TextBox txtbTotalR20;
-        private System.Windows.Forms.TextBox txtbTotalR50;
         private System.Windows.Forms.Label lblTotal1;
-        private System.Windows.Forms.TextBox txtbTotalR100;
-        private System.Windows.Forms.TextBox txtbTotalR200;
-        private System.Windows.Forms.TextBox txtb5c;
-        private System.Windows.Forms.TextBox txtb10c;
-        private System.Windows.Forms.TextBox txtb20c;
-        private System.Windows.Forms.TextBox txtb50c;
-        private System.Windows.Forms.TextBox txtbR1;
-        private System.Windows.Forms.TextBox txtbR2;
-        private System.Windows.Forms.TextBox txtbR5;
-        private System.Windows.Forms.TextBox txtbR10;
-        private System.Windows.Forms.TextBox txtbR20;
-        protected System.Windows.Forms.TextBox txtbR50;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label lbl5c;
         private System.Windows.Forms.Label lbl10c;
@@ -1631,10 +1610,8 @@
         private System.Windows.Forms.Label lblR10;
         private System.Windows.Forms.Label lblR20;
         private System.Windows.Forms.Label lblR50;
-        protected System.Windows.Forms.TextBox txtbR100;
         private System.Windows.Forms.Label lblR100;
         private System.Windows.Forms.Label lblR200;
-        public System.Windows.Forms.TextBox txtbR200;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -1680,18 +1657,45 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DateTimePicker dtpRight;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private System.Windows.Forms.Label lblChequesValue;
         private System.Windows.Forms.TextBox txtbChequesValue;
         private System.Windows.Forms.TextBox txtbNumCheques;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label lblNumCheques;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private System.Windows.Forms.TextBox txtbTotal_Drop;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource cashupBindingSource;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        public System.Windows.Forms.TextBox txtbR200;
+        protected System.Windows.Forms.TextBox txtbR100;
+        protected System.Windows.Forms.TextBox txtbR50;
+        private System.Windows.Forms.TextBox txtbR20;
+        private System.Windows.Forms.TextBox txtbR10;
+        private System.Windows.Forms.TextBox txtbR5;
+        private System.Windows.Forms.TextBox txtbR2;
+        private System.Windows.Forms.TextBox txtbR1;
+        private System.Windows.Forms.TextBox txtb50c;
+        private System.Windows.Forms.TextBox txtb20c;
+        private System.Windows.Forms.TextBox txtb10c;
+        private System.Windows.Forms.TextBox txtb5c;
+        private System.Windows.Forms.TextBox txtbTotalR200;
+        private System.Windows.Forms.TextBox txtbTotalR100;
+        private System.Windows.Forms.TextBox txtbTotalR50;
+        private System.Windows.Forms.TextBox txtbTotalR20;
+        private System.Windows.Forms.TextBox txtbTotalR10;
+        private System.Windows.Forms.TextBox txtbTotalR5;
+        private System.Windows.Forms.TextBox txtbTotalR2;
+        private System.Windows.Forms.TextBox txtbTotalR1;
+        private System.Windows.Forms.TextBox txtbTotal50c;
+        private System.Windows.Forms.TextBox txtbTotal20c;
+        private System.Windows.Forms.TextBox txtbTotal10c;
+        private System.Windows.Forms.TextBox txtbTotal5c;
     }
 }

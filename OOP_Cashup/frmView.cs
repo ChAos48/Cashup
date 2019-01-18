@@ -32,7 +32,7 @@ namespace OOP_Cashup
 
                 } else {
                     log.Warn("Dialog result from frmSelect is not OK");
-                    DialogResult = DialogResult.Abort;
+                    
                     return;
 
                 }
@@ -43,10 +43,12 @@ namespace OOP_Cashup
         private void LoadData(string ID) {
 
             if(cu.LoadFromDB(ID)) {
-                log.Info("Data Successfully loaded from DB");
+                log.Info("Till data Successfully loaded from DB");
             } else {
                 log.Error("couldnt load data from DB");
             }
+
+            cu.Drop();
 
         }
 
@@ -58,5 +60,7 @@ namespace OOP_Cashup
         private void button2_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.OK;
         }
+
+       
     }
 }

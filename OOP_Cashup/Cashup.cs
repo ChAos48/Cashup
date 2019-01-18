@@ -67,19 +67,31 @@ namespace OOP_Cashup
         public int c10Drop { get; set; }
         public int c5Drop { get; set; }
 
+        private Decimal r200DropTotal;
+        private Decimal r100DropTotal;
+        private Decimal r50DropTotal;
+        private Decimal r20DropTotal;
+        private Decimal r10DropTotal;
+        private Decimal r5DropTotal;
+        private Decimal r2DropTotal;
+        private Decimal r1DropTotal;
+        private Decimal C50DropTotal;
+        private Decimal C20DropTotal;
+        private Decimal C10DropTotal;
+        private Decimal C5DropTotal;
 
-        public Decimal R200DropTotal { get { return R200Drop * 200.00M; } set { R200DropTotal = value; } }
-        public Decimal R100DropTotal { get { return R100Drop * 100.00M; } set { R100DropTotal = value; } }
-        public Decimal R50DropTotal { get { return R50Drop * 50.00M; } set { R50DropTotal = value; } }
-        public Decimal R20DropTotal { get { return R20Drop * 20.00M; } set { R20DropTotal = value; } }
-        public Decimal R10DropTotal { get { return R10Drop * 10.00M; } set { R10DropTotal = value; } }
-        public Decimal R5DropTotal { get { return R5Drop * 5.00M; } set { R5DropTotal = value; } }
-        public Decimal R2DropTotal { get { return R2Drop * 2.00M; } set { R2DropTotal = value; } }
-        public Decimal R1DropTotal { get { return R1Drop * 1.00M; } set { R1DropTotal = value; } }
-        public Decimal c50DropTotal { get { return c50Drop * 0.50M; } set { c50DropTotal = value; } }
-        public Decimal c20DropTotal { get { return c20Drop * 0.20M; } set { c20DropTotal = value; } }
-        public Decimal c10DropTotal { get { return c10Drop * 0.10M; } set { c10DropTotal = value; } }
-        public Decimal c5DropTotal { get { return c5Drop * 0.05M; } set { c5DropTotal = value; } }
+        public Decimal R200DropTotal { get { return R200Drop * 200.00M; } set { r200DropTotal = value; } }
+        public Decimal R100DropTotal { get { return R100Drop * 100.00M; } set { r100DropTotal = value; } }
+        public Decimal R50DropTotal { get { return R50Drop * 50.00M; } set { r50DropTotal = value; } }
+        public Decimal R20DropTotal { get { return R20Drop * 20.00M; } set { r20DropTotal = value; } }
+        public Decimal R10DropTotal { get { return R10Drop * 10.00M; } set { r10DropTotal = value; } }
+        public Decimal R5DropTotal { get { return R5Drop * 5.00M; } set { r5DropTotal = value; } }
+        public Decimal R2DropTotal { get { return R2Drop * 2.00M; } set { r2DropTotal = value; } }
+        public Decimal R1DropTotal { get { return R1Drop * 1.00M; } set { r1DropTotal = value; } }
+        public Decimal c50DropTotal { get { return c50Drop * 0.50M; } set { C50DropTotal = value; } }
+        public Decimal c20DropTotal { get { return c20Drop * 0.20M; } set { C20DropTotal = value; } }
+        public Decimal c10DropTotal { get { return c10Drop * 0.10M; } set { C10DropTotal = value; } }
+        public Decimal c5DropTotal { get { return c5Drop * 0.05M; } set { C5DropTotal = value; } }
 
         public Decimal drop { get; set; }
         private Decimal dropTemp;
@@ -320,13 +332,13 @@ namespace OOP_Cashup
         //
         private int Drop(decimal amt, int dropAmt, int actualAmt, ref bool flagerror) {
             log.Debug("dropping R" + amt);
-            while((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
+            while ((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
                 dropAmt++;
                 dropTemp -= amt;
                 Thread.Sleep(0);
             }
 
-            if(dropTemp == amt && actualAmt == 0)
+            if (dropTemp == amt && actualAmt == 0)
                 flagerror = true;
 
             log.Debug("calculated amount to drop for R" + amt + " is " + dropAmt);
@@ -340,7 +352,7 @@ namespace OOP_Cashup
         public void Drop() {
             bool errorFlag = false;//if this is false there are no errors.
             Update();
-            while(drop > droppedTotal) {
+            while (drop > droppedTotal) {
 
                 R200Drop = Drop(200, R200Drop, R200Amt, ref errorFlag);
                 R100Drop = Drop(100, R100Drop, R100Amt, ref errorFlag);
@@ -354,7 +366,7 @@ namespace OOP_Cashup
                 c20Drop = Drop(0.20M, c20Drop, c20Amt, ref errorFlag);
                 c10Drop = Drop(0.10M, c10Drop, c10Amt, ref errorFlag);
                 c5Drop = Drop(0.05M, c5Drop, c5Amt, ref errorFlag);
-                if(errorFlag) {
+                if (errorFlag) {
                     MessageBox.Show("Error trying to drop something when its not available.", "Manual Intervention Required");
                     log.Error("error dropping");
                     break;
@@ -498,7 +510,7 @@ namespace OOP_Cashup
             m_streams = new List<Stream>();
             report.Render("Image", deviceInfo, CreateStream,
                out warnings);
-            foreach(Stream stream in m_streams)
+            foreach (Stream stream in m_streams)
                 stream.Position = 0;
         }
 
@@ -508,8 +520,8 @@ namespace OOP_Cashup
 
             // Adjust rectangular area with printer margins.
             Rectangle adjustedRect = new Rectangle(
-                ev.PageBounds.Left - (int) ev.PageSettings.HardMarginX,
-                ev.PageBounds.Top - (int) ev.PageSettings.HardMarginY,
+                ev.PageBounds.Left - (int)ev.PageSettings.HardMarginX,
+                ev.PageBounds.Top - (int)ev.PageSettings.HardMarginY,
                 ev.PageBounds.Width,
                 ev.PageBounds.Height);
 
@@ -525,14 +537,14 @@ namespace OOP_Cashup
         }
 
         private void Print() {
-            if(m_streams == null || m_streams.Count == 0)
+            if (m_streams == null || m_streams.Count == 0)
                 throw new Exception("Error: no stream to print.");
             PrintDocument printDoc = new PrintDocument();
             PrintDialog pd = new PrintDialog();
             var result = pd.ShowDialog();
-            if(result == System.Windows.Forms.DialogResult.Cancel || result == System.Windows.Forms.DialogResult.No) { return; }
+            if (result == System.Windows.Forms.DialogResult.Cancel || result == System.Windows.Forms.DialogResult.No) { return; }
             printDoc.PrinterSettings = pd.PrinterSettings;
-            if(!printDoc.PrinterSettings.IsValid) {
+            if (!printDoc.PrinterSettings.IsValid) {
                 MessageBox.Show("Printer Settings Not Found");
                 log.Error("printer settings not Found.");
 
@@ -547,7 +559,7 @@ namespace OOP_Cashup
 
 
         }
-        
+
         /// <summary>
         /// saves the report as a pdf.
         /// </summary>
@@ -568,7 +580,7 @@ namespace OOP_Cashup
 
 
 
-            if(!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
+            if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
 
                 log.Info("archive does not exist creating");
                 Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
@@ -577,7 +589,7 @@ namespace OOP_Cashup
                 log.Debug("archive folder exists");
             }
 
-            using(FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive/" + date + ".pdf"),
+            using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive/" + date + ".pdf"),
                 FileMode.Create)) {
 
                 fs.Write(bytes, 0, bytes.Length);
@@ -623,11 +635,11 @@ namespace OOP_Cashup
         /// </summary>
         public void SaveToDB() {
             log.Info("saving data to Database");
-            using(OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
+            using (OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
                 try {
                     con.Open();
                     log.Debug("opened connection to DB");
-                } catch(Exception ex) {
+                } catch (Exception ex) {
                     MessageBox.Show("Could not connect to the Database");
                     log.Error("cannot connect to Database.", ex);
                 }
@@ -647,7 +659,7 @@ c5Drop, NumChecks, ChecksValue);
                     cmd.ExecuteNonQuery();
                     log.Debug("successfully excecuted mysql query.");
 
-                } catch(Exception ex) {
+                } catch (Exception ex) {
                     log.Error("could not write to DB", ex);
                 }
                 con.Close();
@@ -660,21 +672,22 @@ c5Drop, NumChecks, ChecksValue);
 
             OdbcDataReader rdr = null;
 
-            using(OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
+            using (OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
 
                 try {
                     con.Open();
-                } catch(Exception ex) {
+                } catch (Exception ex) {
                     log.Error("Cannot connect to DB", ex);
                     return false;
                 }
 
-                string query = "SELECT * WHERE cashup_ID = \"" + ID + "\"";
+                string query = string.Format(@"SELECT * FROM {0}.Cashup_data WHERE cashup_ID = {1};",
+                    RuntimeSettings.dbName, ID);
                 OdbcCommand cmd = new OdbcCommand(query, con);
 
                 rdr = cmd.ExecuteReader();
 
-                while(rdr.Read()) {
+                while (rdr.Read()) {
                     this.R200Amt = int.Parse(rdr["cashup_R200Amount"].ToString());
                     this.R100Amt = int.Parse(rdr["cashup_R100Amount"].ToString());
                     this.R50Amt = int.Parse(rdr["cashup_R50Amount"].ToString());
@@ -693,51 +706,26 @@ c5Drop, NumChecks, ChecksValue);
                     this.Name = rdr["cashup_CashierName"].ToString();
                     date = rdr["cashup_date"].ToString();
 
-                    this.R200 = int.Parse(rdr["cashup_R200Value"].ToString());
-                    this.R100 = int.Parse(rdr["cashup_R100Value"].ToString());
-                    this.R50 = int.Parse(rdr["cashup_R50Value"].ToString());
-                    this.R20 = int.Parse(rdr["cashup_R20Value"].ToString());
-                    this.R10 = int.Parse(rdr["cashup_R10Value"].ToString());
-                    this.R5 = int.Parse(rdr["cashup_R5Value"].ToString());
-                    this.R2 = int.Parse(rdr["cashup_R2Value"].ToString());
-                    this.R1 = int.Parse(rdr["cashup_R1Value"].ToString());
-                    this.c50 = int.Parse(rdr["cashup_50cValue"].ToString());
-                    this.c20 = int.Parse(rdr["cashup_20cValue"].ToString());
-                    this.c10 = int.Parse(rdr["cashup_10cValue"].ToString());
-                    this.c5 = int.Parse(rdr["cashup_5cValue"].ToString());
-
-                    this.R200Drop = int.Parse(rdr["cashup_R200Value"].ToString());
-                    this.R100Drop = int.Parse(rdr["cashup_R100Value"].ToString());
-                    this.R50Drop = int.Parse(rdr["cashup_R50Value"].ToString());
-                    this.R20Drop = int.Parse(rdr["cashup_R20Value"].ToString());
-                    this.R10Drop = int.Parse(rdr["cashup_R10Value"].ToString());
-                    this.R5Drop = int.Parse(rdr["cashup_R5Value"].ToString());
-                    this.R2Drop = int.Parse(rdr["cashup_R2Value"].ToString());
-                    this.R1Drop = int.Parse(rdr["cashup_R1Value"].ToString());
-                    this.c50Drop = int.Parse(rdr["cashup_50cValue"].ToString());
-                    this.c20Drop = int.Parse(rdr["cashup_20cValue"].ToString());
-                    this.c10Drop = int.Parse(rdr["cashup_10cValue"].ToString());
-                    this.c5Drop = int.Parse(rdr["cashup_5cValue"].ToString());
-
-                    this.R200DropTotal = int.Parse(rdr["cashup_R200DropValue"].ToString());
-                    this.R100DropTotal = int.Parse(rdr["cashup_R100DropValue"].ToString());
-                    this.R50DropTotal = int.Parse(rdr["cashup_R50DropValue"].ToString());
-                    this.R20DropTotal = int.Parse(rdr["cashup_R20DropValue"].ToString());
-                    this.R10DropTotal = int.Parse(rdr["cashup_R10DropValue"].ToString());
-                    this.R5DropTotal = int.Parse(rdr["cashup_R5DropValue"].ToString());
-                    this.R2DropTotal = int.Parse(rdr["cashup_R2DropValue"].ToString());
-                    this.R1DropTotal = int.Parse(rdr["cashup_R1DropValue"].ToString());
-                    this.c50DropTotal = int.Parse(rdr["cashup_50cDropValue"].ToString());
-                    this.c20DropTotal = int.Parse(rdr["cashup_20cDropValue"].ToString());
-                    this.c10DropTotal = int.Parse(rdr["cashup_10cDropValue"].ToString());
-                    this.c5DropTotal = int.Parse(rdr["cashup_5cDropValue"].ToString());
+                    this.R200 = decimal.Parse(rdr["cashup_R200Value"].ToString());
+                    this.R100 = decimal.Parse(rdr["cashup_R100Value"].ToString());
+                    this.R50 = decimal.Parse(rdr["cashup_R50Value"].ToString());
+                    this.R20 = decimal.Parse(rdr["cashup_R20Value"].ToString());
+                    this.R10 = decimal.Parse(rdr["cashup_R10Value"].ToString());
+                    this.R5 = decimal.Parse(rdr["cashup_R5Value"].ToString());
+                    this.R2 = decimal.Parse(rdr["cashup_R2Value"].ToString());
+                    this.R1 = decimal.Parse(rdr["cashup_R1Value"].ToString());
+                    this.c50 = decimal.Parse(rdr["cashup_50cValue"].ToString());
+                    this.c20 = decimal.Parse(rdr["cashup_20cValue"].ToString());
+                    this.c10 = decimal.Parse(rdr["cashup_10cValue"].ToString());
+                    this.c5 = decimal.Parse(rdr["cashup_5cValue"].ToString());
 
                 }
 
             }
 
+            Update();
             return true;
         }
-
+        
     }
 }
