@@ -27,7 +27,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>0.53482cm</Top>
-        <Left>2.2987cm</Left>
+        <Left>2.40452cm</Left>
         <Height>1.36729cm</Height>
         <Width>3.26729cm</Width>
         <Style>
@@ -58,7 +58,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>2.36926cm</Top>
-        <Left>0.3896cm</Left>
+        <Left>0.49542cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>1</ZIndex>
@@ -90,7 +90,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
         <Top>0.53482cm</Top>
-        <Left>7.80203cm</Left>
+        <Left>7.90785cm</Left>
         <Height>0.6cm</Height>
         <Width>1.25646cm</Width>
         <ZIndex>2</ZIndex>
@@ -122,7 +122,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>1.39058cm</Top>
-        <Left>7.29933cm</Left>
+        <Left>7.40515cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -156,7 +156,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>1.30211cm</Top>
-        <Left>10.15683cm</Left>
+        <Left>10.26265cm</Left>
         <Height>0.6cm</Height>
         <Width>6.09833cm</Width>
         <ZIndex>4</ZIndex>
@@ -186,7 +186,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.53482cm</Top>
-        <Left>13.75516cm</Left>
+        <Left>13.86098cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>5</ZIndex>
@@ -202,6 +202,7 @@
       </Textbox>
       <Line Name="Line1">
         <Top>2.25461cm</Top>
+        <Left>0.04166in</Left>
         <Height>0cm</Height>
         <Width>16.72812cm</Width>
         <ZIndex>6</ZIndex>
@@ -1629,6 +1630,103 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
+              <Height>0.18168cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox86">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox86</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox89">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox89</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox90">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox90</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
               <Height>0.63449cm</Height>
               <TablixCells>
                 <TablixCell>
@@ -1790,14 +1888,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox80">
+                    <Textbox Name="WSSCash">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!WSSCash.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1806,7 +1904,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox80</rd:DefaultName>
+                      <rd:DefaultName>WSSCash</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1887,7 +1985,104 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="CashDiscrepancy">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CashDiscrepancy.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CashDiscrepancy</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.15265cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox40">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox80">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox80</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox83">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1903,7 +2098,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <rd:DefaultName>Textbox83</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1984,14 +2179,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox83">
+                    <Textbox Name="CardBanked">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!CardBanked.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2000,7 +2195,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox83</rd:DefaultName>
+                      <rd:DefaultName>CardBanked</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2081,14 +2276,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox89">
+                    <Textbox Name="WssCard">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!WssCard.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2097,7 +2292,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox89</rd:DefaultName>
+                      <rd:DefaultName>WssCard</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2178,14 +2373,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox86">
+                    <Textbox Name="CardDiscrepancy">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!CardDiscrepancy.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2194,7 +2389,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox86</rd:DefaultName>
+                      <rd:DefaultName>CardDiscrepancy</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2638,14 +2833,16 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Cashup</DataSetName>
         <Top>4.31689cm</Top>
-        <Left>0.76884cm</Left>
-        <Height>15.05522cm</Height>
+        <Left>0.87466cm</Left>
+        <Height>15.38964cm</Height>
         <Width>7.97328cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
@@ -2674,7 +2871,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>2.85461cm</Top>
-        <Left>10.52396cm</Left>
+        <Left>10.62978cm</Left>
         <Height>0.6cm</Height>
         <Width>6.09833cm</Width>
         <ZIndex>8</ZIndex>
@@ -2704,7 +2901,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
         <Top>2.36926cm</Top>
-        <Left>3.06599cm</Left>
+        <Left>3.17181cm</Left>
         <Height>1.08535cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>9</ZIndex>
@@ -2736,7 +2933,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>3.14565cm</Top>
-        <Left>3.05717cm</Left>
+        <Left>3.16299cm</Left>
         <Height>0.45007cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>10</ZIndex>
@@ -2766,7 +2963,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.25461cm</Top>
-        <Left>14.08701cm</Left>
+        <Left>14.19283cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>11</ZIndex>
@@ -2782,8 +2979,8 @@
       </Textbox>
       <Line Name="Line2">
         <Top>2.25461cm</Top>
-        <Left>9.05849cm</Left>
-        <Height>14.91396cm</Height>
+        <Left>9.16431cm</Left>
+        <Height>17.62478cm</Height>
         <Width>0cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
@@ -2810,7 +3007,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>2.25461cm</Top>
-        <Left>10.48868cm</Left>
+        <Left>10.5945cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>13</ZIndex>
@@ -2844,7 +3041,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>3.63982cm</Top>
-        <Left>1.31646cm</Left>
+        <Left>1.42228cm</Left>
         <Height>0.6cm</Height>
         <Width>6.09833cm</Width>
         <ZIndex>14</ZIndex>
@@ -4308,7 +4505,7 @@
         </TablixRowHierarchy>
         <DataSetName>Cashup</DataSetName>
         <Top>4.08989cm</Top>
-        <Left>9.60265cm</Left>
+        <Left>9.70847cm</Left>
         <Height>8.4cm</Height>
         <Width>6.61724cm</Width>
         <ZIndex>15</ZIndex>
@@ -4320,7 +4517,7 @@
       </Tablix>
       <Line Name="Line3">
         <Top>12.52516cm</Top>
-        <Left>9.05849cm</Left>
+        <Left>9.16431cm</Left>
         <Height>0cm</Height>
         <Width>7.66963cm</Width>
         <ZIndex>16</ZIndex>
@@ -4350,7 +4547,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox114</rd:DefaultName>
         <Top>12.56044cm</Top>
-        <Left>11.71787cm</Left>
+        <Left>11.82369cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>17</ZIndex>
@@ -4380,7 +4577,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox115</rd:DefaultName>
         <Top>13.16044cm</Top>
-        <Left>9.63792cm</Left>
+        <Left>9.74374cm</Left>
         <Height>0.6cm</Height>
         <Width>3.24083cm</Width>
         <ZIndex>18</ZIndex>
@@ -4410,7 +4607,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox116</rd:DefaultName>
         <Top>13.16044cm</Top>
-        <Left>13.75516cm</Left>
+        <Left>13.86098cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>19</ZIndex>
@@ -4440,7 +4637,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
         <Top>13.76044cm</Top>
-        <Left>9.63792cm</Left>
+        <Left>9.74374cm</Left>
         <Height>0.6cm</Height>
         <Width>3.74354cm</Width>
         <ZIndex>20</ZIndex>
@@ -4470,7 +4667,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox118</rd:DefaultName>
         <Top>13.76044cm</Top>
-        <Left>13.75516cm</Left>
+        <Left>13.86098cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>21</ZIndex>
@@ -4489,7 +4686,7 @@
         <Value>Cashup_icon</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.40211cm</Top>
-        <Left>0.3896cm</Left>
+        <Left>0.49542cm</Left>
         <Height>1.5cm</Height>
         <Width>1.5cm</Width>
         <ZIndex>22</ZIndex>
@@ -4501,8 +4698,8 @@
       </Image>
       <Line Name="Line4">
         <Top>0.02778in</Top>
-        <Left>16.72812cm</Left>
-        <Height>17.09801cm</Height>
+        <Left>16.83394cm</Left>
+        <Height>16.93655cm</Height>
         <Width>0cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
@@ -4512,8 +4709,8 @@
         </Style>
       </Line>
       <Line Name="Line5">
-        <Top>16.37211cm</Top>
-        <Left>3.56633in</Left>
+        <Top>17.00711cm</Top>
+        <Left>3.608in</Left>
         <Height>0cm</Height>
         <Width>7.66963cm</Width>
         <ZIndex>24</ZIndex>
@@ -4525,7 +4722,8 @@
       </Line>
       <Line Name="Line6">
         <Top>2.25461cm</Top>
-        <Height>13.46228cm</Height>
+        <Left>0.04166in</Left>
+        <Height>17.62478cm</Height>
         <Width>0cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
@@ -4550,7 +4748,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.36926cm</Top>
-        <Left>5.92462cm</Left>
+        <Left>6.03044cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>26</ZIndex>
@@ -4566,6 +4764,7 @@
       </Textbox>
       <Line Name="Line7">
         <Top>0.07056cm</Top>
+        <Left>0.04166in</Left>
         <Height>0cm</Height>
         <Width>16.72812cm</Width>
         <ZIndex>27</ZIndex>
@@ -4577,6 +4776,7 @@
       </Line>
       <Line Name="Line8">
         <Top>2.25461cm</Top>
+        <Left>0.04166in</Left>
         <Height>-2.21933cm</Height>
         <Width>0cm</Width>
         <ZIndex>28</ZIndex>
@@ -4604,7 +4804,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
         <Top>3.48989cm</Top>
-        <Left>12.24704cm</Left>
+        <Left>12.35286cm</Left>
         <Height>0.6cm</Height>
         <Width>1.13442cm</Width>
         <ZIndex>29</ZIndex>
@@ -4620,7 +4820,7 @@
       </Textbox>
       <Line Name="Line9">
         <Top>14.39572cm</Top>
-        <Left>9.05849cm</Left>
+        <Left>9.16431cm</Left>
         <Height>0cm</Height>
         <Width>7.66963cm</Width>
         <ZIndex>30</ZIndex>
@@ -4648,7 +4848,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox28</rd:DefaultName>
         <Top>14.39572cm</Top>
-        <Left>11.37391cm</Left>
+        <Left>11.47973cm</Left>
         <Height>0.6cm</Height>
         <Width>3.4525cm</Width>
         <ZIndex>31</ZIndex>
@@ -4678,7 +4878,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox31</rd:DefaultName>
         <Top>15.06627cm</Top>
-        <Left>9.12905cm</Left>
+        <Left>9.23487cm</Left>
         <Height>0.6cm</Height>
         <Width>1.91792cm</Width>
         <ZIndex>32</ZIndex>
@@ -4708,7 +4908,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox37</rd:DefaultName>
         <Top>15.73683cm</Top>
-        <Left>9.12905cm</Left>
+        <Left>9.23487cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>33</ZIndex>
@@ -4738,7 +4938,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>15.06627cm</Top>
-        <Left>13.71989cm</Left>
+        <Left>13.82571cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>34</ZIndex>
@@ -4753,8 +4953,8 @@
         </Style>
       </Textbox>
       <Line Name="Line10">
-        <Top>16.38689cm</Top>
-        <Left>0cm</Left>
+        <Top>19.87939cm</Top>
+        <Left>0.10582cm</Left>
         <Height>0cm</Height>
         <Width>9.05849cm</Width>
         <ZIndex>35</ZIndex>
@@ -4764,15 +4964,27 @@
           </Border>
         </Style>
       </Line>
+      <Line Name="Line11">
+        <Top>12.99775cm</Top>
+        <Left>0.10582cm</Left>
+        <Height>0cm</Height>
+        <Width>9.05849cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
-    <Height>7.62681in</Height>
+    <Height>7.92317in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>6.87754in</Width>
+  <Width>6.9192in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -4790,7 +5002,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>cde8e576-4624-4f60-83a8-4e097407025e</rd:DataSourceID>
+      <rd:DataSourceID>8fd800cb-e878-4bb1-a76d-b343121302a1</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -4864,12 +5076,28 @@
           <DataField>c5DropTotal</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="CardBanked">
+          <DataField>CardBanked</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CardDiscrepancy">
+          <DataField>CardDiscrepancy</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CashDiscrepancy">
+          <DataField>CashDiscrepancy</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
         <Field Name="CashFloat">
           <DataField>CashFloat</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="ChecksValue">
           <DataField>ChecksValue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Correction">
+          <DataField>Correction</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Date">
@@ -5040,11 +5268,19 @@
           <DataField>total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="WssCard">
+          <DataField>WssCard</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="WSSCash">
+          <DataField>WSSCash</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OOP_Cashup</rd:DataSetName>
         <rd:TableName>Cashup</rd:TableName>
-        <rd:ObjectDataSourceType>OOP_Cashup.Cashup, OOP_Cashup, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>OOP_Cashup.Cashup, Cashup, Version=1.0.5.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -84,7 +84,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnPrint = new System.Windows.Forms.Button();
             this.lblCashDrop = new System.Windows.Forms.Label();
-            this.txtbWSSCash = new System.Windows.Forms.TextBox();
+            this.txtbDrop = new System.Windows.Forms.TextBox();
             this.txtbxSubTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -125,6 +125,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.lblRegisterNum = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -144,16 +145,15 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtbTotal_Drop = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.txtbCashDiscrepancy = new System.Windows.Forms.TextBox();
+            this.txtbWSSCash = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtbCashDescrepancy = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtbCardBanked = new System.Windows.Forms.TextBox();
             this.txtbCardWSS = new System.Windows.Forms.TextBox();
             this.txtbCardDiscepancy = new System.Windows.Forms.TextBox();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.SuspendLayout();
             // 
             // txtbR200
@@ -313,7 +313,7 @@
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.Location = new System.Drawing.Point(157, 164);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(59, 16);
+            this.lblAmount.Size = new System.Drawing.Size(60, 16);
             this.lblAmount.TabIndex = 15;
             this.lblAmount.Text = "Amount";
             // 
@@ -584,7 +584,7 @@
             this.lblTotal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal1.Location = new System.Drawing.Point(273, 164);
             this.lblTotal1.Name = "lblTotal1";
-            this.lblTotal1.Size = new System.Drawing.Size(69, 16);
+            this.lblTotal1.Size = new System.Drawing.Size(73, 16);
             this.lblTotal1.TabIndex = 49;
             this.lblTotal1.Text = "Total (R)";
             // 
@@ -612,7 +612,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(559, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
+            this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 61;
             this.label1.Text = "DROP";
             // 
@@ -754,14 +754,14 @@
             this.lblCashDrop.TabIndex = 76;
             this.lblCashDrop.Text = "Cash Drop";
             // 
-            // txtbWSSCash
+            // txtbDrop
             // 
-            this.txtbWSSCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbWSSCash.Location = new System.Drawing.Point(252, 529);
-            this.txtbWSSCash.Name = "txtbWSSCash";
-            this.txtbWSSCash.Size = new System.Drawing.Size(100, 23);
-            this.txtbWSSCash.TabIndex = 77;
-            this.txtbWSSCash.Text = "0.00";
+            this.txtbDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbDrop.Location = new System.Drawing.Point(252, 529);
+            this.txtbDrop.Name = "txtbDrop";
+            this.txtbDrop.Size = new System.Drawing.Size(100, 23);
+            this.txtbDrop.TabIndex = 77;
+            this.txtbDrop.Text = "0.00";
             // 
             // txtbxSubTotal
             // 
@@ -918,7 +918,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(656, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 16);
+            this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 86;
             this.label4.Text = "Total (R)";
             // 
@@ -1149,9 +1149,19 @@
             this.lineShape1,
             this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(772, 854);
+            this.shapeContainer1.Size = new System.Drawing.Size(823, 856);
             this.shapeContainer1.TabIndex = 121;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.SystemColors.Control;
+            this.lineShape3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 0;
+            this.lineShape3.X2 = 434;
+            this.lineShape3.Y1 = 606;
+            this.lineShape3.Y2 = 606;
             // 
             // lineShape2
             // 
@@ -1179,9 +1189,9 @@
             // rectangleShape1
             // 
             this.rectangleShape1.Enabled = false;
-            this.rectangleShape1.Location = new System.Drawing.Point(-9, 79);
+            this.rectangleShape1.Location = new System.Drawing.Point(-8, 79);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(442, 700);
+            this.rectangleShape1.Size = new System.Drawing.Size(442, 781);
             // 
             // lblRegisterNum1
             // 
@@ -1308,7 +1318,7 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(450, 677);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(82, 16);
+            this.label22.Size = new System.Drawing.Size(84, 16);
             this.label22.TabIndex = 134;
             this.label22.Text = "Total Drop";
             // 
@@ -1318,6 +1328,7 @@
             this.txtbTotal_Drop.Name = "txtbTotal_Drop";
             this.txtbTotal_Drop.Size = new System.Drawing.Size(100, 20);
             this.txtbTotal_Drop.TabIndex = 136;
+            this.txtbTotal_Drop.Text = "0.00";
             // 
             // label23
             // 
@@ -1329,13 +1340,13 @@
             this.label23.TabIndex = 137;
             this.label23.Text = "WSS Cash";
             // 
-            // txtbCashDiscrepancy
+            // txtbWSSCash
             // 
-            this.txtbCashDiscrepancy.Location = new System.Drawing.Point(252, 555);
-            this.txtbCashDiscrepancy.Name = "txtbCashDiscrepancy";
-            this.txtbCashDiscrepancy.Size = new System.Drawing.Size(100, 20);
-            this.txtbCashDiscrepancy.TabIndex = 138;
-            this.txtbCashDiscrepancy.Text = "0.00";
+            this.txtbWSSCash.Location = new System.Drawing.Point(252, 555);
+            this.txtbWSSCash.Name = "txtbWSSCash";
+            this.txtbWSSCash.Size = new System.Drawing.Size(100, 20);
+            this.txtbWSSCash.TabIndex = 138;
+            this.txtbWSSCash.Text = "0.00";
             // 
             // label24
             // 
@@ -1347,13 +1358,13 @@
             this.label24.TabIndex = 139;
             this.label24.Text = "Cash Discrepancy";
             // 
-            // textBox2
+            // txtbCashDescrepancy
             // 
-            this.textBox2.Location = new System.Drawing.Point(252, 577);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 140;
-            this.textBox2.Text = "0.00";
+            this.txtbCashDescrepancy.Location = new System.Drawing.Point(252, 577);
+            this.txtbCashDescrepancy.Name = "txtbCashDescrepancy";
+            this.txtbCashDescrepancy.Size = new System.Drawing.Size(100, 20);
+            this.txtbCashDescrepancy.TabIndex = 140;
+            this.txtbCashDescrepancy.Text = "0.00";
             // 
             // label25
             // 
@@ -1391,6 +1402,7 @@
             this.txtbCardBanked.Name = "txtbCardBanked";
             this.txtbCardBanked.Size = new System.Drawing.Size(100, 20);
             this.txtbCardBanked.TabIndex = 141;
+            this.txtbCardBanked.Text = "0.00";
             // 
             // txtbCardWSS
             // 
@@ -1398,6 +1410,7 @@
             this.txtbCardWSS.Name = "txtbCardWSS";
             this.txtbCardWSS.Size = new System.Drawing.Size(100, 20);
             this.txtbCardWSS.TabIndex = 141;
+            this.txtbCardWSS.Text = "0.00";
             // 
             // txtbCardDiscepancy
             // 
@@ -1405,16 +1418,7 @@
             this.txtbCardDiscepancy.Name = "txtbCardDiscepancy";
             this.txtbCardDiscepancy.Size = new System.Drawing.Size(100, 20);
             this.txtbCardDiscepancy.TabIndex = 141;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 0;
-            this.lineShape3.X2 = 434;
-            this.lineShape3.Y1 = 606;
-            this.lineShape3.Y2 = 606;
+            this.txtbCardDiscepancy.Text = "0.00";
             // 
             // Form1
             // 
@@ -1423,16 +1427,16 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(789, 807);
+            this.ClientSize = new System.Drawing.Size(823, 856);
             this.Controls.Add(this.txtbCardDiscepancy);
             this.Controls.Add(this.txtbCardWSS);
             this.Controls.Add(this.txtbCardBanked);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtbCashDescrepancy);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.txtbCashDiscrepancy);
+            this.Controls.Add(this.txtbWSSCash);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.txtbTotal_Drop);
             this.Controls.Add(this.label22);
@@ -1487,7 +1491,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtbxSubTotal);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtbWSSCash);
+            this.Controls.Add(this.txtbDrop);
             this.Controls.Add(this.lblCashDrop);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dateTimePicker1);
@@ -1623,7 +1627,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label lblCashDrop;
-        private System.Windows.Forms.TextBox txtbWSSCash;
+        private System.Windows.Forms.TextBox txtbDrop;
         private System.Windows.Forms.TextBox txtbxSubTotal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -1683,9 +1687,9 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtbTotal_Drop;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtbCashDiscrepancy;
+        private System.Windows.Forms.TextBox txtbWSSCash;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtbCashDescrepancy;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;

@@ -119,19 +119,23 @@ namespace OOP_Cashup
             }
         }
 
+        #region discepancy variables
+
         private Decimal wssCash;
         private Decimal cashDiscrepancy;
 
         public Decimal WSSCash { get { return WssCard; } set { wssCash = value; } }
-        public Decimal CashDiscrepancy { get { return cashDiscrepancy; } set { cashDiscrepancy = value; } }
+        public Decimal CashDiscrepancy { get { return cashDiscrepancy; } }
 
         public Decimal CardBanked { get => cardBanked; set => cardBanked = value; }
         public Decimal WssCard { get => wssCard; set => wssCard = value; }
-        public Decimal CardDiscrepancy { get => cardDiscrepancy; set => cardDiscrepancy = value; }
+        public Decimal CardDiscrepancy { get => cardDiscrepancy; }
 
         private Decimal cardBanked;
         private Decimal wssCard;
         private Decimal cardDiscrepancy;
+
+        #endregion
 
         #endregion
 
@@ -413,8 +417,8 @@ namespace OOP_Cashup
                 R5Drop * 5 + R2Drop * 2 +
                 R1Drop * 1 + c50Drop * 0.50M + c20Drop * 0.2M + c10Drop * 0.1M + c5Drop * 0.05M;
             
-            cardDiscrepancy = drop - wssCash;
-            cashDiscrepancy = cardBanked - wssCard;
+            //cardDiscrepancy = drop - wssCash;
+            //cashDiscrepancy = cardBanked - wssCard;
 
 
             Thread.Sleep(0);
@@ -427,7 +431,7 @@ namespace OOP_Cashup
         /// <param name="e"></param>
         private void On_Cashup_Load(object sender, EventArgs e) {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = (20); // 20 milisecs
+            timer.Interval = (10); // 20 milisecs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
@@ -583,6 +587,15 @@ namespace OOP_Cashup
 
         }
 
+        public void CalcCashDescrepancy() {
+            cashDiscrepancy = this.drop - this.wssCash;
+            Thread.Sleep(0);
+            
+        }
 
+        public void CalcCardDescrepancy() {
+            this.cardDiscrepancy = cardBanked - wssCard;
+            Thread.Sleep(0);
+        }
     }
 }

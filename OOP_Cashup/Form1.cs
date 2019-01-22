@@ -40,6 +40,7 @@ namespace OOP_Cashup
         Decimal skimmed = 0.00M;
         Decimal total = 0.00M;
         #endregion
+        
 
         #region drop variables
 
@@ -84,7 +85,7 @@ namespace OOP_Cashup
         public new void Update() {
 
             try {
-
+                
                 lblRegisterNum.Text = combxRegister.Text;
                 lblRegisterNum1.Text = combxRegister.Text;
                 txtbxFloat1.Text = txtbFloat.Text;
@@ -149,11 +150,10 @@ namespace OOP_Cashup
                 dropTemp = this.drop;
                 this.total = cu.total;
                 txtbxSubTotal.Text = this.subTotal.ToString();
-                txtbWSSCash.Text = this.drop.ToString();
+                txtbDrop.Text = this.drop.ToString();
                 cu.Name = this.txtbxName.Text;
                 cu.TillNum = combxRegister.Text;
-
-
+                
                 #region drop update
 
                 txtbxR200Drop.Text = cu.R200Drop.ToString();
@@ -204,6 +204,15 @@ namespace OOP_Cashup
 
                 txtbTotal_Drop.Text = (droppedTotal + cheques).ToString();
                 cu.DropTotal = droppedTotal + cheques;
+
+                cu.WSSCash = Decimal.Parse(txtbWSSCash.Text);
+                cu.CalcCashDescrepancy();
+                this.txtbCashDescrepancy.Text = cu.CashDiscrepancy.ToString();
+
+                cu.CardBanked = Decimal.Parse(txtbCardBanked.Text);
+                cu.WssCard = Decimal.Parse(txtbCardWSS.Text);
+                cu.CalcCardDescrepancy();
+                this.txtbCardDiscepancy.Text = cu.CardDiscrepancy.ToString();
 
                 #endregion
 
@@ -259,6 +268,9 @@ namespace OOP_Cashup
                     cu.Drop();
 
                     txtbTotal1.Text = this.total.ToString();
+
+                    
+
                 }
             }
 
@@ -404,7 +416,7 @@ namespace OOP_Cashup
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e) {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = (10); // 10 milisecs
+            timer.Interval = (20); // 20 milisecs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
 
