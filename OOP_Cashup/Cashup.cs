@@ -10,8 +10,10 @@ using System.Drawing;
 using Microsoft.Reporting.WinForms;
 using System.Reflection;
 
-namespace OOP_Cashup {
-    class Cashup {
+namespace OOP_Cashup
+{
+    class Cashup
+    {
 
         #region variables
 
@@ -60,7 +62,7 @@ namespace OOP_Cashup {
         public int c10Drop { get; set; }
         public int c5Drop { get; set; }
 
-        
+
         public Decimal R200DropTotal { get { return R200Drop * 200.00M; } set { R200DropTotal = value; } }
         public Decimal R100DropTotal { get { return R100Drop * 100.00M; } set { R100DropTotal = value; } }
         public Decimal R50DropTotal { get { return R50Drop * 50.00M; } set { R50DropTotal = value; } }
@@ -114,7 +116,22 @@ namespace OOP_Cashup {
         public decimal Correction {
             get {
                 return correction;
-            } }
+            }
+        }
+
+        private Decimal wssCash;
+        private Decimal cashDiscrepancy;
+
+        public Decimal WSSCash { get { return WssCard; } set { wssCash = value; } }
+        public Decimal CashDiscrepancy { get { return cashDiscrepancy; } set { cashDiscrepancy = value; } }
+
+        public Decimal CardBanked { get => cardBanked; set => cardBanked = value; }
+        public Decimal WssCard { get => wssCard; set => wssCard = value; }
+        public Decimal CardDiscrepancy { get => cardDiscrepancy; set => cardDiscrepancy = value; }
+
+        private Decimal cardBanked;
+        private Decimal wssCard;
+        private Decimal cardDiscrepancy;
 
         #endregion
 
@@ -174,6 +191,12 @@ namespace OOP_Cashup {
             this.droppedTotal = 0.00M;
             correction = 0.0M;
 
+            cardBanked = 0.0M;
+            cardDiscrepancy = 0.0M;
+            wssCard = 0.0M;
+
+            wssCash = 0.0M;
+            cashDiscrepancy = 0.0M;
         }
 
         /// <summary>
@@ -237,6 +260,13 @@ namespace OOP_Cashup {
 
             tillNum = Register;
 
+            cardBanked = 0.0M;
+            cardDiscrepancy = 0.0M;
+            wssCard = 0.0M;
+
+            wssCash = 0.0M;
+            cashDiscrepancy = 0.0M;
+
         }
 
         /// <summary>
@@ -297,14 +327,21 @@ namespace OOP_Cashup {
             Total = subTotal - drop;
             tillNum = Register;
 
+            cardBanked = 0.0M;
+            cardDiscrepancy = 0.0M;
+            wssCard = 0.0M;
+
+            wssCash = 0.0M;
+            cashDiscrepancy = 0.0M;
+
         }
 
         //Summary Drop Calculation
         //takes each Denomination and figures out how much of each denomination it needs to 
         //remove from the till in order to make the next days float
         //
-        private int Drop(decimal amt, int dropAmt, int actualAmt,ref bool flagerror) {
-            
+        private int Drop(decimal amt, int dropAmt, int actualAmt, ref bool flagerror) {
+
             while ((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
                 dropAmt++;
                 dropTemp -= amt;
@@ -344,7 +381,7 @@ namespace OOP_Cashup {
                 Update();
             }
 
-            
+
 
         }
 
@@ -375,6 +412,11 @@ namespace OOP_Cashup {
             this.droppedTotal = R200Drop * 200 + R100Drop * 100 + R50Drop * 50 + R20Drop * 20 + R10Drop * 10 +
                 R5Drop * 5 + R2Drop * 2 +
                 R1Drop * 1 + c50Drop * 0.50M + c20Drop * 0.2M + c10Drop * 0.1M + c5Drop * 0.05M;
+            
+            cardDiscrepancy = drop - wssCash;
+            cashDiscrepancy = cardBanked - wssCard;
+
+
             Thread.Sleep(0);
         }
 
@@ -418,7 +460,7 @@ namespace OOP_Cashup {
             m_streams.Add(stream);
             return stream;
         }
-        
+
         // Export the given report as an EMF (Enhanced Metafile) file.
         private void Export(LocalReport report) {
             string deviceInfo =
@@ -478,8 +520,8 @@ namespace OOP_Cashup {
                 printDoc.Print();
             }
 
-            
-            
+
+
         }
 
         private void printPdf(LocalReport report) {
@@ -494,7 +536,7 @@ namespace OOP_Cashup {
                 out streamids, out warnings);
 
 
-            
+
             if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
 
                 Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
@@ -541,6 +583,6 @@ namespace OOP_Cashup {
 
         }
 
-        
+
     }
 }
