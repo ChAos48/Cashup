@@ -42,6 +42,8 @@ namespace OOP_Cashup
 
         private void LoadData(string ID) {
 
+            foreach(TextBox in this.)
+
             if(cu.LoadFromDB(ID)) {
                 log.Info("Till data Successfully loaded from DB");
             } else {

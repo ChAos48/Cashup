@@ -719,6 +719,8 @@ c5Drop, NumChecks, ChecksValue);
                     this.c10 = decimal.Parse(rdr["cashup_10cValue"].ToString());
                     this.c5 = decimal.Parse(rdr["cashup_5cValue"].ToString());
 
+
+
                 }
 
             }
