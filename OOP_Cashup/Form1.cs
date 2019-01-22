@@ -149,7 +149,7 @@ namespace OOP_Cashup
                 dropTemp = this.drop;
                 this.total = cu.total;
                 txtbxSubTotal.Text = this.subTotal.ToString();
-                txtbxCashDrop.Text = this.drop.ToString();
+                txtbWSSCash.Text = this.drop.ToString();
                 cu.Name = this.txtbxName.Text;
                 cu.TillNum = combxRegister.Text;
 
