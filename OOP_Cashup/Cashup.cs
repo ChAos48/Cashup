@@ -217,11 +217,10 @@ namespace OOP_Cashup
         /// <param name="amt50c"></param>
         /// <param name="amt20c"></param>
         /// <param name="amt10c"></param>
-        /// <param name="amt5c"></param>
         /// <param name="DroppedTotal"></param>
         /// <param name="Register"></param>
         public Cashup(int amt200, int amt100, int amt50, int amt20, int amt10, int amt5,
-            int amt2, int amt1, int amt50c, int amt20c, int amt10c, int amt5c, Decimal DroppedTotal,
+            int amt2, int amt1, int amt50c, int amt20c, int amt10c,  Decimal DroppedTotal,
             string Register) {
             On_Cashup_Load(this, null);
             date = DateTime.Today.ToString("dddd  dd MMMM yyyy");
@@ -237,7 +236,6 @@ namespace OOP_Cashup
             c50Amt = amt50c;
             c20Amt = amt20c;
             c10Amt = amt10c;
-            c5Amt = amt5c;
 
             R200 = R200Amt * 200.00m;
             R100 = R100Amt * 100.00m;

@@ -36,8 +36,6 @@
             this.lbl50c = new System.Windows.Forms.Label();
             this.lbl20c = new System.Windows.Forms.Label();
             this.lbl10c = new System.Windows.Forms.Label();
-            this.lbl5c = new System.Windows.Forms.Label();
-            this.lblTotal0 = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtbR50 = new System.Windows.Forms.TextBox();
             this.txtbR20 = new System.Windows.Forms.TextBox();
@@ -48,14 +46,11 @@
             this.txtb50c = new System.Windows.Forms.TextBox();
             this.txtb20c = new System.Windows.Forms.TextBox();
             this.txtb10c = new System.Windows.Forms.TextBox();
-            this.txtb5c = new System.Windows.Forms.TextBox();
             this.btnTotal = new System.Windows.Forms.Button();
             this.combxRegister = new System.Windows.Forms.ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtbFloat = new System.Windows.Forms.TextBox();
             this.lblFloat = new System.Windows.Forms.Label();
-            this.txtbTotal1 = new System.Windows.Forms.TextBox();
-            this.txtbTotal5c = new System.Windows.Forms.TextBox();
             this.txtbTotal10c = new System.Windows.Forms.TextBox();
             this.txtbTotal20c = new System.Windows.Forms.TextBox();
             this.txtbTotal50c = new System.Windows.Forms.TextBox();
@@ -69,7 +64,6 @@
             this.txtbTotalR100 = new System.Windows.Forms.TextBox();
             this.txtbTotalR200 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtbxc5Drop = new System.Windows.Forms.TextBox();
             this.txtbxc10Drop = new System.Windows.Forms.TextBox();
             this.txtbxc20Drop = new System.Windows.Forms.TextBox();
             this.txtbxc50Drop = new System.Windows.Forms.TextBox();
@@ -89,9 +83,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtbxCheques = new System.Windows.Forms.TextBox();
-            this.txtbxSkimmed = new System.Windows.Forms.TextBox();
-            this.lblSkimmed = new System.Windows.Forms.Label();
-            this.txtbxc5TotalDrop = new System.Windows.Forms.TextBox();
             this.txtbxc10TotalDrop = new System.Windows.Forms.TextBox();
             this.txtbxc20TotalDrop = new System.Windows.Forms.TextBox();
             this.txtbxc50TotalDrop = new System.Windows.Forms.TextBox();
@@ -109,7 +100,6 @@
             this.txtbDropTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -287,33 +277,13 @@
             this.lbl10c.TabIndex = 12;
             this.lbl10c.Text = "10c";
             // 
-            // lbl5c
-            // 
-            this.lbl5c.AutoSize = true;
-            this.lbl5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5c.Location = new System.Drawing.Point(13, 484);
-            this.lbl5c.Name = "lbl5c";
-            this.lbl5c.Size = new System.Drawing.Size(23, 17);
-            this.lbl5c.TabIndex = 13;
-            this.lbl5c.Text = "5c";
-            // 
-            // lblTotal0
-            // 
-            this.lblTotal0.AutoSize = true;
-            this.lblTotal0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal0.Location = new System.Drawing.Point(11, 756);
-            this.lblTotal0.Name = "lblTotal0";
-            this.lblTotal0.Size = new System.Drawing.Size(44, 16);
-            this.lblTotal0.TabIndex = 14;
-            this.lblTotal0.Text = "Total";
-            // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.Location = new System.Drawing.Point(157, 164);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(60, 16);
+            this.lblAmount.Size = new System.Drawing.Size(59, 16);
             this.lblAmount.TabIndex = 15;
             this.lblAmount.Text = "Amount";
             // 
@@ -407,20 +377,10 @@
             this.txtb10c.Text = "0";
             this.txtb10c.TextChanged += new System.EventHandler(this.TextChanged);
             // 
-            // txtb5c
-            // 
-            this.txtb5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtb5c.Location = new System.Drawing.Point(135, 477);
-            this.txtb5c.Name = "txtb5c";
-            this.txtb5c.Size = new System.Drawing.Size(100, 23);
-            this.txtb5c.TabIndex = 25;
-            this.txtb5c.Text = "0";
-            this.txtb5c.TextChanged += new System.EventHandler(this.TextChanged);
-            // 
             // btnTotal
             // 
             this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.Location = new System.Drawing.Point(13, 772);
+            this.btnTotal.Location = new System.Drawing.Point(13, 723);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(75, 23);
             this.btnTotal.TabIndex = 26;
@@ -478,24 +438,6 @@
             this.lblFloat.Size = new System.Drawing.Size(59, 17);
             this.lblFloat.TabIndex = 46;
             this.lblFloat.Text = "Float(R)";
-            // 
-            // txtbTotal1
-            // 
-            this.txtbTotal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotal1.Location = new System.Drawing.Point(250, 749);
-            this.txtbTotal1.Name = "txtbTotal1";
-            this.txtbTotal1.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotal1.TabIndex = 60;
-            this.txtbTotal1.Text = "0.00";
-            // 
-            // txtbTotal5c
-            // 
-            this.txtbTotal5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotal5c.Location = new System.Drawing.Point(251, 477);
-            this.txtbTotal5c.Name = "txtbTotal5c";
-            this.txtbTotal5c.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotal5c.TabIndex = 59;
-            this.txtbTotal5c.Text = "0.00";
             // 
             // txtbTotal10c
             // 
@@ -584,7 +526,7 @@
             this.lblTotal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal1.Location = new System.Drawing.Point(273, 164);
             this.lblTotal1.Name = "lblTotal1";
-            this.lblTotal1.Size = new System.Drawing.Size(73, 16);
+            this.lblTotal1.Size = new System.Drawing.Size(69, 16);
             this.lblTotal1.TabIndex = 49;
             this.lblTotal1.Text = "Total (R)";
             // 
@@ -612,18 +554,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(559, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 61;
             this.label1.Text = "DROP";
-            // 
-            // txtbxc5Drop
-            // 
-            this.txtbxc5Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxc5Drop.Location = new System.Drawing.Point(562, 477);
-            this.txtbxc5Drop.Name = "txtbxc5Drop";
-            this.txtbxc5Drop.Size = new System.Drawing.Size(35, 23);
-            this.txtbxc5Drop.TabIndex = 73;
-            this.txtbxc5Drop.Text = "0";
             // 
             // txtbxc10Drop
             // 
@@ -736,7 +669,7 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(13, 802);
+            this.btnPrint.Location = new System.Drawing.Point(13, 753);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
             this.btnPrint.TabIndex = 75;
@@ -801,35 +734,6 @@
             this.txtbxCheques.TabIndex = 81;
             this.txtbxCheques.Text = "0.00";
             this.txtbxCheques.TextChanged += new System.EventHandler(this.TextChanged);
-            // 
-            // txtbxSkimmed
-            // 
-            this.txtbxSkimmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxSkimmed.Location = new System.Drawing.Point(250, 722);
-            this.txtbxSkimmed.Name = "txtbxSkimmed";
-            this.txtbxSkimmed.Size = new System.Drawing.Size(100, 23);
-            this.txtbxSkimmed.TabIndex = 83;
-            this.txtbxSkimmed.Text = "0.00";
-            this.txtbxSkimmed.TextChanged += new System.EventHandler(this.TextChanged);
-            // 
-            // lblSkimmed
-            // 
-            this.lblSkimmed.AutoSize = true;
-            this.lblSkimmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkimmed.Location = new System.Drawing.Point(12, 729);
-            this.lblSkimmed.Name = "lblSkimmed";
-            this.lblSkimmed.Size = new System.Drawing.Size(72, 17);
-            this.lblSkimmed.TabIndex = 82;
-            this.lblSkimmed.Text = "Skimmed";
-            // 
-            // txtbxc5TotalDrop
-            // 
-            this.txtbxc5TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxc5TotalDrop.Location = new System.Drawing.Point(634, 477);
-            this.txtbxc5TotalDrop.Name = "txtbxc5TotalDrop";
-            this.txtbxc5TotalDrop.Size = new System.Drawing.Size(100, 23);
-            this.txtbxc5TotalDrop.TabIndex = 96;
-            this.txtbxc5TotalDrop.Text = "0.00";
             // 
             // txtbxc10TotalDrop
             // 
@@ -918,7 +822,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(656, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
+            this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 86;
             this.label4.Text = "Total (R)";
             // 
@@ -954,7 +858,7 @@
             // 
             this.lblDropTotal.AutoSize = true;
             this.lblDropTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDropTotal.Location = new System.Drawing.Point(490, 503);
+            this.lblDropTotal.Location = new System.Drawing.Point(490, 479);
             this.lblDropTotal.Name = "lblDropTotal";
             this.lblDropTotal.Size = new System.Drawing.Size(126, 17);
             this.lblDropTotal.TabIndex = 98;
@@ -963,7 +867,7 @@
             // txtbDropTotal
             // 
             this.txtbDropTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbDropTotal.Location = new System.Drawing.Point(634, 502);
+            this.txtbDropTotal.Location = new System.Drawing.Point(634, 478);
             this.txtbDropTotal.Name = "txtbDropTotal";
             this.txtbDropTotal.Size = new System.Drawing.Size(100, 23);
             this.txtbDropTotal.TabIndex = 99;
@@ -982,23 +886,13 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(13, 831);
+            this.btnClear.Location = new System.Drawing.Point(13, 782);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 101;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(515, 477);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 17);
-            this.label7.TabIndex = 113;
-            this.label7.Text = "5c";
             // 
             // label8
             // 
@@ -1149,7 +1043,7 @@
             this.lineShape1,
             this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(823, 856);
+            this.shapeContainer1.Size = new System.Drawing.Size(823, 813);
             this.shapeContainer1.TabIndex = 121;
             this.shapeContainer1.TabStop = false;
             // 
@@ -1168,30 +1062,30 @@
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 433;
             this.lineShape2.X2 = 873;
-            this.lineShape2.Y1 = 631;
-            this.lineShape2.Y2 = 631;
+            this.lineShape2.Y1 = 596;
+            this.lineShape2.Y2 = 596;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 434;
             this.lineShape1.X2 = 874;
-            this.lineShape1.Y1 = 536;
-            this.lineShape1.Y2 = 536;
+            this.lineShape1.Y1 = 510;
+            this.lineShape1.Y2 = 510;
             // 
             // rectangleShape2
             // 
             this.rectangleShape2.Enabled = false;
             this.rectangleShape2.Location = new System.Drawing.Point(433, 79);
             this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(442, 700);
+            this.rectangleShape2.Size = new System.Drawing.Size(442, 595);
             // 
             // rectangleShape1
             // 
             this.rectangleShape1.Enabled = false;
             this.rectangleShape1.Location = new System.Drawing.Point(-8, 79);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(442, 781);
+            this.rectangleShape1.Size = new System.Drawing.Size(442, 734);
             // 
             // lblRegisterNum1
             // 
@@ -1227,7 +1121,7 @@
             // dateTimePicker3
             // 
             this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(402, 36);
+            this.dateTimePicker3.Location = new System.Drawing.Point(402, 39);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(264, 26);
             this.dateTimePicker3.TabIndex = 125;
@@ -1258,7 +1152,7 @@
             // 
             this.lblNumCheques.AutoSize = true;
             this.lblNumCheques.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumCheques.Location = new System.Drawing.Point(496, 575);
+            this.lblNumCheques.Location = new System.Drawing.Point(496, 539);
             this.lblNumCheques.Name = "lblNumCheques";
             this.lblNumCheques.Size = new System.Drawing.Size(127, 16);
             this.lblNumCheques.TabIndex = 128;
@@ -1269,7 +1163,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label20.Location = new System.Drawing.Point(584, 555);
+            this.label20.Location = new System.Drawing.Point(584, 519);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(56, 13);
             this.label20.TabIndex = 129;
@@ -1277,7 +1171,7 @@
             // 
             // txtbNumCheques
             // 
-            this.txtbNumCheques.Location = new System.Drawing.Point(634, 571);
+            this.txtbNumCheques.Location = new System.Drawing.Point(634, 535);
             this.txtbNumCheques.Name = "txtbNumCheques";
             this.txtbNumCheques.Size = new System.Drawing.Size(100, 20);
             this.txtbNumCheques.TabIndex = 130;
@@ -1285,7 +1179,7 @@
             // 
             // txtbChequesValue
             // 
-            this.txtbChequesValue.Location = new System.Drawing.Point(634, 597);
+            this.txtbChequesValue.Location = new System.Drawing.Point(634, 561);
             this.txtbChequesValue.Name = "txtbChequesValue";
             this.txtbChequesValue.ShortcutsEnabled = false;
             this.txtbChequesValue.Size = new System.Drawing.Size(100, 20);
@@ -1296,7 +1190,7 @@
             // 
             this.lblChequesValue.AutoSize = true;
             this.lblChequesValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChequesValue.Location = new System.Drawing.Point(496, 601);
+            this.lblChequesValue.Location = new System.Drawing.Point(496, 565);
             this.lblChequesValue.Name = "lblChequesValue";
             this.lblChequesValue.Size = new System.Drawing.Size(114, 16);
             this.lblChequesValue.TabIndex = 132;
@@ -1306,7 +1200,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(584, 647);
+            this.label21.Location = new System.Drawing.Point(584, 611);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(46, 15);
             this.label21.TabIndex = 133;
@@ -1316,15 +1210,15 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(450, 677);
+            this.label22.Location = new System.Drawing.Point(450, 641);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 16);
+            this.label22.Size = new System.Drawing.Size(82, 16);
             this.label22.TabIndex = 134;
             this.label22.Text = "Total Drop";
             // 
             // txtbTotal_Drop
             // 
-            this.txtbTotal_Drop.Location = new System.Drawing.Point(634, 676);
+            this.txtbTotal_Drop.Location = new System.Drawing.Point(634, 640);
             this.txtbTotal_Drop.Name = "txtbTotal_Drop";
             this.txtbTotal_Drop.Size = new System.Drawing.Size(100, 20);
             this.txtbTotal_Drop.TabIndex = 136;
@@ -1427,7 +1321,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(823, 856);
+            this.ClientSize = new System.Drawing.Size(823, 813);
             this.Controls.Add(this.txtbCardDiscepancy);
             this.Controls.Add(this.txtbCardWSS);
             this.Controls.Add(this.txtbCardBanked);
@@ -1455,7 +1349,6 @@
             this.Controls.Add(this.lblRegisterNum);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.txtbxName);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -1472,7 +1365,6 @@
             this.Controls.Add(this.txtbDropTotal);
             this.Controls.Add(this.lblDropTotal);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtbxc5TotalDrop);
             this.Controls.Add(this.txtbxc10TotalDrop);
             this.Controls.Add(this.txtbxc20TotalDrop);
             this.Controls.Add(this.txtbxc50TotalDrop);
@@ -1485,8 +1377,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtbxR100TotalDrop);
             this.Controls.Add(this.txtbxR200TotalDrop);
-            this.Controls.Add(this.txtbxSkimmed);
-            this.Controls.Add(this.lblSkimmed);
             this.Controls.Add(this.txtbxCheques);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtbxSubTotal);
@@ -1495,7 +1385,6 @@
             this.Controls.Add(this.lblCashDrop);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txtbxc5Drop);
             this.Controls.Add(this.txtbxc10Drop);
             this.Controls.Add(this.txtbxc20Drop);
             this.Controls.Add(this.txtbxc50Drop);
@@ -1508,8 +1397,6 @@
             this.Controls.Add(this.txtbxR100Drop);
             this.Controls.Add(this.txtbxR200Drop);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtbTotal1);
-            this.Controls.Add(this.txtbTotal5c);
             this.Controls.Add(this.txtbTotal10c);
             this.Controls.Add(this.txtbTotal20c);
             this.Controls.Add(this.txtbTotal50c);
@@ -1527,7 +1414,6 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.combxRegister);
             this.Controls.Add(this.btnTotal);
-            this.Controls.Add(this.txtb5c);
             this.Controls.Add(this.txtb10c);
             this.Controls.Add(this.txtb20c);
             this.Controls.Add(this.txtb50c);
@@ -1538,8 +1424,6 @@
             this.Controls.Add(this.txtbR20);
             this.Controls.Add(this.txtbR50);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.lblTotal0);
-            this.Controls.Add(this.lbl5c);
             this.Controls.Add(this.lbl10c);
             this.Controls.Add(this.lbl20c);
             this.Controls.Add(this.lbl50c);
@@ -1577,8 +1461,6 @@
         private System.Windows.Forms.Label lbl50c;
         private System.Windows.Forms.Label lbl20c;
         private System.Windows.Forms.Label lbl10c;
-        private System.Windows.Forms.Label lbl5c;
-        private System.Windows.Forms.Label lblTotal0;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtbR20;
         private System.Windows.Forms.TextBox txtbR10;
@@ -1588,14 +1470,11 @@
         private System.Windows.Forms.TextBox txtb50c;
         private System.Windows.Forms.TextBox txtb20c;
         private System.Windows.Forms.TextBox txtb10c;
-        private System.Windows.Forms.TextBox txtb5c;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.ComboBox combxRegister;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtbFloat;
         private System.Windows.Forms.Label lblFloat;
-        private System.Windows.Forms.TextBox txtbTotal1;
-        private System.Windows.Forms.TextBox txtbTotal5c;
         private System.Windows.Forms.TextBox txtbTotal10c;
         private System.Windows.Forms.TextBox txtbTotal20c;
         private System.Windows.Forms.TextBox txtbTotal50c;
@@ -1612,7 +1491,6 @@
         protected System.Windows.Forms.TextBox txtbR50;
         public System.Windows.Forms.TextBox txtbR200;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtbxc5Drop;
         private System.Windows.Forms.TextBox txtbxc10Drop;
         private System.Windows.Forms.TextBox txtbxc20Drop;
         private System.Windows.Forms.TextBox txtbxc50Drop;
@@ -1632,9 +1510,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtbxCheques;
-        private System.Windows.Forms.TextBox txtbxSkimmed;
-        private System.Windows.Forms.Label lblSkimmed;
-        private System.Windows.Forms.TextBox txtbxc5TotalDrop;
         private System.Windows.Forms.TextBox txtbxc10TotalDrop;
         private System.Windows.Forms.TextBox txtbxc20TotalDrop;
         private System.Windows.Forms.TextBox txtbxc50TotalDrop;
@@ -1652,7 +1527,6 @@
         private System.Windows.Forms.TextBox txtbDropTotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

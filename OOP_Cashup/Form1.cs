@@ -14,8 +14,9 @@ using Microsoft.Reporting.WinForms;
 using System.Drawing.Imaging;
 
 namespace OOP_Cashup
+{
+    public partial class Form1 : Form
     {
-    public partial class Form1: Form {
 
         #region Variables
 
@@ -40,7 +41,7 @@ namespace OOP_Cashup
         Decimal skimmed = 0.00M;
         Decimal total = 0.00M;
         #endregion
-        
+
 
         #region drop variables
 
@@ -85,7 +86,7 @@ namespace OOP_Cashup
         public new void Update() {
 
             try {
-                
+
                 lblRegisterNum.Text = combxRegister.Text;
                 lblRegisterNum1.Text = combxRegister.Text;
                 txtbxFloat1.Text = txtbFloat.Text;
@@ -94,7 +95,7 @@ namespace OOP_Cashup
                 txtbChequesValue.Text = txtbxCheques.Text;
                 cu.NumChecks = int.Parse(this.txtbNumCheques.Text);
                 cu.ChecksValue = Decimal.Parse(txtbChequesValue.Text);
-               
+
 
                 #region regster update
 
@@ -110,11 +111,8 @@ namespace OOP_Cashup
                 cu.c50Amt = int.Parse(txtb50c.Text);
                 cu.c20Amt = int.Parse(txtb20c.Text);
                 cu.c10Amt = int.Parse(txtb10c.Text);
-                cu.c5Amt = int.Parse(txtb5c.Text);
 
                 Decimal.TryParse(txtbChequesValue.Text, out cheques);
-                Decimal.TryParse(txtbxSkimmed.Text, out skimmed);
-
 
 
                 this.R200Total = (cu.R200Amt * 200);
@@ -141,7 +139,6 @@ namespace OOP_Cashup
                 txtbTotal50c.Text = this.c50Total.ToString();
                 txtbTotal20c.Text = this.c20Total.ToString();
                 txtbTotal10c.Text = this.c10Total.ToString();
-                txtbTotal5c.Text = this.c5Total.ToString();
                 #endregion
 
                 cu.CashFloat = this.cashFloat;
@@ -153,7 +150,7 @@ namespace OOP_Cashup
                 txtbDrop.Text = this.drop.ToString();
                 cu.Name = this.txtbxName.Text;
                 cu.TillNum = combxRegister.Text;
-                
+
                 #region drop update
 
                 txtbxR200Drop.Text = cu.R200Drop.ToString();
@@ -167,7 +164,6 @@ namespace OOP_Cashup
                 txtbxc50Drop.Text = cu.c50Drop.ToString();
                 txtbxc20Drop.Text = cu.c20Drop.ToString();
                 txtbxc10Drop.Text = cu.c10Drop.ToString();
-                txtbxc5Drop.Text = cu.c5Drop.ToString();
 
 
                 R200TotalDrop = cu.R200Drop * 200;
@@ -194,7 +190,6 @@ namespace OOP_Cashup
                 txtbxc50TotalDrop.Text = this.c50TotalDrop.ToString();
                 txtbxc20TotalDrop.Text = this.c20TotalDrop.ToString();
                 txtbxc10TotalDrop.Text = this.c10TotalDrop.ToString();
-                txtbxc5TotalDrop.Text = this.c5TotalDrop.ToString();
 
                 droppedTotal = R200TotalDrop + R100TotalDrop + R50TotalDrop + R20TotalDrop + R10TotalDrop
                    + R5TotalDrop + R2TotalDrop + R1TotalDrop + c50TotalDrop + c20TotalDrop +
@@ -221,9 +216,9 @@ namespace OOP_Cashup
                     TextBox txt = x as TextBox;
                     if (txt is TextBox) {
                         if (string.IsNullOrEmpty(txt.Text)) {
-                          txt.Text = "0";
-                          txt.Focus();
-                          txt.SelectAll();
+                            txt.Text = "0";
+                            txt.Focus();
+                            txt.SelectAll();
                         }
                     }
                 }
@@ -266,10 +261,6 @@ namespace OOP_Cashup
                     Update();
 
                     cu.Drop();
-
-                    txtbTotal1.Text = this.total.ToString();
-
-                    
 
                 }
             }
@@ -331,7 +322,7 @@ namespace OOP_Cashup
                 Clear();
 
             }
-            
+
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
@@ -356,10 +347,6 @@ namespace OOP_Cashup
             txtb50c.Text = "0";
             txtb20c.Text = "0";
             txtb10c.Text = "0";
-            txtb5c.Text = "0";
-            txtbxCheques.Text = "0";
-            txtbxSkimmed.Text = "0";
-            txtbTotal1.Text = "0";
 
             ClearDrop();
 
@@ -388,7 +375,6 @@ namespace OOP_Cashup
             txtbxc50Drop.Text = "0";
             txtbxc20Drop.Text = "0";
             txtbxc10Drop.Text = "0";
-            txtbxc5Drop.Text = "0";
 
             cu.ClearDrop();
 
