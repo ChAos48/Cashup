@@ -198,7 +198,7 @@ namespace OOP_Cashup
                 cu.DroppedTotal = droppedTotal;
 
                 txtbTotal_Drop.Text = (droppedTotal + cheques).ToString();
-                cu.DropTotal = droppedTotal + cheques;
+                cu.DropTotal = Decimal.Parse(txtbTotal_Drop.Text.ToString());
 
                 cu.WSSCash = Decimal.Parse(txtbWSSCash.Text);
                 cu.CalcCashDescrepancy();

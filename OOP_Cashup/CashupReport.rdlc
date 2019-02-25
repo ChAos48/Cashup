@@ -4458,7 +4458,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!drop.Value</Value>
+                <Value>=Fields!DropAndCheques.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -4466,7 +4466,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>15.17211cm</Top>
+        <Top>15.06628cm</Top>
         <Left>13.86098cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -4511,7 +4511,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Cashup">
+    <DataSet Name="Cahsup">
       <Query>
         <DataSourceName>OOP_Cashup</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -4611,6 +4611,10 @@
         </Field>
         <Field Name="drop">
           <DataField>drop</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DropAndCheques">
+          <DataField>DropAndCheques</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="DroppedTotal">
@@ -4785,7 +4789,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>OOP_Cashup</rd:DataSetName>
         <rd:TableName>Cashup</rd:TableName>
-        <rd:ObjectDataSourceType>OOP_Cashup.Cashup, Cashup, Version=1.0.5.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>OOP_Cashup.Cashup, Cashup, Version=1.0.6.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

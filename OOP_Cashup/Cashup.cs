@@ -119,6 +119,12 @@ namespace OOP_Cashup
             }
         }
 
+        private Decimal dropAndCheques;
+        public Decimal DropAndCheques {
+            get { return dropAndCheques; }
+            set { dropAndCheques = value; }
+        }
+
         #region discepancy variables
 
         private Decimal wssCash;
@@ -220,7 +226,7 @@ namespace OOP_Cashup
         /// <param name="DroppedTotal"></param>
         /// <param name="Register"></param>
         public Cashup(int amt200, int amt100, int amt50, int amt20, int amt10, int amt5,
-            int amt2, int amt1, int amt50c, int amt20c, int amt10c,  Decimal DroppedTotal,
+            int amt2, int amt1, int amt50c, int amt20c, int amt10c, Decimal DroppedTotal,
             string Register) {
             On_Cashup_Load(this, null);
             date = DateTime.Today.ToString("dddd  dd MMMM yyyy");
@@ -253,7 +259,7 @@ namespace OOP_Cashup
             subTotal = R200 + R100 + R50 + R20 + R10 + R5 + R2 +
                  R1 + c50 + c20 + c10 + c5;
 
-            drop = subTotal - cashFloat + skimmed;
+            drop = subTotal - cashFloat;
             dropTemp = drop;
 
             Total = subTotal - drop;
@@ -407,17 +413,15 @@ namespace OOP_Cashup
             subTotal = R200 + R100 + R50 + R20 + R10 + R5 + R2 +
                 R1 + c50 + c20 + c10 + c5;
 
-            drop = subTotal - cashFloat + skimmed;
+            drop = subTotal - cashFloat;
             dropTemp = drop;
 
             this.Total = subTotal - drop;
             this.droppedTotal = R200Drop * 200 + R100Drop * 100 + R50Drop * 50 + R20Drop * 20 + R10Drop * 10 +
                 R5Drop * 5 + R2Drop * 2 +
                 R1Drop * 1 + c50Drop * 0.50M + c20Drop * 0.2M + c10Drop * 0.1M + c5Drop * 0.05M;
-            
-            //cardDiscrepancy = drop - wssCash;
-            //cashDiscrepancy = cardBanked - wssCard;
 
+            dropAndCheques = drop + ChecksValue;
 
             Thread.Sleep(0);
         }
@@ -477,8 +481,15 @@ namespace OOP_Cashup
             </DeviceInfo>";
             Warning[] warnings;
             m_streams = new List<Stream>();
-            report.Render("Image", deviceInfo, CreateStream,
-               out warnings);
+            try {
+                report.Render("Image", deviceInfo, CreateStream,
+                   out warnings);
+            }catch (Exception ex) {
+                Console.WriteLine("could not render" + ex.ToString());
+                //foreach (Warning warn in warnings) {
+
+                //}
+            }
             foreach (Stream stream in m_streams)
                 stream.Position = 0;
         }
@@ -588,7 +599,7 @@ namespace OOP_Cashup
         public void CalcCashDescrepancy() {
             cashDiscrepancy = this.drop - this.wssCash;
             Thread.Sleep(0);
-            
+
         }
 
         public void CalcCardDescrepancy() {
