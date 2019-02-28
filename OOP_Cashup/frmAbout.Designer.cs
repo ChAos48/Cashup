@@ -1,4 +1,6 @@
-﻿namespace OOP_Cashup
+﻿using Microsoft.VisualBasic.PowerPacks;
+
+namespace OOP_Cashup
 {
     partial class frmAbout
     {
@@ -35,8 +37,10 @@
             this.rtxtbChangelog = new System.Windows.Forms.RichTextBox();
             this.tabPageFAQ = new System.Windows.Forms.TabPage();
             this.tabPageLisence = new System.Windows.Forms.TabPage();
-            this.btnClose = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.tabControl1.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
             this.tabPageChangeLog.SuspendLayout();
@@ -133,6 +137,14 @@
             this.tabPageLisence.Text = "Lisence";
             this.tabPageLisence.UseVisualStyleBackColor = true;
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(4, 4);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(785, 388);
+            this.richTextBox2.TabIndex = 0;
+            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
+            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(5, 429);
@@ -143,13 +155,23 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // richTextBox2
+            // shapeContainer1
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(4, 4);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(785, 388);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(800, 459);
+            this.shapeContainer1.TabIndex = 2;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.Location = new System.Drawing.Point(235, 297);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(75, 23);
+            this.rectangleShape1.Click += new System.EventHandler(this.rectangleShape1_Click);
             // 
             // frmAbout
             // 
@@ -158,6 +180,7 @@
             this.ClientSize = new System.Drawing.Size(800, 459);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.shapeContainer1);
             this.Name = "frmAbout";
             this.Text = "frmAbout";
             this.Load += new System.EventHandler(this.frmAbout_Load);
@@ -183,5 +206,7 @@
         private System.Windows.Forms.RichTextBox rtxtbChangelog;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private ShapeContainer shapeContainer1;
+        private RectangleShape rectangleShape1;
     }
 }

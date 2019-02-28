@@ -32,7 +32,7 @@ namespace OOP_Cashup
 
                 } else {
                     log.Warn("Dialog result from frmSelect is not OK");
-                    
+
                     return;
 
                 }
@@ -42,15 +42,14 @@ namespace OOP_Cashup
 
         private void LoadData(string ID) {
 
-            foreach(TextBox in this.)
-
-            if(cu.LoadFromDB(ID)) {
+            if (cu.LoadFromDB(ID)) {
                 log.Info("Till data Successfully loaded from DB");
             } else {
                 log.Error("couldnt load data from DB");
             }
 
             cu.Drop();
+            setTextBoxes();
 
         }
 
@@ -59,10 +58,61 @@ namespace OOP_Cashup
             DialogResult = DialogResult.Cancel;
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void btnClose_click(object sender, EventArgs e) {
             DialogResult = DialogResult.OK;
         }
 
-       
+        private void setTextBoxes() {
+            this.txtbR200.Text = cu.R200Amt.ToString();
+            this.txtbR100.Text = cu.R100Amt.ToString();
+            this.txtbR50.Text = cu.R50Amt.ToString();
+            this.txtbR20.Text = cu.R20Amt.ToString();
+            this.txtbR10.Text = cu.R10Amt.ToString();
+            this.txtbR5.Text = cu.R5Amt.ToString();
+            this.txtbR2.Text = cu.R2Amt.ToString();
+            this.txtbR1.Text = cu.R1Amt.ToString();
+            this.txtb50c.Text = cu.c50Amt.ToString();
+            this.txtb20c.Text = cu.c20Amt.ToString();
+            this.txtb10c.Text = cu.c10Amt.ToString();
+
+            this.txtbTotalR200.Text = cu.R200.ToString();
+            this.txtbTotalR100.Text = cu.R100.ToString();
+            this.txtbTotalR50.Text = cu.R50.ToString();
+            this.txtbTotalR20.Text = cu.R20.ToString();
+            this.txtbTotalR10.Text = cu.R10.ToString();
+            this.txtbTotalR5.Text = cu.R5.ToString();
+            this.txtbTotalR2.Text = cu.R2.ToString();
+            this.txtbTotalR1.Text = cu.R1.ToString();
+            this.txtbTotal50c.Text = cu.c50.ToString();
+            this.txtbTotal20c.Text = cu.c20.ToString();
+            this.txtbTotal10c.Text = cu.c10.ToString();
+
+            this.txtbxR200Drop.Text = cu.R200Drop.ToString();
+            this.txtbxR100Drop.Text = cu.R100Drop.ToString();
+            this.txtbxR50Drop.Text = cu.R50Drop.ToString();
+            this.txtbxR20Drop.Text = cu.R20Drop.ToString();
+            this.txtbxR10Drop.Text = cu.R10Drop.ToString();
+            this.txtbxR5Drop.Text = cu.R5Drop.ToString();
+            this.txtbxR2Drop.Text = cu.R2Drop.ToString();
+            this.txtbxR1Drop.Text = cu.R1Drop.ToString();
+            this.txtbxc50Drop.Text = cu.c50Drop.ToString();
+            this.txtbxc20Drop.Text = cu.c20Drop.ToString();
+            this.txtbxc10Drop.Text = cu.c10Drop.ToString();
+
+            this.txtbxR200TotalDrop.Text = cu.R200DropTotal.ToString();
+            this.txtbxR100TotalDrop.Text = cu.R100DropTotal.ToString();
+            this.txtbxR50TotalDrop.Text = cu.R50DropTotal.ToString();
+            this.txtbxR20TotalDrop.Text = cu.R20DropTotal.ToString();
+            this.txtbxR10TotalDrop.Text = cu.R10DropTotal.ToString();
+            this.txtbxR5TotalDrop.Text = cu.R5DropTotal.ToString();
+            this.txtbxR2TotalDrop.Text = cu.R2DropTotal.ToString();
+            this.txtbxR1TotalDrop.Text = cu.R1DropTotal.ToString();
+            this.txtbxc50TotalDrop.Text = cu.c50DropTotal.ToString();
+            this.txtbxc20TotalDrop.Text = cu.c20DropTotal.ToString();
+            this.txtbxc10TotalDrop.Text = cu.c10DropTotal.ToString();
+
+        }
+
+
     }
 }

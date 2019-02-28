@@ -670,8 +670,6 @@ c5Drop, NumChecks, ChecksValue);
 
         public bool LoadFromDB(string ID) {
 
-            OdbcDataReader rdr = null;
-
             using (OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
 
                 try {
@@ -681,45 +679,47 @@ c5Drop, NumChecks, ChecksValue);
                     return false;
                 }
 
-                string query = string.Format(@"SELECT * FROM {0}.Cashup_data WHERE cashup_ID = {1};",
-                    RuntimeSettings.dbName, ID);
+                string query = string.Format(@"SELECT * FROM Cashup_data WHERE cashup_ID = '{0}';", ID);
                 OdbcCommand cmd = new OdbcCommand(query, con);
-
-                rdr = cmd.ExecuteReader();
+                OdbcDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read()) {
-                    this.R200Amt = int.Parse(rdr["cashup_R200Amount"].ToString());
-                    this.R100Amt = int.Parse(rdr["cashup_R100Amount"].ToString());
-                    this.R50Amt = int.Parse(rdr["cashup_R50Amount"].ToString());
-                    this.R20Amt = int.Parse(rdr["cashup_R20Amount"].ToString());
-                    this.R10Amt = int.Parse(rdr["cashup_R10Amount"].ToString());
-                    this.R5Amt = int.Parse(rdr["cashup_R5Amount"].ToString());
-                    this.R2Amt = int.Parse(rdr["cashup_R2Amount"].ToString());
-                    this.R1Amt = int.Parse(rdr["cashup_R1Amount"].ToString());
-                    this.c50Amt = int.Parse(rdr["cashup_50cAmount"].ToString());
-                    this.c20Amt = int.Parse(rdr["cashup_20cAmount"].ToString());
-                    this.c10Amt = int.Parse(rdr["cashup_10cAmount"].ToString());
-                    this.c5Amt = int.Parse(rdr["cashup_5cAmount"].ToString());
+                    try {
+                        this.R200Amt = int.Parse(rdr["cashup_R200Amount"].ToString());
+                        log.Debug("Loading R200 Amount from DB: " + this.R200Amt);
+                        this.R100Amt = int.Parse(rdr["cashup_R100Amount"].ToString());
+                        this.R50Amt = int.Parse(rdr["cashup_R50Amount"].ToString());
+                        this.R20Amt = int.Parse(rdr["cashup_R20Amount"].ToString());
+                        this.R10Amt = int.Parse(rdr["cashup_R10Amount"].ToString());
+                        this.R5Amt = int.Parse(rdr["cashup_R5Amount"].ToString());
+                        this.R2Amt = int.Parse(rdr["cashup_R2Amount"].ToString());
+                        this.R1Amt = int.Parse(rdr["cashup_R1Amount"].ToString());
+                        this.c50Amt = int.Parse(rdr["cashup_50cAmount"].ToString());
+                        this.c20Amt = int.Parse(rdr["cashup_20cAmount"].ToString());
+                        this.c10Amt = int.Parse(rdr["cashup_10cAmount"].ToString());
+                        this.c5Amt = int.Parse(rdr["cashup_5cAmount"].ToString());
 
-                    this.CashFloat = decimal.Parse(rdr["cashup_float"].ToString());
-                    this.TillNum = "Register #" + rdr["cashup_TillNum"].ToString();
-                    this.Name = rdr["cashup_CashierName"].ToString();
-                    date = rdr["cashup_date"].ToString();
+                        this.CashFloat = decimal.Parse(rdr["cashup_float"].ToString());
+                        this.TillNum = "Register #" + rdr["cashup_TillNum"].ToString();
+                        this.Name = rdr["cashup_CashierName"].ToString();
+                        date = rdr["cashup_date"].ToString();
 
-                    this.R200 = decimal.Parse(rdr["cashup_R200Value"].ToString());
-                    this.R100 = decimal.Parse(rdr["cashup_R100Value"].ToString());
-                    this.R50 = decimal.Parse(rdr["cashup_R50Value"].ToString());
-                    this.R20 = decimal.Parse(rdr["cashup_R20Value"].ToString());
-                    this.R10 = decimal.Parse(rdr["cashup_R10Value"].ToString());
-                    this.R5 = decimal.Parse(rdr["cashup_R5Value"].ToString());
-                    this.R2 = decimal.Parse(rdr["cashup_R2Value"].ToString());
-                    this.R1 = decimal.Parse(rdr["cashup_R1Value"].ToString());
-                    this.c50 = decimal.Parse(rdr["cashup_50cValue"].ToString());
-                    this.c20 = decimal.Parse(rdr["cashup_20cValue"].ToString());
-                    this.c10 = decimal.Parse(rdr["cashup_10cValue"].ToString());
-                    this.c5 = decimal.Parse(rdr["cashup_5cValue"].ToString());
-
-
+                        this.R200 = decimal.Parse(rdr["cashup_R200Value"].ToString());
+                        this.R100 = decimal.Parse(rdr["cashup_R100Value"].ToString());
+                        this.R50 = decimal.Parse(rdr["cashup_R50Value"].ToString());
+                        this.R20 = decimal.Parse(rdr["cashup_R20Value"].ToString());
+                        this.R10 = decimal.Parse(rdr["cashup_R10Value"].ToString());
+                        this.R5 = decimal.Parse(rdr["cashup_R5Value"].ToString());
+                        this.R2 = decimal.Parse(rdr["cashup_R2Value"].ToString());
+                        this.R1 = decimal.Parse(rdr["cashup_R1Value"].ToString());
+                        this.c50 = decimal.Parse(rdr["cashup_50cValue"].ToString());
+                        this.c20 = decimal.Parse(rdr["cashup_20cValue"].ToString());
+                        this.c10 = decimal.Parse(rdr["cashup_10cValue"].ToString());
+                        this.c5 = decimal.Parse(rdr["cashup_5cValue"].ToString());
+                        log.Debug("loading 5c Value from DB: " + c5);
+                    } catch (Exception ex) {
+                        log.Error("issue asigning values from DB.", ex);
+                    }
 
                 }
 

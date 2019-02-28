@@ -55,7 +55,6 @@
             this.lblCashDrop = new System.Windows.Forms.Label();
             this.lblTotal1 = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.lbl5c = new System.Windows.Forms.Label();
             this.lbl10c = new System.Windows.Forms.Label();
             this.lbl20c = new System.Windows.Forms.Label();
             this.lbl50c = new System.Windows.Forms.Label();
@@ -121,7 +120,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -138,7 +137,6 @@
             this.txtb50c = new System.Windows.Forms.TextBox();
             this.txtb20c = new System.Windows.Forms.TextBox();
             this.txtb10c = new System.Windows.Forms.TextBox();
-            this.txtb5c = new System.Windows.Forms.TextBox();
             this.txtbTotalR200 = new System.Windows.Forms.TextBox();
             this.txtbTotalR100 = new System.Windows.Forms.TextBox();
             this.txtbTotalR50 = new System.Windows.Forms.TextBox();
@@ -150,7 +148,6 @@
             this.txtbTotal50c = new System.Windows.Forms.TextBox();
             this.txtbTotal20c = new System.Windows.Forms.TextBox();
             this.txtbTotal10c = new System.Windows.Forms.TextBox();
-            this.txtbTotal5c = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -421,16 +418,6 @@
             this.lblAmount.Size = new System.Drawing.Size(59, 16);
             this.lblAmount.TabIndex = 98;
             this.lblAmount.Text = "Amount";
-            // 
-            // lbl5c
-            // 
-            this.lbl5c.AutoSize = true;
-            this.lbl5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5c.Location = new System.Drawing.Point(17, 493);
-            this.lbl5c.Name = "lbl5c";
-            this.lbl5c.Size = new System.Drawing.Size(23, 17);
-            this.lbl5c.TabIndex = 97;
-            this.lbl5c.Text = "5c";
             // 
             // lbl10c
             // 
@@ -1106,16 +1093,16 @@
             this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(6, 682);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(270, 28);
-            this.button2.TabIndex = 184;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(6, 682);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(270, 28);
+            this.btnClose.TabIndex = 184;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_click);
             // 
             // lineShape4
             // 
@@ -1293,17 +1280,6 @@
             this.txtb10c.TabIndex = 107;
             this.txtb10c.Text = "0";
             // 
-            // txtb5c
-            // 
-            this.txtb5c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5Amt", true));
-            this.txtb5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtb5c.Location = new System.Drawing.Point(70, 490);
-            this.txtb5c.Name = "txtb5c";
-            this.txtb5c.ReadOnly = true;
-            this.txtb5c.Size = new System.Drawing.Size(100, 23);
-            this.txtb5c.TabIndex = 108;
-            this.txtb5c.Text = "0";
-            // 
             // txtbTotalR200
             // 
             this.txtbTotalR200.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "R200", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -1425,23 +1401,12 @@
             this.txtbTotal10c.TabIndex = 120;
             this.txtbTotal10c.Text = "0.00";
             // 
-            // txtbTotal5c
-            // 
-            this.txtbTotal5c.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5", true));
-            this.txtbTotal5c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbTotal5c.Location = new System.Drawing.Point(175, 490);
-            this.txtbTotal5c.Name = "txtbTotal5c";
-            this.txtbTotal5c.ReadOnly = true;
-            this.txtbTotal5c.Size = new System.Drawing.Size(100, 23);
-            this.txtbTotal5c.TabIndex = 121;
-            this.txtbTotal5c.Text = "0.00";
-            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 718);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtbTotal_Drop);
             this.Controls.Add(this.label29);
@@ -1504,7 +1469,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtbxCashDrop);
             this.Controls.Add(this.lblCashDrop);
-            this.Controls.Add(this.txtbTotal5c);
             this.Controls.Add(this.txtbTotal10c);
             this.Controls.Add(this.txtbTotal20c);
             this.Controls.Add(this.txtbTotal50c);
@@ -1517,7 +1481,6 @@
             this.Controls.Add(this.lblTotal1);
             this.Controls.Add(this.txtbTotalR100);
             this.Controls.Add(this.txtbTotalR200);
-            this.Controls.Add(this.txtb5c);
             this.Controls.Add(this.txtb10c);
             this.Controls.Add(this.txtb20c);
             this.Controls.Add(this.txtb50c);
@@ -1528,7 +1491,6 @@
             this.Controls.Add(this.txtbR20);
             this.Controls.Add(this.txtbR50);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.lbl5c);
             this.Controls.Add(this.lbl10c);
             this.Controls.Add(this.lbl20c);
             this.Controls.Add(this.lbl50c);
@@ -1600,7 +1562,6 @@
         private System.Windows.Forms.Label lblCashDrop;
         private System.Windows.Forms.Label lblTotal1;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Label lbl5c;
         private System.Windows.Forms.Label lbl10c;
         private System.Windows.Forms.Label lbl20c;
         private System.Windows.Forms.Label lbl50c;
@@ -1666,7 +1627,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.BindingSource cashupBindingSource;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
@@ -1684,7 +1645,6 @@
         private System.Windows.Forms.TextBox txtb50c;
         private System.Windows.Forms.TextBox txtb20c;
         private System.Windows.Forms.TextBox txtb10c;
-        private System.Windows.Forms.TextBox txtb5c;
         private System.Windows.Forms.TextBox txtbTotalR200;
         private System.Windows.Forms.TextBox txtbTotalR100;
         private System.Windows.Forms.TextBox txtbTotalR50;
@@ -1696,6 +1656,5 @@
         private System.Windows.Forms.TextBox txtbTotal50c;
         private System.Windows.Forms.TextBox txtbTotal20c;
         private System.Windows.Forms.TextBox txtbTotal10c;
-        private System.Windows.Forms.TextBox txtbTotal5c;
     }
 }

@@ -434,7 +434,10 @@ namespace OOP_Cashup
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
-            frmAbout About = new frmAbout();
+            frmAbout aboutfrm = new frmAbout();
+            if(aboutfrm.ShowDialog() == DialogResult.OK) {
+                return;
+            }
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
