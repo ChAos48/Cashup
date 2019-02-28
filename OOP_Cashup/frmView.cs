@@ -59,10 +59,11 @@ namespace OOP_Cashup
         }
 
         private void btnClose_click(object sender, EventArgs e) {
-            DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void setTextBoxes() {
+            #region till
             this.txtbR200.Text = cu.R200Amt.ToString();
             this.txtbR100.Text = cu.R100Amt.ToString();
             this.txtbR50.Text = cu.R50Amt.ToString();
@@ -86,7 +87,9 @@ namespace OOP_Cashup
             this.txtbTotal50c.Text = cu.c50.ToString();
             this.txtbTotal20c.Text = cu.c20.ToString();
             this.txtbTotal10c.Text = cu.c10.ToString();
+            #endregion
 
+            #region 
             this.txtbxR200Drop.Text = cu.R200Drop.ToString();
             this.txtbxR100Drop.Text = cu.R100Drop.ToString();
             this.txtbxR50Drop.Text = cu.R50Drop.ToString();
@@ -110,9 +113,34 @@ namespace OOP_Cashup
             this.txtbxc50TotalDrop.Text = cu.c50DropTotal.ToString();
             this.txtbxc20TotalDrop.Text = cu.c20DropTotal.ToString();
             this.txtbxc10TotalDrop.Text = cu.c10DropTotal.ToString();
+            #endregion
+
+            this.txtbFloatLeft.Text = cu.CashFloat.ToString();
+            this.txtbFloatTop.Text = cu.CashFloat.ToString();
+            this.txtbNameLeft.Text = cu.Name;
+            this.txtbNameTop.Text = cu.Name;
+            this.textBox1.Text = cu.Name;
+            this.dtpLeft.Value = cu.Date;
+            this.dtpTop.Value = cu.Date;
+            this.dtpRight.Value = cu.Date;
+
+            this.txtbRegisterLeft.Text = cu.TillNum.ToString();
+            this.txtbRegisterRight.Text = cu.TillNum.ToString();
+
+            this.txtbxSubTotal.Text = cu.subTotal.ToString();
+            this.txtbDropTotal.Text = cu.DropTotal.ToString();
+            this.txtbxCashDrop.Text = cu.drop.ToString();
+            this.txtbxCheques.Text = cu.ChecksValue.ToString();
+            this.txtbChequesValue.Text = cu.ChecksValue.ToString();
+            this.txtbNumCheques.Text = cu.NumChecks.ToString();
+            this.txtbxSkimmed.Text = cu.skimmed.ToString();
+            this.txtbTotal_Drop.Text = (cu.drop + cu.NumChecks).ToString();
+            log.Debug("finished loading");
 
         }
 
-
+        private void button1_Click(object sender, EventArgs e) {
+            cu.PrintFromView();
+        }
     }
 }

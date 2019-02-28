@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbNameTop = new System.Windows.Forms.TextBox();
-            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtbFloatTop = new System.Windows.Forms.TextBox();
             this.dtpTop = new System.Windows.Forms.DateTimePicker();
             this.txtbRegisterLeft = new System.Windows.Forms.TextBox();
@@ -66,7 +65,6 @@
             this.lblR50 = new System.Windows.Forms.Label();
             this.lblR100 = new System.Windows.Forms.Label();
             this.lblR200 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -81,7 +79,6 @@
             this.txtbDropTotal = new System.Windows.Forms.TextBox();
             this.lblDropTotal = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.txtbxc5TotalDrop = new System.Windows.Forms.TextBox();
             this.txtbxc10TotalDrop = new System.Windows.Forms.TextBox();
             this.txtbxc20TotalDrop = new System.Windows.Forms.TextBox();
             this.txtbxc50TotalDrop = new System.Windows.Forms.TextBox();
@@ -94,7 +91,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtbxR100TotalDrop = new System.Windows.Forms.TextBox();
             this.txtbxR200TotalDrop = new System.Windows.Forms.TextBox();
-            this.txtbxc5Drop = new System.Windows.Forms.TextBox();
             this.txtbxc10Drop = new System.Windows.Forms.TextBox();
             this.txtbxc20Drop = new System.Windows.Forms.TextBox();
             this.txtbxc50Drop = new System.Windows.Forms.TextBox();
@@ -148,6 +144,7 @@
             this.txtbTotal50c = new System.Windows.Forms.TextBox();
             this.txtbTotal20c = new System.Windows.Forms.TextBox();
             this.txtbTotal10c = new System.Windows.Forms.TextBox();
+            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -217,10 +214,6 @@
             this.txtbNameTop.Size = new System.Drawing.Size(156, 20);
             this.txtbNameTop.TabIndex = 8;
             this.txtbNameTop.Text = "Name";
-            // 
-            // cashupBindingSource
-            // 
-            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
             // 
             // txtbFloatTop
             // 
@@ -529,16 +522,6 @@
             this.lblR200.TabIndex = 85;
             this.lblR200.Text = "R200";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(334, 502);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 17);
-            this.label12.TabIndex = 170;
-            this.label12.Text = "5c";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -680,17 +663,6 @@
             this.label24.TabIndex = 156;
             this.label24.Text = "To Drop";
             // 
-            // txtbxc5TotalDrop
-            // 
-            this.txtbxc5TotalDrop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5DropTotal", true));
-            this.txtbxc5TotalDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxc5TotalDrop.Location = new System.Drawing.Point(453, 502);
-            this.txtbxc5TotalDrop.Name = "txtbxc5TotalDrop";
-            this.txtbxc5TotalDrop.ReadOnly = true;
-            this.txtbxc5TotalDrop.Size = new System.Drawing.Size(100, 23);
-            this.txtbxc5TotalDrop.TabIndex = 155;
-            this.txtbxc5TotalDrop.Text = "0.00";
-            // 
             // txtbxc10TotalDrop
             // 
             this.txtbxc10TotalDrop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10DropTotal", true));
@@ -821,17 +793,6 @@
             this.txtbxR200TotalDrop.Size = new System.Drawing.Size(100, 23);
             this.txtbxR200TotalDrop.TabIndex = 143;
             this.txtbxR200TotalDrop.Text = "0.00";
-            // 
-            // txtbxc5Drop
-            // 
-            this.txtbxc5Drop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c5Drop", true));
-            this.txtbxc5Drop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxc5Drop.Location = new System.Drawing.Point(381, 502);
-            this.txtbxc5Drop.Name = "txtbxc5Drop";
-            this.txtbxc5Drop.ReadOnly = true;
-            this.txtbxc5Drop.Size = new System.Drawing.Size(35, 23);
-            this.txtbxc5Drop.TabIndex = 142;
-            this.txtbxc5Drop.Text = "0";
             // 
             // txtbxc10Drop
             // 
@@ -1092,6 +1053,7 @@
             this.button1.TabIndex = 183;
             this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnClose
             // 
@@ -1401,6 +1363,10 @@
             this.txtbTotal10c.TabIndex = 120;
             this.txtbTotal10c.Text = "0.00";
             // 
+            // cashupBindingSource
+            // 
+            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
+            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1420,7 +1386,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.txtbRegisterRight);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -1435,7 +1400,6 @@
             this.Controls.Add(this.txtbDropTotal);
             this.Controls.Add(this.lblDropTotal);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.txtbxc5TotalDrop);
             this.Controls.Add(this.txtbxc10TotalDrop);
             this.Controls.Add(this.txtbxc20TotalDrop);
             this.Controls.Add(this.txtbxc50TotalDrop);
@@ -1448,7 +1412,6 @@
             this.Controls.Add(this.label25);
             this.Controls.Add(this.txtbxR100TotalDrop);
             this.Controls.Add(this.txtbxR200TotalDrop);
-            this.Controls.Add(this.txtbxc5Drop);
             this.Controls.Add(this.txtbxc10Drop);
             this.Controls.Add(this.txtbxc20Drop);
             this.Controls.Add(this.txtbxc50Drop);
@@ -1573,7 +1536,6 @@
         private System.Windows.Forms.Label lblR50;
         private System.Windows.Forms.Label lblR100;
         private System.Windows.Forms.Label lblR200;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -1588,7 +1550,6 @@
         private System.Windows.Forms.TextBox txtbDropTotal;
         private System.Windows.Forms.Label lblDropTotal;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtbxc5TotalDrop;
         private System.Windows.Forms.TextBox txtbxc10TotalDrop;
         private System.Windows.Forms.TextBox txtbxc20TotalDrop;
         private System.Windows.Forms.TextBox txtbxc50TotalDrop;
@@ -1601,7 +1562,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtbxR100TotalDrop;
         private System.Windows.Forms.TextBox txtbxR200TotalDrop;
-        private System.Windows.Forms.TextBox txtbxc5Drop;
         private System.Windows.Forms.TextBox txtbxc10Drop;
         private System.Windows.Forms.TextBox txtbxc20Drop;
         private System.Windows.Forms.TextBox txtbxc50Drop;

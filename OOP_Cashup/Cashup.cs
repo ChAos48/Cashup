@@ -117,8 +117,8 @@ namespace OOP_Cashup
         public int NumChecks { get; set; }
         public Decimal ChecksValue { get; set; }
 
-        private string date;
-        public string Date { get { return date; } }
+        private DateTime date;
+        public DateTime Date { get { return date; } }
 
         private string name;
         public string Name { get { return name; } set { name = value; } }
@@ -144,7 +144,7 @@ namespace OOP_Cashup
         public Cashup() {
 
             On_Cashup_Load(this, null);
-            date = DateTime.Now.ToString("dddd  dd MMMM yyyy");
+            date = DateTime.Now;
 
             R200Amt = 0;
             R100Amt = 0;
@@ -222,7 +222,7 @@ namespace OOP_Cashup
 
             log.Debug("cashup object timer started.");
 
-            date = DateTime.Now.ToString("dddd  dd MMMM yyyy");
+            date = DateTime.Now;
 
             R200Amt = amt200;
             R100Amt = amt100;
@@ -273,7 +273,7 @@ namespace OOP_Cashup
         /// <param name="Register"></param>
         public Cashup(Decimal DroppedTotal, string Register) {
             On_Cashup_Load(this, null);
-            date = DateTime.Today.ToString("dddd  dd MMMM yyyy");
+            date = DateTime.Today;
 
             R200Amt = 0;
             R100Amt = 0;
@@ -588,8 +588,9 @@ namespace OOP_Cashup
             } else {
                 log.Debug("archive folder exists");
             }
-
-            using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive/" + date + ".pdf"),
+            
+            log.Debug(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyy") + "till" + tillNum + ".pdf"));
+            using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyy") + "till" + tillNum + ".pdf"),
                 FileMode.Create)) {
 
                 fs.Write(bytes, 0, bytes.Length);
@@ -702,7 +703,7 @@ c5Drop, NumChecks, ChecksValue);
                         this.CashFloat = decimal.Parse(rdr["cashup_float"].ToString());
                         this.TillNum = "Register #" + rdr["cashup_TillNum"].ToString();
                         this.Name = rdr["cashup_CashierName"].ToString();
-                        date = rdr["cashup_date"].ToString();
+                        date = DateTime.Parse(rdr["cashup_date"].ToString());
 
                         this.R200 = decimal.Parse(rdr["cashup_R200Value"].ToString());
                         this.R100 = decimal.Parse(rdr["cashup_R100Value"].ToString());
@@ -715,8 +716,8 @@ c5Drop, NumChecks, ChecksValue);
                         this.c50 = decimal.Parse(rdr["cashup_50cValue"].ToString());
                         this.c20 = decimal.Parse(rdr["cashup_20cValue"].ToString());
                         this.c10 = decimal.Parse(rdr["cashup_10cValue"].ToString());
-                        this.c5 = decimal.Parse(rdr["cashup_5cValue"].ToString());
-                        log.Debug("loading 5c Value from DB: " + c5);
+                        this.ChecksValue = decimal.Parse(rdr["cashup_ChequesValue"].ToString());
+                        this.NumChecks = int.Parse(rdr["cashup_NumCheques"].ToString());
                     } catch (Exception ex) {
                         log.Error("issue asigning values from DB.", ex);
                     }
@@ -729,5 +730,19 @@ c5Drop, NumChecks, ChecksValue);
             return true;
         }
         //Look at this: https://stackoverflow.com/questions/1383609/using-a-datasource-with-a-textbox
+
+        public void PrintFromView() {
+            frmPrintPreview rpt = new frmPrintPreview();
+            ReportViewer rv = rpt.reportViewer1;
+            rv.SetDisplayMode(DisplayMode.PrintLayout);
+            rv.ZoomMode = ZoomMode.PageWidth;
+            rv.LocalReport.ReportPath = "CashupReport.rdlc";
+
+            rv.LocalReport.DataSources.Add(new ReportDataSource("Cashup", new BindingSource(this, null)));
+
+            Export(rv.LocalReport);
+            printPdf(rv.LocalReport);
+            Print();
+        }
     }
 }
