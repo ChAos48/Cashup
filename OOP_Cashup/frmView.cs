@@ -55,7 +55,6 @@ namespace OOP_Cashup
 
         private void frmView_FormClosing(object sender, FormClosingEventArgs e) {
             log.Debug("Closing frmView");
-            DialogResult = DialogResult.Cancel;
         }
 
         private void btnClose_click(object sender, EventArgs e) {
