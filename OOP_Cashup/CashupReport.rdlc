@@ -4040,12 +4040,13 @@
       </Line>
       <Line Name="Line6">
         <Top>2.25461cm</Top>
-        <Height>13.46228cm</Height>
+        <Height>13.41166cm</Height>
         <Width>0cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>

@@ -34,6 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbNameTop = new System.Windows.Forms.TextBox();
+            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtbFloatTop = new System.Windows.Forms.TextBox();
             this.dtpTop = new System.Windows.Forms.DateTimePicker();
             this.txtbRegisterLeft = new System.Windows.Forms.TextBox();
@@ -144,7 +145,6 @@
             this.txtbTotal50c = new System.Windows.Forms.TextBox();
             this.txtbTotal20c = new System.Windows.Forms.TextBox();
             this.txtbTotal10c = new System.Windows.Forms.TextBox();
-            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -214,6 +214,10 @@
             this.txtbNameTop.Size = new System.Drawing.Size(156, 20);
             this.txtbNameTop.TabIndex = 8;
             this.txtbNameTop.Text = "Name";
+            // 
+            // cashupBindingSource
+            // 
+            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
             // 
             // txtbFloatTop
             // 
@@ -1363,10 +1367,6 @@
             this.txtbTotal10c.TabIndex = 120;
             this.txtbTotal10c.Text = "0.00";
             // 
-            // cashupBindingSource
-            // 
-            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
-            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1489,6 +1489,7 @@
             this.Name = "frmView";
             this.Text = "View Old Sheet";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmView_FormClosing);
+            this.Load += new System.EventHandler(this.frmView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).EndInit();
             this.ResumeLayout(false);

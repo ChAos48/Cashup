@@ -25,18 +25,8 @@ namespace OOP_Cashup
             InitializeComponent();
             log.Debug("frmView Opened");
 
-            using (frmSelect selectFrm = new frmSelect()) {
-                if (selectFrm.ShowDialog() == DialogResult.OK) {
-
-                    ID = selectFrm.ID;
-
-                } else {
-                    log.Warn("Dialog result from frmSelect is not OK");
-                    this.DialogResult = DialogResult.Cancel;
-                    this.Close();
-                }
-            }
-            LoadData(ID);
+            
+            
         }
 
         private void LoadData(string ID) {
@@ -139,6 +129,21 @@ namespace OOP_Cashup
 
         private void button1_Click(object sender, EventArgs e) {
             cu.PrintFromView();
+        }
+
+        private void frmView_Load(object sender, EventArgs e) {
+            using (frmSelect selectFrm = new frmSelect()) {
+                if (selectFrm.ShowDialog() == DialogResult.OK) {
+
+                    ID = selectFrm.ID;
+                    LoadData(ID);
+
+                } else {
+                    log.Warn("Dialog result from frmSelect is not OK");
+                    this.DialogResult = DialogResult.Cancel;
+
+                }
+            }
         }
     }
 }
