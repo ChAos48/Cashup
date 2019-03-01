@@ -32,9 +32,8 @@ namespace OOP_Cashup
 
                 } else {
                     log.Warn("Dialog result from frmSelect is not OK");
-
-                    return;
-
+                    this.DialogResult = DialogResult.Cancel;
+                    this.Close();
                 }
             }
             LoadData(ID);

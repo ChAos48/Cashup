@@ -446,7 +446,6 @@ namespace OOP_Cashup
                     log.Info("viewing Done");
                 } else {
                     log.Info("no item selected.");
-                    MessageBox.Show("no Items selected.");
                 }
             }
         }

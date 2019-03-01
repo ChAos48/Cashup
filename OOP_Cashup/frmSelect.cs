@@ -105,5 +105,10 @@ namespace OOP_Cashup
         private void frmSelect_FormClosing(object sender, FormClosingEventArgs e) {
             log.Debug("closing frmSelect");
         }
+
+        private void btnClose_Click(object sender, EventArgs e) {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
