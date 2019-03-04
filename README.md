@@ -1,8 +1,11 @@
 Cashup is an application I developed to help with the cashup proccess at a retail store in South Africa.
 The way to use it is the following:
 
+<<<<<<< HEAD
 DB_WORK BRANCH!!!
 
+=======
+>>>>>>> master
 1. Count all the money in the Till (counting the number of each denomination)
 2. Enter all the figures in the fields provided in the application.
 3. Select which til you are using (designed for a specific store with 6 Tills and 3 of them can be used as night shift tills)

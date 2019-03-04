@@ -14,11 +14,9 @@ using Microsoft.Reporting.WinForms;
 using System.Drawing.Imaging;
 
 namespace OOP_Cashup
+{
+    public partial class frmMain : Form
     {
-    public partial class frmMain: Form {
-
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         #region Variables
 
@@ -43,6 +41,7 @@ namespace OOP_Cashup
         Decimal skimmed = 0.00M;
         Decimal total = 0.00M;
         #endregion
+
 
         #region drop variables
 
@@ -91,12 +90,12 @@ namespace OOP_Cashup
                 lblRegisterNum.Text = combxRegister.Text;
                 lblRegisterNum1.Text = combxRegister.Text;
                 txtbxFloat1.Text = txtbFloat.Text;
-                lblName0.Text = txtbNameLeft.Text;
-                lblName1.Text = txtbNameLeft.Text;
+                lblName0.Text = txtbxName.Text;
+                lblName1.Text = txtbxName.Text;
                 txtbChequesValue.Text = txtbxCheques.Text;
                 cu.NumChecks = int.Parse(this.txtbNumCheques.Text);
                 cu.ChecksValue = Decimal.Parse(txtbChequesValue.Text);
-               
+
 
                 #region regster update
 
@@ -112,11 +111,8 @@ namespace OOP_Cashup
                 cu.c50Amt = int.Parse(txtb50c.Text);
                 cu.c20Amt = int.Parse(txtb20c.Text);
                 cu.c10Amt = int.Parse(txtb10c.Text);
-                cu.c5Amt = int.Parse(txtb5c.Text);
 
                 Decimal.TryParse(txtbChequesValue.Text, out cheques);
-                Decimal.TryParse(txtbxSkimmed.Text, out skimmed);
-
 
 
                 this.R200Total = (cu.R200Amt * 200);
@@ -130,7 +126,6 @@ namespace OOP_Cashup
                 this.c50Total = (cu.c50Amt * 0.5M);
                 this.c20Total = (cu.c20Amt * 0.2M);
                 this.c10Total = (cu.c10Amt * 0.1M);
-                this.c5Total = (cu.c5Amt * 0.05M);
 
                 txtbTotalR200.Text = this.R200Total.ToString();
                 txtbTotalR100.Text = this.R100Total.ToString();
@@ -143,7 +138,6 @@ namespace OOP_Cashup
                 txtbTotal50c.Text = this.c50Total.ToString();
                 txtbTotal20c.Text = this.c20Total.ToString();
                 txtbTotal10c.Text = this.c10Total.ToString();
-                txtbTotal5c.Text = this.c5Total.ToString();
                 #endregion
 
                 cu.CashFloat = this.cashFloat;
@@ -152,10 +146,9 @@ namespace OOP_Cashup
                 dropTemp = this.drop;
                 this.total = cu.total;
                 txtbxSubTotal.Text = this.subTotal.ToString();
-                txtbxCashDrop.Text = this.drop.ToString();
-                cu.Name = this.txtbNameLeft.Text;
+                txtbDrop.Text = this.drop.ToString();
+                cu.Name = this.txtbxName.Text;
                 cu.TillNum = combxRegister.Text;
-
 
                 #region drop update
 
@@ -170,7 +163,6 @@ namespace OOP_Cashup
                 txtbxc50Drop.Text = cu.c50Drop.ToString();
                 txtbxc20Drop.Text = cu.c20Drop.ToString();
                 txtbxc10Drop.Text = cu.c10Drop.ToString();
-                txtbxc5Drop.Text = cu.c5Drop.ToString();
 
 
                 R200TotalDrop = cu.R200Drop * 200;
@@ -184,7 +176,6 @@ namespace OOP_Cashup
                 c50TotalDrop = cu.c50Drop * 0.5M;
                 c20TotalDrop = cu.c20Drop * 0.2M;
                 c10TotalDrop = cu.c10Drop * 0.1M;
-                c5TotalDrop = cu.c5Drop * 0.05M;
 
                 txtbxR200TotalDrop.Text = this.R200TotalDrop.ToString();
                 txtbxR100TotalDrop.Text = this.R100TotalDrop.ToString();
@@ -197,7 +188,6 @@ namespace OOP_Cashup
                 txtbxc50TotalDrop.Text = this.c50TotalDrop.ToString();
                 txtbxc20TotalDrop.Text = this.c20TotalDrop.ToString();
                 txtbxc10TotalDrop.Text = this.c10TotalDrop.ToString();
-                txtbxc5TotalDrop.Text = this.c5TotalDrop.ToString();
 
                 droppedTotal = R200TotalDrop + R100TotalDrop + R50TotalDrop + R20TotalDrop + R10TotalDrop
                    + R5TotalDrop + R2TotalDrop + R1TotalDrop + c50TotalDrop + c20TotalDrop +
@@ -206,7 +196,16 @@ namespace OOP_Cashup
                 cu.DroppedTotal = droppedTotal;
 
                 txtbTotal_Drop.Text = (droppedTotal + cheques).ToString();
-                cu.DropTotal = droppedTotal + cheques;
+                cu.DropTotal = Decimal.Parse(txtbTotal_Drop.Text.ToString());
+
+                cu.WSSCash = Decimal.Parse(txtbWSSCash.Text);
+                cu.CalcCashDescrepancy();
+                this.txtbCashDescrepancy.Text = cu.CashDiscrepancy.ToString();
+
+                cu.CardBanked = Decimal.Parse(txtbCardBanked.Text);
+                cu.WssCard = Decimal.Parse(txtbCardWSS.Text);
+                cu.CalcCardDescrepancy();
+                this.txtbCardDiscepancy.Text = cu.CardDiscrepancy.ToString();
 
                 #endregion
 
@@ -215,9 +214,9 @@ namespace OOP_Cashup
                     TextBox txt = x as TextBox;
                     if (txt is TextBox) {
                         if (string.IsNullOrEmpty(txt.Text)) {
-                          txt.Text = "0";
-                          txt.Focus();
-                          txt.SelectAll();
+                            txt.Text = "0";
+                            txt.Focus();
+                            txt.SelectAll();
                         }
                     }
                 }
@@ -261,7 +260,6 @@ namespace OOP_Cashup
 
                     cu.Drop();
 
-                    txtbTotal1.Text = this.total.ToString();
                 }
             }
 
@@ -289,20 +287,15 @@ namespace OOP_Cashup
             if (combxRegister.SelectedIndex == 4) {
                 txtbFloat.Text = "5000";
                 this.cashFloat = 5000.00M;
-                log.Info("Till 5 float set to R5000");
-                
             } else if (combxRegister.SelectedIndex == 8 || combxRegister.SelectedIndex == 7) {
                 txtbFloat.Text = "3000";
                 this.cashFloat = 3000.00M;
-                log.Info("Night staff float set to R5000");
             } else if (combxRegister.SelectedIndex == 5) {
                 txtbFloat.Text = "10000";
                 this.cashFloat = 10000.00M;
-                log.Info("Till 6 float set to R1000.00");
             } else {
                 txtbFloat.Text = "3000";
                 this.cashFloat = 3000.00M;
-                log.Info("float set to R3000");
 
             }
             cu.CashFloat = this.cashFloat;
@@ -311,7 +304,7 @@ namespace OOP_Cashup
 
         void btnPrint_Click(object sender, EventArgs e) {
 
-            if (txtbNameLeft.Text == "" || txtbNameLeft.Text == "Name" || txtbNameLeft.Text == null) {
+            if (txtbxName.Text == "" || txtbxName.Text == "Name" || txtbxName.Text == null) {
 
                 MessageBox.Show("Please enter your name befor printing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -322,19 +315,18 @@ namespace OOP_Cashup
                 return;
 
             } else {
-                log.Info("printing");
 
                 cu.btnPrint_Click(sender, e);
                 Clear();
 
             }
-            
+
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
-            
+
             Clear();
-            log.Info("data cleared");
+
         }
 
         /// <summary>
@@ -342,7 +334,6 @@ namespace OOP_Cashup
         /// </summary>
         private void Clear() {
 
-            log.Info("clearing till data.");
             txtbR200.Text = "0";
             txtbR100.Text = "0";
             txtbR50.Text = "0";
@@ -354,14 +345,10 @@ namespace OOP_Cashup
             txtb50c.Text = "0";
             txtb20c.Text = "0";
             txtb10c.Text = "0";
-            txtb5c.Text = "0";
-            txtbxCheques.Text = "0";
-            txtbxSkimmed.Text = "0";
-            txtbTotal1.Text = "0";
 
             ClearDrop();
 
-            txtbNameLeft.Text = "Name";
+            txtbxName.Text = "Name";
             combxRegister.Text = "Register#";
             txtbNumCheques.Text = "0";
 
@@ -375,8 +362,6 @@ namespace OOP_Cashup
         }
 
         private void ClearDrop() {
-
-            log.Info("Clearing Drop data");
             Update();
             txtbxR200Drop.Text = "0";
             txtbxR100Drop.Text = "0";
@@ -388,7 +373,6 @@ namespace OOP_Cashup
             txtbxc50Drop.Text = "0";
             txtbxc20Drop.Text = "0";
             txtbxc10Drop.Text = "0";
-            txtbxc5Drop.Text = "0";
 
             cu.ClearDrop();
 
@@ -416,10 +400,9 @@ namespace OOP_Cashup
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e) {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = (10); // 10 milisecs
+            timer.Interval = (20); // 20 milisecs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
-            log.Debug("update tick started");
 
 
         }
@@ -433,35 +416,6 @@ namespace OOP_Cashup
             Update();
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
-            frmAbout aboutfrm = new frmAbout();
-            if(aboutfrm.ShowDialog() == DialogResult.OK) {
-                return;
-            }
-        }
-
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
-            using(frmView view = new frmView()) {
-                if(view.ShowDialog() == DialogResult.OK) {
-                    log.Info("viewing Done");
-                } else {
-                    log.Info("no item selected.");
-                    view.Dispose();
-                }
-            }
-        }
-
-        private void savePdfToolStripMenuItem_Click(object sender, EventArgs e) {
-            cu.SavePDF();
-        }
-
-        private void printOnlyToolStripMenuItem_Click(object sender, EventArgs e) {
-            cu.PrintOnly();
-        }
-
-        private void saveToDatabaseToolStripMenuItem_Click(object sender, EventArgs e) {
-            cu.SaveToDB();
-        }
     }
 }
 

@@ -121,7 +121,6 @@ namespace OOP_Cashup
             this.txtbxCheques.Text = cu.ChecksValue.ToString();
             this.txtbChequesValue.Text = cu.ChecksValue.ToString();
             this.txtbNumCheques.Text = cu.NumChecks.ToString();
-            this.txtbxSkimmed.Text = cu.skimmed.ToString();
             this.txtbTotal_Drop.Text = (cu.drop + cu.NumChecks).ToString();
             log.Debug("finished loading");
 

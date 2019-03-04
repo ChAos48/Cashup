@@ -35,7 +35,6 @@ namespace OOP_Cashup
         public Decimal c50 { get; set; }
         public Decimal c20 { get; set; }
         public Decimal c10 { get; set; }
-        public Decimal c5 { get; set; }
 
         public int R200Amt { get; set; }
         public int R100Amt { get; set; }
@@ -48,7 +47,6 @@ namespace OOP_Cashup
         public int c50Amt { get; set; }
         public int c20Amt { get; set; }
         public int c10Amt { get; set; }
-        public int c5Amt { get; set; }
 
         #endregion
 
@@ -65,8 +63,7 @@ namespace OOP_Cashup
         public int c50Drop { get; set; }
         public int c20Drop { get; set; }
         public int c10Drop { get; set; }
-        public int c5Drop { get; set; }
-
+        
         private Decimal r200DropTotal;
         private Decimal r100DropTotal;
         private Decimal r50DropTotal;
@@ -78,7 +75,6 @@ namespace OOP_Cashup
         private Decimal C50DropTotal;
         private Decimal C20DropTotal;
         private Decimal C10DropTotal;
-        private Decimal C5DropTotal;
 
         public Decimal R200DropTotal { get { return R200Drop * 200.00M; } set { r200DropTotal = value; } }
         public Decimal R100DropTotal { get { return R100Drop * 100.00M; } set { r100DropTotal = value; } }
@@ -91,7 +87,6 @@ namespace OOP_Cashup
         public Decimal c50DropTotal { get { return c50Drop * 0.50M; } set { C50DropTotal = value; } }
         public Decimal c20DropTotal { get { return c20Drop * 0.20M; } set { C20DropTotal = value; } }
         public Decimal c10DropTotal { get { return c10Drop * 0.10M; } set { C10DropTotal = value; } }
-        public Decimal c5DropTotal { get { return c5Drop * 0.05M; } set { C5DropTotal = value; } }
 
         public Decimal drop { get; set; }
         private Decimal dropTemp;
@@ -103,8 +98,6 @@ namespace OOP_Cashup
 
         private Decimal Total;
         public Decimal total { get { return Total; } }
-
-        public Decimal skimmed { set; get; }
 
         public Decimal subTotal { get; set; }
 
@@ -136,6 +129,30 @@ namespace OOP_Cashup
             }
         }
 
+        private Decimal dropAndCheques;
+        public Decimal DropAndCheques {
+            get { return dropAndCheques; }
+            set { dropAndCheques = value; }
+        }
+
+        #region discepancy variables
+
+        private Decimal wssCash;
+        private Decimal cashDiscrepancy;
+
+        public Decimal WSSCash { get { return WssCard; } set { wssCash = value; } }
+        public Decimal CashDiscrepancy { get { return cashDiscrepancy; } }
+
+        public Decimal CardBanked { get => cardBanked; set => cardBanked = value; }
+        public Decimal WssCard { get => wssCard; set => wssCard = value; }
+        public Decimal CardDiscrepancy { get => cardDiscrepancy; }
+
+        private Decimal cardBanked;
+        private Decimal wssCard;
+        private Decimal cardDiscrepancy;
+
+        #endregion
+
         #endregion
 
         /// <summary>
@@ -157,7 +174,6 @@ namespace OOP_Cashup
             c50Amt = 0;
             c20Amt = 0;
             c10Amt = 0;
-            c5Amt = 0;
 
             R200 = R200Amt * 200.00m;
             R100 = R100Amt * 100.00m;
@@ -170,7 +186,6 @@ namespace OOP_Cashup
             c50 = c50Amt * 0.50m;
             c20 = c20Amt * 0.20m;
             c10 = c10Amt * 0.10m;
-            c5 = c5Amt * 0.05m;
 
             R200Drop = 0;
             R100Drop = 0;
@@ -183,19 +198,24 @@ namespace OOP_Cashup
             c50Drop = 0;
             c20Drop = 0;
             c10Drop = 0;
-            c5Drop = 0;
 
             subTotal = R200 + R100 + R50 + R20 + R10 + R5 + R2 +
-                R1 + c50 + c20 + c10 + c5;
+                R1 + c50 + c20 + c10;
 
-            drop = subTotal - cashFloat + skimmed;
+            drop = subTotal - cashFloat;
             dropTemp = drop;
 
             Total = subTotal - drop;
             this.droppedTotal = 0.00M;
             correction = 0.0M;
-
+            
             log.Debug("cashup object created. with default constructor.");
+            cardBanked = 0.0M;
+            cardDiscrepancy = 0.0M;
+            wssCard = 0.0M;
+
+            wssCash = 0.0M;
+            cashDiscrepancy = 0.0M;
         }
 
         /// <summary>
@@ -212,11 +232,10 @@ namespace OOP_Cashup
         /// <param name="amt50c"></param>
         /// <param name="amt20c"></param>
         /// <param name="amt10c"></param>
-        /// <param name="amt5c"></param>
         /// <param name="DroppedTotal"></param>
         /// <param name="Register"></param>
         public Cashup(int amt200, int amt100, int amt50, int amt20, int amt10, int amt5,
-            int amt2, int amt1, int amt50c, int amt20c, int amt10c, int amt5c, Decimal DroppedTotal,
+            int amt2, int amt1, int amt50c, int amt20c, int amt10c, Decimal DroppedTotal,
             string Register) {
             On_Cashup_Load(this, null);
 
@@ -235,7 +254,6 @@ namespace OOP_Cashup
             c50Amt = amt50c;
             c20Amt = amt20c;
             c10Amt = amt10c;
-            c5Amt = amt5c;
 
             R200 = R200Amt * 200.00m;
             R100 = R100Amt * 100.00m;
@@ -248,12 +266,11 @@ namespace OOP_Cashup
             c50 = c50Amt * 0.50m;
             c20 = c20Amt * 0.20m;
             c10 = c10Amt * 0.10m;
-            c5 = c5Amt * 0.05m;
 
             subTotal = R200 + R100 + R50 + R20 + R10 + R5 + R2 +
-                 R1 + c50 + c20 + c10 + c5;
+                 R1 + c50 + c20 + c10;
 
-            drop = subTotal - cashFloat + skimmed;
+            drop = subTotal - cashFloat;
             dropTemp = drop;
 
             Total = subTotal - drop;
@@ -261,8 +278,14 @@ namespace OOP_Cashup
             this.dropTotal = DroppedTotal + ChecksValue;
 
             tillNum = Register;
-
+            
             log.Debug("cashup object created using constructor 1(value initiation)");
+            cardBanked = 0.0M;
+            cardDiscrepancy = 0.0M;
+            wssCard = 0.0M;
+
+            wssCash = 0.0M;
+            cashDiscrepancy = 0.0M;
 
         }
 
@@ -286,7 +309,6 @@ namespace OOP_Cashup
             c50Amt = 0;
             c20Amt = 0;
             c10Amt = 0;
-            c5Amt = 0;
 
             R200 = R200Amt * 200.00m;
             R100 = R100Amt * 100.00m;
@@ -299,7 +321,6 @@ namespace OOP_Cashup
             c50 = c50Amt * 0.50m;
             c20 = c20Amt * 0.20m;
             c10 = c10Amt * 0.10m;
-            c5 = c5Amt * 0.05m;
 
             R200Drop = 0;
             R100Drop = 0;
@@ -312,18 +333,24 @@ namespace OOP_Cashup
             c50Drop = 0;
             c20Drop = 0;
             c10Drop = 0;
-            c5Drop = 0;
 
             subTotal = R200 + R100 + R50 + R20 + R10 + R5 + R2 +
-                R1 + c50 + c20 + c10 + c5;
+                R1 + c50 + c20 + c10;
 
-            drop = subTotal - cashFloat + skimmed;
+            drop = subTotal - cashFloat;
             dropTemp = drop;
             this.droppedTotal = DroppedTotal;
 
             Total = subTotal - drop;
             tillNum = Register;
             log.Debug("cashup object created using constructor 1(drop total and register number)");
+
+            cardBanked = 0.0M;
+            cardDiscrepancy = 0.0M;
+            wssCard = 0.0M;
+
+            wssCash = 0.0M;
+            cashDiscrepancy = 0.0M;
         }
 
         //Summary Drop Calculation
@@ -332,6 +359,7 @@ namespace OOP_Cashup
         //
         private int Drop(decimal amt, int dropAmt, int actualAmt, ref bool flagerror) {
             log.Debug("dropping R" + amt);
+            
             while ((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
                 dropAmt++;
                 dropTemp -= amt;
@@ -365,7 +393,6 @@ namespace OOP_Cashup
                 c50Drop = Drop(0.50M, c50Drop, c50Amt, ref errorFlag);
                 c20Drop = Drop(0.20M, c20Drop, c20Amt, ref errorFlag);
                 c10Drop = Drop(0.10M, c10Drop, c10Amt, ref errorFlag);
-                c5Drop = Drop(0.05M, c5Drop, c5Amt, ref errorFlag);
                 if (errorFlag) {
                     MessageBox.Show("Error trying to drop something when its not available.", "Manual Intervention Required");
                     log.Error("error dropping");
@@ -393,18 +420,20 @@ namespace OOP_Cashup
             c50 = c50Amt * 0.50m;
             c20 = c20Amt * 0.20m;
             c10 = c10Amt * 0.10m;
-            c5 = c5Amt * 0.05m;
 
             subTotal = R200 + R100 + R50 + R20 + R10 + R5 + R2 +
-                R1 + c50 + c20 + c10 + c5;
+                R1 + c50 + c20 + c10;
 
-            drop = subTotal - cashFloat + skimmed;
+            drop = subTotal - cashFloat;
             dropTemp = drop;
 
             this.Total = subTotal - drop;
             this.droppedTotal = R200Drop * 200 + R100Drop * 100 + R50Drop * 50 + R20Drop * 20 + R10Drop * 10 +
                 R5Drop * 5 + R2Drop * 2 +
-                R1Drop * 1 + c50Drop * 0.50M + c20Drop * 0.2M + c10Drop * 0.1M + c5Drop * 0.05M;
+                R1Drop * 1 + c50Drop * 0.50M + c20Drop * 0.2M + c10Drop * 0.1M;
+
+            dropAndCheques = drop + ChecksValue;
+
             Thread.Sleep(0);
         }
 
@@ -415,7 +444,7 @@ namespace OOP_Cashup
         /// <param name="e"></param>
         private void On_Cashup_Load(object sender, EventArgs e) {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = (20); // 20 milisecs
+            timer.Interval = (10); // 20 milisecs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
             log.Debug("cashup object timer started");
@@ -489,11 +518,12 @@ namespace OOP_Cashup
             m_streams.Add(stream);
             return stream;
         }
-
+        
         /// <summary>
         /// Export the given report as an EMF (Enhanced Metafile) file.
         /// </summary>
         /// <param name="report"></param>
+        /// 
         private void Export(LocalReport report) {
             log.Debug("exporting data to EMF file for printing");
             string deviceInfo =
@@ -508,8 +538,15 @@ namespace OOP_Cashup
             </DeviceInfo>";
             Warning[] warnings;
             m_streams = new List<Stream>();
-            report.Render("Image", deviceInfo, CreateStream,
-               out warnings);
+            try {
+                report.Render("Image", deviceInfo, CreateStream,
+                   out warnings);
+            }catch (Exception ex) {
+                Console.WriteLine("could not render" + ex.ToString());
+                //foreach (Warning warn in warnings) {
+
+                //}
+            }
             foreach (Stream stream in m_streams)
                 stream.Position = 0;
         }
@@ -614,7 +651,6 @@ namespace OOP_Cashup
             this.c50Amt = 0;
             this.c20Amt = 0;
             this.c10Amt = 0;
-            this.c5Amt = 0;
 
             R200Drop = 0;
             R100Drop = 0;
@@ -627,7 +663,6 @@ namespace OOP_Cashup
             c50Drop = 0;
             c20Drop = 0;
             c10Drop = 0;
-            c5Drop = 0;
             log.Debug("drop data cleared.");
         }
 
@@ -647,11 +682,11 @@ namespace OOP_Cashup
 
                 string query = string.Format(@"INSERT INTO `Cashup_test`.`Cashup_data`(`cashup_TillNum`, `cashup_CashierName`,`cashup_Date`, `cashup_float`,`cashup_R200Value`,`cashup_R100Value`, `cashup_R50Value`,`cashup_R20Value`,`cashup_R10Value`, `cashup_R5Value`,`cashup_R2Value`, `cashup_R1Value`,`cashup_50cValue`, `cashup_20cValue`, `cashup_10cValue`,`cashup_5cValue`, `cashup_R200Amount`, `cashup_R100Amount`, `cashup_R50Amount`, `cashup_R20Amount`,`cashup_R10Amount`, `cashup_R5Amount`, `cashup_R2Amount`, `cashup_R1Amount`, `cashup_50cAmount`,`cashup_20cAmount`, `cashup_10cAmount`, `cashup_5cAmount`, `cashup_R200DropValue`,`cashup_R100DropValue`, `cashup_R50DropValue`, `cashup_R20DropValue`, `cashup_R10DropValue`,`cashup_R5DropValue`, `cashup_R2DropValue`, `cashup_R1DropValue`, `cashup_50cDropValue`, `cashup_20cDropValue`, `cashup_10cDropValue`, `cashup_5cDropValue`, `cashup_R200DropAmount`, `cashup_R100DropAmount`, `cashup_R50DropAmount`, `cashup_R20DropAmount`, `cashup_R10DropAmount`, `cashup_R5DropAmount`, `cashup_R2DropAmount`, `cashup_R1DropAmount`, `cashup_50cDropAmount`,`cashup_20cDropAmount`, `cashup_10cDropAmount`, `cashup_5cDropAmount`, `cashup_NumCheques`,`cashup_ChequesValue`)VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22},{23},{24},{25},{26},{27},{28},{29},{30},{31},{32},{33},{34},{35},{36},{37},{38},{39},{40},{41},{42},{43},{44},{45},{46},{47},{48},{49},{50},{51},{52},{53});",
 tillNum.Replace("Register #", ""), "\"" + name + "\"", "\"" + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + "\"", cashFloat, R200, R100, R50, R20, R10, R5,
-R2, R1, c50, c20, c10, c5, R200Amt, R100Amt, R50Amt, R20Amt, R10Amt, R5Amt, R2Amt, R1Amt, c50Amt,
-c20Amt, c10Amt, c5Amt, R200DropTotal, R100DropTotal, R50DropTotal, R20DropTotal, R10DropTotal,
-R5DropTotal, R2DropTotal, R1DropTotal, c50DropTotal, c20DropTotal, c10DropTotal, c5DropTotal,
+R2, R1, c50, c20, c10, 0, R200Amt, R100Amt, R50Amt, R20Amt, R10Amt, R5Amt, R2Amt, R1Amt, c50Amt,
+c20Amt, c10Amt, 0.00m, R200DropTotal, R100DropTotal, R50DropTotal, R20DropTotal, R10DropTotal,
+R5DropTotal, R2DropTotal, R1DropTotal, c50DropTotal, c20DropTotal, c10DropTotal, 0,
 R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop, c50Drop, c20Drop, c10Drop,
-c5Drop, NumChecks, ChecksValue);
+0.00m, NumChecks, ChecksValue);
 
                 log.Debug("sql Query: " + query);
                 OdbcCommand cmd = new OdbcCommand(query, con);
@@ -668,7 +703,7 @@ c5Drop, NumChecks, ChecksValue);
 
             }
         }
-
+        
         public bool LoadFromDB(string ID) {
 
             using (OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {
@@ -698,7 +733,6 @@ c5Drop, NumChecks, ChecksValue);
                         this.c50Amt = int.Parse(rdr["cashup_50cAmount"].ToString());
                         this.c20Amt = int.Parse(rdr["cashup_20cAmount"].ToString());
                         this.c10Amt = int.Parse(rdr["cashup_10cAmount"].ToString());
-                        this.c5Amt = int.Parse(rdr["cashup_5cAmount"].ToString());
 
                         this.CashFloat = decimal.Parse(rdr["cashup_float"].ToString());
                         this.TillNum = "Register #" + rdr["cashup_TillNum"].ToString();
@@ -743,6 +777,17 @@ c5Drop, NumChecks, ChecksValue);
             Export(rv.LocalReport);
             printPdf(rv.LocalReport);
             Print();
+        }
+
+        public void CalcCashDescrepancy() {
+            cashDiscrepancy = this.drop - this.wssCash;
+            Thread.Sleep(0);
+
+        }
+
+        public void CalcCardDescrepancy() {
+            this.cardDiscrepancy = cardBanked - wssCard;
+            Thread.Sleep(0);
         }
     }
 }
