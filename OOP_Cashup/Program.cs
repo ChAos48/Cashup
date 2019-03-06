@@ -10,42 +10,52 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Xml;
+using Hounds;
+using System.Globalization;
 
-namespace OOP_Cashup {
-    static class Program {
+namespace OOP_Cashup
+{
+    static class Program
+    {
+
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            #region Log code(changes Console.write line to write to file)
-            if (!Directory.Exists(@"./Logs")) {
-                Directory.CreateDirectory(@"./Logs");
-                Console.WriteLine(DateTime.Now + ": Created Log dir.");
-            }
 
-            FileStream ostrm;
-            StreamWriter writer;
-            TextWriter oldOut = Console.Out;
-            try {
-                string logFile = Environment.CurrentDirectory  + "\\Logs\\" + DateTime.Now.ToFileTime().ToString() + ".log";
-                ostrm = new FileStream(logFile, FileMode.OpenOrCreate, FileAccess.Write);
-                writer = new StreamWriter(ostrm);
-            } catch (Exception e) {
-                Console.WriteLine(DateTime.Now +": Cannot open log file for writing");
-                Console.WriteLine(e.Message);
-                return;
-            }
+            log.Info("Started application");
+            LoadSettings();
+            #region old Log code(changes Console.write line to write to file)
+            //if (!Directory.Exists(@"./Logs")) {
+            //    Directory.CreateDirectory(@"./Logs");
+            //    Console.WriteLine(DateTime.Now + ": Created Log dir.");
+            //}
 
-            Console.SetOut(writer);
-#endregion
-            Console.WriteLine("{0}: Started application", DateTime.Now.ToString());
+            //FileStream ostrm;
+            //StreamWriter writer;
+            //TextWriter oldOut = Console.Out;
+            //try {
+            //    string logFile = Environment.CurrentDirectory  + "\\Logs\\" + DateTime.Now.ToFileTime().ToString() + ".log";
+            //    ostrm = new FileStream(logFile, FileMode.OpenOrCreate, FileAccess.Write);
+            //    writer = new StreamWriter(ostrm);
+            //} catch (Exception e) {
+            //    Console.WriteLine(DateTime.Now +": Cannot open log file for writing");
+            //    Console.WriteLine(e.Message);
+            //    return;
+            //}
+
+            //Console.SetOut(writer);
+            #endregion
 
 #if DEBUG
-            Console.WriteLine("in debug mode skipping update");
+            log.Debug("in debug mode skipping update");
             goto skipupdate;
 
 #endif
@@ -54,21 +64,21 @@ namespace OOP_Cashup {
             string online_hash = GetOnlineHash(tFile);
             string local_hash = GetHash();
 
-            Console.WriteLine(DateTime.Now + ": Online Hash = " + online_hash);
-            Console.WriteLine(DateTime.Now + ": Online Hash = " + local_hash);
+            log.Debug("Online Hash = " + online_hash);
+            log.Debug("Online Hash = " + local_hash);
 
             var temp = online_hash == local_hash;
-//#if DEBUG
-//            temp = true;
-//            goto skipupdate;
-//#endif
+            //#if DEBUG
+            //            temp = true;
+            //            goto skipupdate;
+            //#endif
             if (temp) {
 
-                Console.WriteLine(DateTime.Now + ": no update required");
+                log.Info("no update required");
 
-            } else if(canPing()) {
+            } else if (canPing()) {
 
-                Console.WriteLine(DateTime.Now + ": Update Required");
+                log.Info("Update Required");
                 Process proc = new Process();
                 proc.StartInfo.FileName = Path.Combine(Path.GetDirectoryName(
                     Assembly.GetExecutingAssembly().Location), "Cashup Updater.exe");
@@ -78,22 +88,19 @@ namespace OOP_Cashup {
                 Application.Exit();
 
             } else {
-                Console.WriteLine("cannot contact Protea.dedicated.co.za skipping up");
+                log.Warn("cannot contact Protea.dedicated.co.za skipping update");
                 goto skipupdate;
             }
             string hashAfterUpdate = GetHash();
-            Console.WriteLine(DateTime.Now + ": New Local Hash = " + hashAfterUpdate);
+            log.Debug("New Local Hash = " + hashAfterUpdate);
             goto skipupdate;
 
             skipupdate:
-            Application.Run(new Form1());
+            Application.Run(new frmMain());
             goto Finish;
 
             Finish:
-            Console.SetOut(oldOut);
-            writer.Close();
-            ostrm.Close();
-            Console.WriteLine("Done");
+            log.Info("Done");
 
         }
 
@@ -160,5 +167,34 @@ namespace OOP_Cashup {
             }
         }
 
+        static void LoadSettings() {
+            
+            if (File.Exists("./Settings.cfg")) {
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load("./Settings.cfg");
+                XmlNodeList LocalSettings = xDoc.GetElementsByTagName("settings");
+
+                var server = Encryption.Decrypt(LocalSettings[0].ChildNodes[0].InnerText);
+                var Username = Encryption.Decrypt(LocalSettings[0].ChildNodes[1].InnerText);
+                var Password = Encryption.Decrypt(LocalSettings[0].ChildNodes[2].InnerText);
+                var dbName = Encryption.Decrypt(LocalSettings[0].ChildNodes[3].InnerText);
+                var _driver = LocalSettings[0].ChildNodes[4].InnerText;
+
+                var DriverProvider = String.Format("Driver={0};provider=ODBC", _driver);
+                string ConString = string.Format(CultureInfo.InvariantCulture, "{4};server={0};port=3306;option=67108864;database={3};uid={1};pwd={2};", server, Username, Password, dbName, DriverProvider);
+                RuntimeSettings.conString = ConString;
+                RuntimeSettings.dbName = dbName;
+
+            } else if (!File.Exists("./Settings.cfg")) {
+
+                frmSettings settings = new frmSettings();
+
+                if (DialogResult.OK == settings.ShowDialog()) {
+
+                    LoadSettings();
+
+                }
+            }
+        }
     }
 }

@@ -209,6 +209,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -2591,6 +2592,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4029,6 +4031,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4210,6 +4213,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4222,6 +4226,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4234,6 +4239,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4276,6 +4282,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4332,6 +4339,7 @@
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
         </Style>
       </Line>
@@ -4451,6 +4459,19 @@
           </Border>
         </Style>
       </Line>
+      <Line Name="Line10_">
+        <Top>15.11689cm</Top>
+        <Left>0cm</Left>
+        <Height>0cm</Height>
+        <Width>9.05849cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </Border>
+        </Style>
+      </Line>
       <Textbox Name="Textbox46">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -4470,7 +4491,7 @@
         <Left>13.86098cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>36</ZIndex>
+        <ZIndex>37</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4511,7 +4532,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Cahsup">
+    <DataSet Name="Cashup">
       <Query>
         <DataSourceName>OOP_Cashup</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -4549,10 +4570,6 @@
           <DataField>c20DropTotal</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="c5">
-          <DataField>c5</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="c50">
           <DataField>c50</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -4567,18 +4584,6 @@
         </Field>
         <Field Name="c50DropTotal">
           <DataField>c50DropTotal</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="c5Amt">
-          <DataField>c5Amt</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="c5Drop">
-          <DataField>c5Drop</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="c5DropTotal">
-          <DataField>c5DropTotal</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="CardBanked">
@@ -4607,7 +4612,7 @@
         </Field>
         <Field Name="Date">
           <DataField>Date</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="drop">
           <DataField>drop</DataField>
@@ -4761,10 +4766,6 @@
           <DataField>R5DropTotal</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="skimmed">
-          <DataField>skimmed</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="subTotal">
           <DataField>subTotal</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -4789,7 +4790,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>OOP_Cashup</rd:DataSetName>
         <rd:TableName>Cashup</rd:TableName>
-        <rd:ObjectDataSourceType>OOP_Cashup.Cashup, Cashup, Version=1.0.6.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>OOP_Cashup.Cashup, Cashup, Version=2.0.5.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

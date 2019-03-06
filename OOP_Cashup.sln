@@ -9,7 +9,13 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CashUp Installer", "CashUp 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashup Updater", "Application Updater\Cashup Updater.csproj", "{98828135-9AA6-42B4-AF92-9190BBC5BDC5}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Hounds", "Hounds\Hounds.shproj", "{9086A788-4947-453E-8C40-0766D199BF17}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Hounds\Hounds.projitems*{2750256e-b4c3-4e47-9c81-e3e9be050411}*SharedItemsImports = 4
+		Hounds\Hounds.projitems*{9086a788-4947-453e-8c40-0766d199bf17}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -54,7 +60,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {281BEB84-58B4-49E7-9C4B-3C852F1BF0AB}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal
