@@ -24,9 +24,6 @@ namespace OOP_Cashup
         public frmView() {
             InitializeComponent();
             log.Debug("frmView Opened");
-
-            
-            
         }
 
         private void LoadData(string ID) {
@@ -122,6 +119,7 @@ namespace OOP_Cashup
             this.txtbChequesValue.Text = cu.ChecksValue.ToString();
             this.txtbNumCheques.Text = cu.NumChecks.ToString();
             this.txtbTotal_Drop.Text = (cu.drop + cu.NumChecks).ToString();
+            
             log.Debug("finished loading");
 
         }

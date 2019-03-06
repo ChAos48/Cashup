@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbNameTop = new System.Windows.Forms.TextBox();
-            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtbFloatTop = new System.Windows.Forms.TextBox();
             this.dtpTop = new System.Windows.Forms.DateTimePicker();
             this.txtbRegisterLeft = new System.Windows.Forms.TextBox();
@@ -45,8 +44,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtpLeft = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtbxSkimmed = new System.Windows.Forms.TextBox();
-            this.lblSkimmed = new System.Windows.Forms.Label();
             this.txtbxCheques = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtbxSubTotal = new System.Windows.Forms.TextBox();
@@ -145,6 +142,17 @@
             this.txtbTotal50c = new System.Windows.Forms.TextBox();
             this.txtbTotal20c = new System.Windows.Forms.TextBox();
             this.txtbTotal10c = new System.Windows.Forms.TextBox();
+            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtbxWSSCash = new System.Windows.Forms.TextBox();
+            this.txtbCashDiscrepancy = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -214,10 +222,6 @@
             this.txtbNameTop.Size = new System.Drawing.Size(156, 20);
             this.txtbNameTop.TabIndex = 8;
             this.txtbNameTop.Text = "Name";
-            // 
-            // cashupBindingSource
-            // 
-            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
             // 
             // txtbFloatTop
             // 
@@ -312,32 +316,11 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Denomination";
             // 
-            // txtbxSkimmed
-            // 
-            this.txtbxSkimmed.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "skimmed", true));
-            this.txtbxSkimmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxSkimmed.Location = new System.Drawing.Point(174, 594);
-            this.txtbxSkimmed.Name = "txtbxSkimmed";
-            this.txtbxSkimmed.ReadOnly = true;
-            this.txtbxSkimmed.Size = new System.Drawing.Size(100, 23);
-            this.txtbxSkimmed.TabIndex = 129;
-            this.txtbxSkimmed.Text = "0.00";
-            // 
-            // lblSkimmed
-            // 
-            this.lblSkimmed.AutoSize = true;
-            this.lblSkimmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkimmed.Location = new System.Drawing.Point(16, 597);
-            this.lblSkimmed.Name = "lblSkimmed";
-            this.lblSkimmed.Size = new System.Drawing.Size(72, 17);
-            this.lblSkimmed.TabIndex = 128;
-            this.lblSkimmed.Text = "Skimmed";
-            // 
             // txtbxCheques
             // 
             this.txtbxCheques.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "ChecksValue", true));
             this.txtbxCheques.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxCheques.Location = new System.Drawing.Point(175, 568);
+            this.txtbxCheques.Location = new System.Drawing.Point(176, 698);
             this.txtbxCheques.Name = "txtbxCheques";
             this.txtbxCheques.ReadOnly = true;
             this.txtbxCheques.Size = new System.Drawing.Size(100, 23);
@@ -348,7 +331,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 571);
+            this.label10.Location = new System.Drawing.Point(17, 701);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 17);
             this.label10.TabIndex = 126;
@@ -1051,7 +1034,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(5, 648);
+            this.button1.Location = new System.Drawing.Point(5, 725);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(270, 28);
             this.button1.TabIndex = 183;
@@ -1062,7 +1045,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(6, 682);
+            this.btnClose.Location = new System.Drawing.Point(6, 759);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(270, 28);
             this.btnClose.TabIndex = 184;
@@ -1120,7 +1103,7 @@
             this.lineShape3,
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(589, 718);
+            this.shapeContainer1.Size = new System.Drawing.Size(589, 791);
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
@@ -1367,11 +1350,122 @@
             this.txtbTotal10c.TabIndex = 120;
             this.txtbTotal10c.Text = "0.00";
             // 
+            // cashupBindingSource
+            // 
+            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 573);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 13);
+            this.label12.TabIndex = 185;
+            this.label12.Text = "WSS Cash";
+            // 
+            // txtbxWSSCash
+            // 
+            this.txtbxWSSCash.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10", true));
+            this.txtbxWSSCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxWSSCash.Location = new System.Drawing.Point(176, 568);
+            this.txtbxWSSCash.Name = "txtbxWSSCash";
+            this.txtbxWSSCash.ReadOnly = true;
+            this.txtbxWSSCash.Size = new System.Drawing.Size(100, 23);
+            this.txtbxWSSCash.TabIndex = 186;
+            this.txtbxWSSCash.Text = "0.00";
+            // 
+            // txtbCashDiscrepancy
+            // 
+            this.txtbCashDiscrepancy.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10", true));
+            this.txtbCashDiscrepancy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbCashDiscrepancy.Location = new System.Drawing.Point(176, 593);
+            this.txtbCashDiscrepancy.Name = "txtbCashDiscrepancy";
+            this.txtbCashDiscrepancy.ReadOnly = true;
+            this.txtbCashDiscrepancy.Size = new System.Drawing.Size(100, 23);
+            this.txtbCashDiscrepancy.TabIndex = 188;
+            this.txtbCashDiscrepancy.Text = "0.00";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(19, 598);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(93, 13);
+            this.label31.TabIndex = 187;
+            this.label31.Text = "Cash Discrepancy";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(19, 624);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(69, 13);
+            this.label32.TabIndex = 187;
+            this.label32.Text = "Card Banked";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(176, 619);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(100, 23);
+            this.textBox2.TabIndex = 188;
+            this.textBox2.Text = "0.00";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(19, 650);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(57, 13);
+            this.label33.TabIndex = 187;
+            this.label33.Text = "WSS Card";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(176, 645);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(100, 23);
+            this.textBox3.TabIndex = 188;
+            this.textBox3.Text = "0.00";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(19, 676);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(91, 13);
+            this.label34.TabIndex = 187;
+            this.label34.Text = "Card Discrepancy";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(176, 671);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(100, 23);
+            this.textBox4.TabIndex = 188;
+            this.textBox4.Text = "0.00";
+            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 718);
+            this.ClientSize = new System.Drawing.Size(589, 791);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.txtbCashDiscrepancy);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.txtbxWSSCash);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtbTotal_Drop);
@@ -1424,8 +1518,6 @@
             this.Controls.Add(this.txtbxR100Drop);
             this.Controls.Add(this.txtbxR200Drop);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.txtbxSkimmed);
-            this.Controls.Add(this.lblSkimmed);
             this.Controls.Add(this.txtbxCheques);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtbxSubTotal);
@@ -1516,8 +1608,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpLeft;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtbxSkimmed;
-        private System.Windows.Forms.Label lblSkimmed;
         private System.Windows.Forms.TextBox txtbxCheques;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtbxSubTotal;
@@ -1617,5 +1707,15 @@
         private System.Windows.Forms.TextBox txtbTotal50c;
         private System.Windows.Forms.TextBox txtbTotal20c;
         private System.Windows.Forms.TextBox txtbTotal10c;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtbxWSSCash;
+        private System.Windows.Forms.TextBox txtbCashDiscrepancy;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

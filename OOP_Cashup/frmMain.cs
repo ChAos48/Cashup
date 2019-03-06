@@ -17,6 +17,8 @@ namespace OOP_Cashup
 {
     public partial class frmMain : Form
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         #region Variables
 
@@ -416,6 +418,29 @@ namespace OOP_Cashup
             Update();
         }
 
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
+            frmView ViewForm = new frmView();
+            if (ViewForm.ShowDialog() == DialogResult.OK) {
+                log.Info("from view ok");
+            } else {
+                log.Debug("form view clsoed(dialog result not ok)");
+            }
+        }
+
+        private void printPDFToolStripMenuItem_Click(object sender, EventArgs e) {
+            cu.SavePDF();
+            cu.SaveToDB();
+            btnClear_Click(sender, e);
+        }
+
+        private void saveToDBOnlyToolStripMenuItem_Click(object sender, EventArgs e) {
+            cu.SaveToDB();
+            btnClear_Click(sender, e);
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e) {
+            btnPrint_Click(sender, e);
+        }
     }
 }
 

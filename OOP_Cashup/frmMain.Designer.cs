@@ -144,6 +144,13 @@
             this.txtbCardBanked = new System.Windows.Forms.TextBox();
             this.txtbCardWSS = new System.Windows.Forms.TextBox();
             this.txtbCardDiscepancy = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToDBOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtbR200
@@ -1314,7 +1321,56 @@
             this.txtbCardDiscepancy.TabIndex = 141;
             this.txtbCardDiscepancy.Text = "0.00";
             // 
-            // Form1
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(823, 24);
+            this.menuStrip1.TabIndex = 142;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
+            this.printPDFToolStripMenuItem,
+            this.saveToDBOnlyToolStripMenuItem,
+            this.printToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // printPDFToolStripMenuItem
+            // 
+            this.printPDFToolStripMenuItem.Name = "printPDFToolStripMenuItem";
+            this.printPDFToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.printPDFToolStripMenuItem.Text = "Print PDF";
+            this.printPDFToolStripMenuItem.Click += new System.EventHandler(this.printPDFToolStripMenuItem_Click);
+            // 
+            // saveToDBOnlyToolStripMenuItem
+            // 
+            this.saveToDBOnlyToolStripMenuItem.Name = "saveToDBOnlyToolStripMenuItem";
+            this.saveToDBOnlyToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.saveToDBOnlyToolStripMenuItem.Text = "Save to DB Only";
+            this.saveToDBOnlyToolStripMenuItem.Click += new System.EventHandler(this.saveToDBOnlyToolStripMenuItem_Click);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
+            // 
+            // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
@@ -1437,13 +1493,17 @@
             this.Controls.Add(this.lblR100);
             this.Controls.Add(this.lblR200);
             this.Controls.Add(this.txtbR200);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(780, 726);
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CashUp";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1571,6 +1631,12 @@
         private System.Windows.Forms.TextBox txtbCardBanked;
         private System.Windows.Forms.TextBox txtbCardWSS;
         private System.Windows.Forms.TextBox txtbCardDiscepancy;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printPDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToDBOnlyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
     }
 }
 
