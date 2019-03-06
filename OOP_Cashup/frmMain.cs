@@ -441,6 +441,13 @@ namespace OOP_Cashup
         private void printToolStripMenuItem_Click(object sender, EventArgs e) {
             btnPrint_Click(sender, e);
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+            frmAbout about = new frmAbout();
+            if(about.ShowDialog() == DialogResult.OK) {
+                log.Info("about form closed");
+            }
+        }
     }
 }
 

@@ -1,0 +1,452 @@
+git log
+commit bf79b96b60ba55b204d1a40bd2544a28000da678
+Merge: b6617cb d93b4cc
+Author: ChAos <chaos7197@gmail.com>
+Date:   Wed Mar 6 14:59:37 2019 +0200
+
+    Merge pull request #8 from ChAos48/DB_work
+    
+    Db work
+
+commit d93b4ccabe1b9db43efa6c3a00d63127830658e9
+Author: Joshua <chaos7197@gmail.com>
+Date:   Wed Mar 6 14:40:40 2019 +0200
+
+    + added discrepancy things to the DB
+    * fixed an issue with the report that popped up
+
+commit 74fb1cc65e4eee47527e845dff6fb857fc2249d9
+Merge: a04f1bf b6617cb
+Author: Joshua <chaos7197@gmail.com>
+Date:   Mon Mar 4 10:28:24 2019 +0200
+
+    Merge branch 'master' into DB_work
+    added new functionality to the program, and fixed some issues with the
+    previous version
+    upgrade to 2.0
+
+commit a04f1bfdb12a96b0b83a5f20b41785922230c9db
+Author: Joshua <chaos7197@gmail.com>
+Date:   Fri Mar 1 18:48:57 2019 +0200
+
+    + added cancel button on select form
+    * fixed view form still showing if cancel is clicked on the select form
+
+commit 00bce9b4a6b56140f2401050f83ded77624daf8f
+Author: Joshua <chaos7197@gmail.com>
+Date:   Fri Mar 1 18:12:15 2019 +0200
+
+    - removed annoying message again.
+
+commit bf26dc77a9ed73f64b5b96d02134d173254ccf38
+Author: Joshua <chaos7197@gmail.com>
+Date:   Thu Feb 28 20:44:56 2019 +0200
+
+    - removed annoying message when closing view form.
+
+commit cb7ca8b13e85dec70fac418efe84d81f3c40ef4e
+Author: Joshua <chaos7197@gmail.com>
+Date:   Thu Feb 28 20:33:44 2019 +0200
+
+    + finished the load from DB
+    + added functionality for print on the frmView
+    * canged all instances of date in cashup to DateTime
+
+commit f2fa82a507854051cb9472fd89c2418165f75122
+Author: Joshua <chaos7197@gmail.com>
+Date:   Thu Feb 28 09:05:45 2019 +0200
+
+    + added individual save buttons on a tool bar to save to DB, PDF, and
+    normal print(all of te options in one), as wll as a load button
+    + added an about window to tell people about the program.
+    + started work on the DB saving and loading, saving works well
+    - removed 5c from UI and report
+    + loading opens a new window that shows all the transactions
+    + added discrepancy indicators for card and cash
+    * removed dragons *
+
+commit b6617cb69e017317a5319a2791a90d72afc411c9
+Author: Joshua <chaos7197@gmail.com>
+Date:   Mon Feb 25 19:46:33 2019 +0200
+
+    misc
+
+commit bf27572cb559a2fe0660093233911a7cfd02168d
+Author: Joshua <chaos7197@gmail.com>
+Date:   Fri Jan 25 16:41:54 2019 +0200
+
+    removed, 5c, Total at the botoom of the report, and skimmed.
+
+commit d557e4beac9543b3adecb2c89d34ac79c34b06f6
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 22 20:06:15 2019 +0200
+
+    V1.0.6.0
+    + added requested Discrepancy calculation feature
+    *  fixed lines on Report
+
+commit b08c074991ef59d6c4cfbae32ae2a21d681067b0
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 22 18:10:54 2019 +0200
+
+    + added relevant properties to cashup object to hold the discrepancy feature data.
+
+commit 56e4743c6693f53ae1bfef8599bea75079246455
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 22 17:52:27 2019 +0200
+
+    + added requested  discrepancy checking features to GUI
+
+commit dc127418975deb10d39ba60f5946cd27a7b7e507
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 22 17:19:47 2019 +0200
+
+    Started work on the making of textbox being made non-read only before
+    loading ffrom the db
+
+commit 0c444fbe2aeae827de42b71d8e22031f21e4b8cb
+Author: Joshua <chaos7197@gmail.com>
+Date:   Sat Jan 19 12:09:33 2019 +0200
+
+    misc
+
+commit d3381b653059be69fd2739af23426b9274cba5c8
+Author: Joshua <chaos7197@gmail.com>
+Date:   Fri Jan 18 20:39:07 2019 +0200
+
+    + added some cashup property asignments to frmView
+    
+    TODO:
+    get data binding working for frmView
+
+commit 6b71706632b7d26b9dacd7a6234985f4317f6cd8
+Author: ChAos48 <chaos7197@gmail.com>
+Date:   Fri Jan 18 09:45:07 2019 +0200
+
+    + frmview text box value pull directly from cashup object(data binding)
+    + cashup object loading from db added to the object instead of doing it
+    in the form
+    * played arround with references.
+
+commit 259d6fbd44596398906c6f794ed418f6714392fd
+Author: ChAos48 <chaos7197@gmail.com>
+Date:   Fri Jan 18 09:13:51 2019 +0200
+
+    fixed issue with power packs not syncing
+
+commit c914a36bc6b0500d6e6ca8bad6c82e20018e4067
+Author: Joshua <chaos7197@gmail.com>
+Date:   Thu Jan 17 20:46:39 2019 +0200
+
+    * Started work on Assigning value to frmView textboxes
+
+commit 590f22f35ff153f1c92289b776c4720829e27e7e
+Author: Joshua <chaos7197@gmail.com>
+Date:   Thu Jan 17 20:10:08 2019 +0200
+
+    + added dbName to Runtime Settings
+    + added population of frmSelect
+    + added selection of which entry to Load
+    - removed date search (comented out) on frmSelect
+    * got order of opperations after you click load
+    + added methods tu pull all data from DB to the frmSelect form.
+
+commit 42796ae327604acad4ff356809b6603671af65c9
+Author: Joshua <chaos7197@gmail.com>
+Date:   Thu Jan 17 14:36:11 2019 +0200
+
+    * changd the name of Form1 to frmMain
+    * changed weight of the lines on the application and form.
+
+commit ca9a9063287e52bcd054ceaac14207b9f84c2ddd
+Author: Joshua <chaos7197@gmail.com>
+Date:   Thu Jan 17 14:12:05 2019 +0200
+
+    added Lisence Text and added power packs to the solution via nget.
+
+commit 6198dbef775380a34ee9a942fa61627c4fb0adaf
+Author: ChAos <chaos7197@gmail.com>
+Date:   Thu Jan 17 10:45:29 2019 +0200
+
+    Create LICENSE
+
+commit 381bfeb15821534d39a3f8d79332d144a0e5c28f
+Merge: 950830d c784242
+Author: ChAos <chaos7197@gmail.com>
+Date:   Thu Jan 17 10:41:09 2019 +0200
+
+    Merge pull request #5 from ChAos48/DB_Work
+    
+    misc
+
+commit c784242b871b57d1e169205916fd0e41cd8f5e8a
+Author: Joshua Smith <joshua.sm48@gmail.com>
+Date:   Thu Jan 17 00:54:42 2019 +0200
+
+    misc
+
+commit 950830d487d216658a7b2abee3b179cdf549506b
+Merge: bea85a7 209c20c
+Author: ChAos <chaos7197@gmail.com>
+Date:   Thu Jan 17 00:52:28 2019 +0200
+
+    Merge pull request #4 from ChAos48/DB_Work
+    
+    added SqlServerTypes Back to Git
+
+commit 209c20c40b98081d2c8169cf893e9ebf4c90e0ad
+Author: Joshua Smith <joshua.sm48@gmail.com>
+Date:   Thu Jan 17 00:28:05 2019 +0200
+
+    added SqlServerTypes Back to Git
+
+commit bea85a7963b3cfaf2a23edc61032e885f1bef890
+Merge: 1cf5765 c95ec04
+Author: ChAos <chaos7197@gmail.com>
+Date:   Thu Jan 17 00:25:03 2019 +0200
+
+    Merge pull request #3 from ChAos48/DB_Work
+    
+    added sql server types exception to gitignore
+
+commit c95ec04a71aff3a0ace087cd794edf9f067bfc27
+Author: Joshua Smith <joshua.sm48@gmail.com>
+Date:   Thu Jan 17 00:22:57 2019 +0200
+
+    added sql server types exception to gitignore
+
+commit 1cf57655a957e0fe7a1535b58779dab620d43c73
+Merge: e5f2cc8 3c8eb1e
+Author: ChAos <chaos7197@gmail.com>
+Date:   Thu Jan 17 00:14:28 2019 +0200
+
+    Merge pull request #2 from ChAos48/DB_Work
+    
+    Merge
+
+commit 3c8eb1ede4c62201db301965f3022408304e63d3
+Author: Joshua Smith <joshua.sm48@gmail.com>
+Date:   Thu Jan 17 00:06:31 2019 +0200
+
+    did the following
+    + added methods for printing only, saving pdf only.
+    * made SaveToDB() public
+    + added menustrip items to the main form.
+    + added an about form that has tabs for different things (about,
+    changelog, FAQ, lisence)
+    * Made all the textbox's on the viewing form ReadOnly
+    * Made Changelog get its data from the ChangeLog.txt
+    + Added some Summaries to methods.
+
+commit e5f2cc8796d03801185ab790a8e533d88ae20e64
+Merge: 1bb7962 14b7c92
+Author: ChAos <chaos7197@gmail.com>
+Date:   Wed Jan 16 20:50:14 2019 +0200
+
+    Merge pull request #1 from ChAos48/DB_Work
+    
+    added controls  to frmView. TODO is rename most of them and make read…
+
+commit 14b7c92e61eaa5aeea86aa60a8779286d021a4af
+Author: Joshua <chaos7197@gmail.com>
+Date:   Wed Jan 16 20:47:49 2019 +0200
+
+    added controls  to frmView. TODO is rename most of them and make readonly, add code to the buttons, add menue to main form to open frmView, add code to pull data from DB to frmView
+
+commit 39b3b331de78c06d6892c040baf97813b667c872
+Author: Joshua <chaos7197@gmail.com>
+Date:   Wed Jan 16 19:46:26 2019 +0200
+
+    added things to gitignore
+
+commit 1bb796218d17c2a8bedf3f7390099af1a9328482
+Author: Joshua <chaos7197@gmail.com>
+Date:   Wed Jan 16 19:33:25 2019 +0200
+
+    changed size of form
+
+commit fa22003aea4892c03b3bf1ca0fdff30149c1f735
+Author: Joshua <chaos7197@gmail.com>
+Date:   Wed Jan 16 18:02:12 2019 +0200
+
+    added frmView to work as the viewing for the DB data.
+
+commit d34cb1cb39e14f1dbaecb694ad128ea4e2a812c0
+Author: ChAos <chaos7197@gmail.com>
+Date:   Wed Jan 16 17:47:46 2019 +0200
+
+    Update README.md
+    
+    added Readme
+
+commit e1e4f9a648baa2c2097fc48cc56e1ee3573296d9
+Author: ChAos <chaos7197@gmail.com>
+Date:   Wed Jan 16 17:44:43 2019 +0200
+
+    Create README.md
+
+commit 8499307d8e2f70c171ac629448e24762dd05bc04
+Author: Joshua <chaos7197@gmail.com>
+Date:   Wed Jan 16 17:11:47 2019 +0200
+
+    Added some more logging and changed default logging level to INFO
+
+commit ec61cf1ee6a1c3271ebc0115b478bf5deda2ec30
+Author: Joshua <chaos7197@gmail.com>
+Date:   Wed Jan 16 15:22:45 2019 +0200
+
+    SaveToDB() is now working
+
+commit 4a51451caabed18546cf9d992648380866d9dd89
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 20:38:27 2019 +0200
+
+    gitignore fix
+
+commit 7de7b52dd25badb94824ed59e199ee8bf832459c
+Merge: 9820960 151f3f4
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 20:18:08 2019 +0200
+
+    Merge branch 'DB_work' of https://github.com/ChAos48/Cashup into DB_work
+
+commit 9820960b297d758f608905e40897894e0de1cad8
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 20:17:53 2019 +0200
+
+    Revert "changed title of frmSettings"
+    
+    This reverts commit 9a89302f84cc3b3fa51448af2f405b5f11087188.
+
+commit 5f09d7a194d6de88aa51f4d01a4c77a89d25cdaf
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 20:16:08 2019 +0200
+
+    Revert "removed compiled bins"
+    
+    This reverts commit fae3e7ecc742eecbaecd748d45fe06f75851c781.
+
+commit fae3e7ecc742eecbaecd748d45fe06f75851c781
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 20:03:43 2019 +0200
+
+    removed compiled bins
+
+commit 151f3f4d8ea1f82cf4bacec6d2deb58b999bacfa
+Author: ChAos <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:57:41 2019 +0200
+
+    Update .gitignore
+
+commit f34542eff5e4a69ad10c54215c2fb8448bc0160c
+Author: ChAos <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:56:17 2019 +0200
+
+    Update .gitignore
+
+commit 176aa34a5098fc82ac8311d4fc6922a3c31fd5f1
+Author: ChAos <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:53:43 2019 +0200
+
+    Update .gitignore
+
+commit 0bd078cdb91739cbbac60497014e7921c59dfd56
+Author: ChAos <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:52:37 2019 +0200
+
+    Update .gitignore
+    
+    added ignore for bin folder
+
+commit 9a89302f84cc3b3fa51448af2f405b5f11087188
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:42:25 2019 +0200
+
+    changed title of frmSettings
+
+commit f1ca7c317298ad069f8405ae6c916cc08e9849b1
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:39:14 2019 +0200
+
+    added method to create DB entry
+
+commit bcb38e66db5d968d07db572d50bb2a7efd732cfe
+Merge: 58de148 4e791e4
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:36:14 2019 +0200
+
+    Merge branch 'DB_work' of https://github.com/ChAos48/Cashup into DB_work
+
+commit 58de14880054c23f15249ea20d71d2d9569aeb7e
+Author: Joshua <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:34:59 2019 +0200
+
+    added method to save to DB
+
+commit e28be1a50bd60ce66692c6b65cdbfb105f8905ba
+Author: ChAos <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:32:26 2019 +0200
+
+    Create .gitignore
+
+commit 4e791e4da823e5dbe33a500d4a20225c7e5a209f
+Author: ChAos <chaos7197@gmail.com>
+Date:   Tue Jan 15 19:31:59 2019 +0200
+
+    Create .gitignore
+
+commit 22aa43328654677541f774fd2ba833510728d227
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Tue Jan 15 16:17:39 2019 +0200
+
+    persistant settings an log4net logging
+
+commit c104f49ce3ce69b42f5649f6da134e858aef3e9c
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Tue Jan 15 16:14:13 2019 +0200
+
+    cleanup
+
+commit 0712317c9e917ad5df8c37d8b0ccf919a95caf85
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Tue Jan 15 16:13:30 2019 +0200
+
+    added persistant settings
+
+commit 3a823939ce7dfe6ad93f1ca66b2aea504606b58a
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Tue Jan 15 15:30:53 2019 +0200
+
+    added log4net logging
+
+commit edcfcbd9f8ab5f0ce9d44b8f5b37739922915bbc
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Tue Jan 15 15:28:53 2019 +0200
+
+    added log4net logging
+
+commit 0a9313869f9f1512aa66d576be067bc52718eb68
+Author: ChAos <chaos7197@gmail.com>
+Date:   Tue Jan 15 10:16:34 2019 +0200
+
+    Created README.md
+    
+    the main Read me for the application.
+
+commit 8849345231ad8334b6b9c4e5f8a4e43aa9fd99da
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Mon Jan 14 20:40:37 2019 +0200
+
+    Started work on the DB connection and adding encryption
+
+commit 69d37f55a4b0652fb21d50d2181c4468cd167430
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Thu Jan 10 16:34:42 2019 +0200
+
+    first commit
+
+commit 6185e708793e84771e88c268df62ca19954c2062
+Author: Joshua <joshua.sm48@gmail.com>
+Date:   Wed Sep 5 16:14:41 2018 +0200
+
+    inital Commit

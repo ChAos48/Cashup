@@ -119,7 +119,13 @@ namespace OOP_Cashup
             this.txtbChequesValue.Text = cu.ChecksValue.ToString();
             this.txtbNumCheques.Text = cu.NumChecks.ToString();
             this.txtbTotal_Drop.Text = (cu.drop + cu.NumChecks).ToString();
-            
+
+            this.txtbCashDiscrepancy.Text = cu.CashDiscrepancy.ToString();
+            this.txtbxWSSCash.Text = cu.WSSCash.ToString();
+            this.txtbxCardBanked.Text = cu.CardBanked.ToString();
+            this.txtbxWssCard.Text = cu.WssCard.ToString();
+            this.txtbxCardDiscrepancy.Text = cu.CardDiscrepancy.ToString();
+
             log.Debug("finished loading");
 
         }

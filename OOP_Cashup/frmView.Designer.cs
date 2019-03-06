@@ -34,6 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbNameTop = new System.Windows.Forms.TextBox();
+            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtbFloatTop = new System.Windows.Forms.TextBox();
             this.dtpTop = new System.Windows.Forms.DateTimePicker();
             this.txtbRegisterLeft = new System.Windows.Forms.TextBox();
@@ -142,17 +143,16 @@
             this.txtbTotal50c = new System.Windows.Forms.TextBox();
             this.txtbTotal20c = new System.Windows.Forms.TextBox();
             this.txtbTotal10c = new System.Windows.Forms.TextBox();
-            this.cashupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.txtbxWSSCash = new System.Windows.Forms.TextBox();
             this.txtbCashDiscrepancy = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtbxCardBanked = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtbxWssCard = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtbxCardDiscrepancy = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -222,6 +222,10 @@
             this.txtbNameTop.Size = new System.Drawing.Size(156, 20);
             this.txtbNameTop.TabIndex = 8;
             this.txtbNameTop.Text = "Name";
+            // 
+            // cashupBindingSource
+            // 
+            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
             // 
             // txtbFloatTop
             // 
@@ -1350,10 +1354,6 @@
             this.txtbTotal10c.TabIndex = 120;
             this.txtbTotal10c.Text = "0.00";
             // 
-            // cashupBindingSource
-            // 
-            this.cashupBindingSource.DataSource = typeof(OOP_Cashup.Cashup);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1403,15 +1403,15 @@
             this.label32.TabIndex = 187;
             this.label32.Text = "Card Banked";
             // 
-            // textBox2
+            // txtbxCardBanked
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(176, 619);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 188;
-            this.textBox2.Text = "0.00";
+            this.txtbxCardBanked.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxCardBanked.Location = new System.Drawing.Point(176, 619);
+            this.txtbxCardBanked.Name = "txtbxCardBanked";
+            this.txtbxCardBanked.ReadOnly = true;
+            this.txtbxCardBanked.Size = new System.Drawing.Size(100, 23);
+            this.txtbxCardBanked.TabIndex = 188;
+            this.txtbxCardBanked.Text = "0.00";
             // 
             // label33
             // 
@@ -1422,15 +1422,15 @@
             this.label33.TabIndex = 187;
             this.label33.Text = "WSS Card";
             // 
-            // textBox3
+            // txtbxWssCard
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(176, 645);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 188;
-            this.textBox3.Text = "0.00";
+            this.txtbxWssCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxWssCard.Location = new System.Drawing.Point(176, 645);
+            this.txtbxWssCard.Name = "txtbxWssCard";
+            this.txtbxWssCard.ReadOnly = true;
+            this.txtbxWssCard.Size = new System.Drawing.Size(100, 23);
+            this.txtbxWssCard.TabIndex = 188;
+            this.txtbxWssCard.Text = "0.00";
             // 
             // label34
             // 
@@ -1441,26 +1441,26 @@
             this.label34.TabIndex = 187;
             this.label34.Text = "Card Discrepancy";
             // 
-            // textBox4
+            // txtbxCardDiscrepancy
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(176, 671);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 188;
-            this.textBox4.Text = "0.00";
+            this.txtbxCardDiscrepancy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxCardDiscrepancy.Location = new System.Drawing.Point(176, 671);
+            this.txtbxCardDiscrepancy.Name = "txtbxCardDiscrepancy";
+            this.txtbxCardDiscrepancy.ReadOnly = true;
+            this.txtbxCardDiscrepancy.Size = new System.Drawing.Size(100, 23);
+            this.txtbxCardDiscrepancy.TabIndex = 188;
+            this.txtbxCardDiscrepancy.Text = "0.00";
             // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 791);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtbxCardDiscrepancy);
             this.Controls.Add(this.label34);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtbxWssCard);
             this.Controls.Add(this.label33);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtbxCardBanked);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.txtbCashDiscrepancy);
             this.Controls.Add(this.label31);
@@ -1712,10 +1712,10 @@
         private System.Windows.Forms.TextBox txtbCashDiscrepancy;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtbxCardBanked;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtbxWssCard;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtbxCardDiscrepancy;
     }
 }

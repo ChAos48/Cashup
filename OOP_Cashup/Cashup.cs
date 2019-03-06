@@ -753,6 +753,14 @@ R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop, c50Drop, 
                         this.c10 = decimal.Parse(rdr["cashup_10cValue"].ToString());
                         this.ChecksValue = decimal.Parse(rdr["cashup_ChequesValue"].ToString());
                         this.NumChecks = int.Parse(rdr["cashup_NumCheques"].ToString());
+
+                        this.wssCash = decimal.Parse(rdr["cashup_WssCash"].ToString());
+                        this.cashDiscrepancy = decimal.Parse(rdr["cashup_CashDiscrepancy"].ToString());
+
+                        this.wssCard = decimal.Parse(rdr["cashup_WssCard"].ToString());
+                        this.cardBanked = decimal.Parse(rdr["cashup_CardBanked"].ToString());
+                        this.cardDiscrepancy = decimal.Parse(rdr["cashup_CardDiscrepancy"].ToString());
+
                     } catch (Exception ex) {
                         log.Error("issue asigning values from DB.", ex);
                     }
