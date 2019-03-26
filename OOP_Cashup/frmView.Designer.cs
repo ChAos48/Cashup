@@ -144,7 +144,6 @@
             this.txtbTotal20c = new System.Windows.Forms.TextBox();
             this.txtbTotal10c = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtbxWSSCash = new System.Windows.Forms.TextBox();
             this.txtbCashDiscrepancy = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -153,6 +152,7 @@
             this.txtbxWssCard = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.txtbxCardDiscrepancy = new System.Windows.Forms.TextBox();
+            this.txtbxWssCash = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -1363,17 +1363,6 @@
             this.label12.TabIndex = 185;
             this.label12.Text = "WSS Cash";
             // 
-            // txtbxWSSCash
-            // 
-            this.txtbxWSSCash.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10", true));
-            this.txtbxWSSCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxWSSCash.Location = new System.Drawing.Point(176, 568);
-            this.txtbxWSSCash.Name = "txtbxWSSCash";
-            this.txtbxWSSCash.ReadOnly = true;
-            this.txtbxWSSCash.Size = new System.Drawing.Size(100, 23);
-            this.txtbxWSSCash.TabIndex = 186;
-            this.txtbxWSSCash.Text = "0.00";
-            // 
             // txtbCashDiscrepancy
             // 
             this.txtbCashDiscrepancy.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cashupBindingSource, "c10", true));
@@ -1451,11 +1440,21 @@
             this.txtbxCardDiscrepancy.TabIndex = 188;
             this.txtbxCardDiscrepancy.Text = "0.00";
             // 
+            // txtbxWssCash
+            // 
+            this.txtbxWssCash.Location = new System.Drawing.Point(176, 569);
+            this.txtbxWssCash.Name = "txtbxWssCash";
+            this.txtbxWssCash.ReadOnly = true;
+            this.txtbxWssCash.Size = new System.Drawing.Size(100, 20);
+            this.txtbxWssCash.TabIndex = 189;
+            this.txtbxWssCash.Text = "0.00";
+            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 791);
+            this.Controls.Add(this.txtbxWssCash);
             this.Controls.Add(this.txtbxCardDiscrepancy);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.txtbxWssCard);
@@ -1464,7 +1463,6 @@
             this.Controls.Add(this.label32);
             this.Controls.Add(this.txtbCashDiscrepancy);
             this.Controls.Add(this.label31);
-            this.Controls.Add(this.txtbxWSSCash);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.button1);
@@ -1708,7 +1706,6 @@
         private System.Windows.Forms.TextBox txtbTotal20c;
         private System.Windows.Forms.TextBox txtbTotal10c;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtbxWSSCash;
         private System.Windows.Forms.TextBox txtbCashDiscrepancy;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
@@ -1717,5 +1714,6 @@
         private System.Windows.Forms.TextBox txtbxWssCard;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txtbxCardDiscrepancy;
+        private System.Windows.Forms.TextBox txtbxWssCash;
     }
 }

@@ -1,2 +1,15 @@
 ﻿V1.0.5.0
 *Initial Release plus a few bug fixes.
+V2.1.0.0
+- removed 5c from the UI and reports
++ added individual save buttons on a tool bar to save to DB, PDF, and normal print(all of the options in one, as will)
++ added an about window to tell people about the prgram.
++ application will now save all data to the Database.
++ loading opens a new window that shows all transactions(will be upgradded to search)
++ added discrepancy indicators
+* fixed some issues with the reports
+V2.2.0.0
+* fixed a bug where a vale was misassigned
+* fixed som visual issues on the printout.
++ added some extra logs to help find a bug.
+more details on github: https://github.com/ChAos48/Cashup

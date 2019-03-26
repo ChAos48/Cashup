@@ -26,33 +26,22 @@ namespace OOP_Cashup
         /// </summary>
         /// 
         [STAThread]
-        static void Main() {
+        static void Main(string[] args) {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             log.Info("Started application");
             LoadSettings();
-            #region old Log code(changes Console.write line to write to file)
-            //if (!Directory.Exists(@"./Logs")) {
-            //    Directory.CreateDirectory(@"./Logs");
-            //    Console.WriteLine(DateTime.Now + ": Created Log dir.");
-            //}
+            if (args.Length > 0) {
+                foreach (String str in args) {
+                    switch (str) {
 
-            //FileStream ostrm;
-            //StreamWriter writer;
-            //TextWriter oldOut = Console.Out;
-            //try {
-            //    string logFile = Environment.CurrentDirectory  + "\\Logs\\" + DateTime.Now.ToFileTime().ToString() + ".log";
-            //    ostrm = new FileStream(logFile, FileMode.OpenOrCreate, FileAccess.Write);
-            //    writer = new StreamWriter(ostrm);
-            //} catch (Exception e) {
-            //    Console.WriteLine(DateTime.Now +": Cannot open log file for writing");
-            //    Console.WriteLine(e.Message);
-            //    return;
-            //}
-
-            //Console.SetOut(writer);
-            #endregion
+                        case "-debug":
+                            goto skipupdate;
+  
+                    }
+                }
+            }
 
 #if DEBUG
             log.Debug("in debug mode skipping update");
@@ -168,7 +157,7 @@ namespace OOP_Cashup
         }
 
         static void LoadSettings() {
-            
+
             if (File.Exists("./Settings.cfg")) {
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load("./Settings.cfg");

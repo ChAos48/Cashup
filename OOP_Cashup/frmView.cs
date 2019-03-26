@@ -34,8 +34,11 @@ namespace OOP_Cashup
                 log.Error("couldnt load data from DB");
             }
 
+            log.Debug("cu.wssCash before drop  is: " + cu.WSSCash.ToString());
             cu.Drop();
+            log.Debug("cu.wssCash after drop  is: " + cu.WSSCash.ToString());
             setTextBoxes();
+            
 
         }
 
@@ -121,9 +124,12 @@ namespace OOP_Cashup
             this.txtbTotal_Drop.Text = (cu.drop + cu.NumChecks).ToString();
 
             this.txtbCashDiscrepancy.Text = cu.CashDiscrepancy.ToString();
-            this.txtbxWSSCash.Text = cu.WSSCash.ToString();
+            this.txtbxWssCash.Text = cu.WSSCash.ToString();
+            log.Debug("txtbxWSSCASH.Text set to " + this.txtbxWssCash.Text.ToString());
+            //this.txtbxWSSCash.Text = cu.WSSCash.ToString();
             this.txtbxCardBanked.Text = cu.CardBanked.ToString();
             this.txtbxWssCard.Text = cu.WssCard.ToString();
+            log.Debug("txtbxWSSCard.Text set to" + this.txtbxWssCard.Text.ToString());
             this.txtbxCardDiscrepancy.Text = cu.CardDiscrepancy.ToString();
 
             log.Debug("finished loading");

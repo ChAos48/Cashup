@@ -199,6 +199,8 @@ namespace OOP_Cashup
 
                 txtbTotal_Drop.Text = (droppedTotal + cheques).ToString();
                 cu.DropTotal = Decimal.Parse(txtbTotal_Drop.Text.ToString());
+                
+                #endregion
 
                 cu.WSSCash = Decimal.Parse(txtbWSSCash.Text);
                 cu.CalcCashDescrepancy();
@@ -208,8 +210,6 @@ namespace OOP_Cashup
                 cu.WssCard = Decimal.Parse(txtbCardWSS.Text);
                 cu.CalcCardDescrepancy();
                 this.txtbCardDiscepancy.Text = cu.CardDiscrepancy.ToString();
-
-                #endregion
 
             } catch (FormatException) {
                 foreach (Control x in this.Controls) {
@@ -306,20 +306,14 @@ namespace OOP_Cashup
 
         void btnPrint_Click(object sender, EventArgs e) {
 
-            if (txtbxName.Text == "" || txtbxName.Text == "Name" || txtbxName.Text == null) {
-
-                MessageBox.Show("Please enter your name befor printing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-
-            } else if (combxRegister.Text == "Register#") {
-
-                MessageBox.Show("Please Change the Register number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-
-            } else {
+            if (isNameFilledAndRegisterChanged()) {
 
                 cu.btnPrint_Click(sender, e);
                 Clear();
+
+            } else {
+
+                log.Warn("user has not changed the name on the app/has not selected a register number.");
 
             }
 
@@ -428,14 +422,33 @@ namespace OOP_Cashup
         }
 
         private void printPDFToolStripMenuItem_Click(object sender, EventArgs e) {
-            cu.SavePDF();
-            cu.SaveToDB();
-            btnClear_Click(sender, e);
+
+            if (isNameFilledAndRegisterChanged()) {
+
+                cu.SavePDF();
+                cu.SaveToDB();
+                Clear();
+
+            } else {
+
+                log.Warn("user has not changed the name on the app/has not selected a register number.");
+
+            }
+            
         }
 
         private void saveToDBOnlyToolStripMenuItem_Click(object sender, EventArgs e) {
-            cu.SaveToDB();
-            btnClear_Click(sender, e);
+            if (isNameFilledAndRegisterChanged()) {
+
+                cu.SaveToDB();
+                Clear();
+
+            } else {
+
+                log.Warn("user has not changed the name on the app/has not selected a register number.");
+
+            }
+            
         }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -444,10 +457,30 @@ namespace OOP_Cashup
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             frmAbout about = new frmAbout();
-            if(about.ShowDialog() == DialogResult.OK) {
+            if (about.ShowDialog() == DialogResult.OK) {
                 log.Info("about form closed");
             }
         }
+
+        private bool isNameFilledAndRegisterChanged() {
+
+            if (txtbxName.Text == "" || txtbxName.Text == "Name" || txtbxName.Text == null) {
+
+                MessageBox.Show("Please enter your name before printing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+
+            } else if (combxRegister.Text == "Register#") {
+
+                MessageBox.Show("Please Change the Register number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+
+            } else {
+
+                return true;
+
+            }
+        }
+        
     }
 }
 
