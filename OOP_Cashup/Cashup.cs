@@ -63,7 +63,7 @@ namespace OOP_Cashup
         public int c50Drop { get; set; }
         public int c20Drop { get; set; }
         public int c10Drop { get; set; }
-        
+
         private Decimal r200DropTotal;
         private Decimal r100DropTotal;
         private Decimal r50DropTotal;
@@ -208,7 +208,7 @@ namespace OOP_Cashup
             Total = subTotal - drop;
             this.droppedTotal = 0.00M;
             correction = 0.0M;
-            
+
             log.Debug("cashup object created. with default constructor.");
             cardBanked = 0.0M;
             cardDiscrepancy = 0.0M;
@@ -278,7 +278,7 @@ namespace OOP_Cashup
             this.dropTotal = DroppedTotal + ChecksValue;
 
             tillNum = Register;
-            
+
             log.Debug("cashup object created using constructor 1(value initiation)");
             cardBanked = 0.0M;
             cardDiscrepancy = 0.0M;
@@ -359,7 +359,7 @@ namespace OOP_Cashup
         //
         private int Drop(decimal amt, int dropAmt, int actualAmt, ref bool flagerror) {
             log.Debug("dropping R" + amt);
-            
+
             while ((dropTemp - amt >= 0) && dropAmt < actualAmt && !(dropAmt > actualAmt)) {
                 dropAmt++;
                 dropTemp -= amt;
@@ -470,9 +470,11 @@ namespace OOP_Cashup
             rv.SetDisplayMode(DisplayMode.PrintLayout);
             rv.ZoomMode = ZoomMode.PageWidth;
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
-
-            rv.LocalReport.DataSources.Add(new ReportDataSource("Cashup", new BindingSource(this, null)));
-
+            try {
+                rv.LocalReport.DataSources.Add(new ReportDataSource("Cashup", new BindingSource(this, null)));
+            }catch(Exception ex) {
+                log.Error("issue adding data source to local report rv: ", ex);
+            }
             Export(rv.LocalReport);
             printPdf(rv.LocalReport);
             Print();
@@ -518,11 +520,13 @@ namespace OOP_Cashup
         #region Printing
 
         private Stream CreateStream(string name, string fileNameExtension, Encoding encoding, string mimeType, bool willSeek) {
+            log.Debug("Creating Stream: " + name);
             Stream stream = new MemoryStream();
             m_streams.Add(stream);
+            log.Debug("stream created and added to m_streams.");
             return stream;
         }
-        
+
         /// <summary>
         /// Export the given report as an EMF (Enhanced Metafile) file.
         /// </summary>
@@ -545,11 +549,9 @@ namespace OOP_Cashup
             try {
                 report.Render("Image", deviceInfo, CreateStream,
                    out warnings);
-            }catch (Exception ex) {
-                Console.WriteLine("could not render" + ex.ToString());
-                //foreach (Warning warn in warnings) {
-
-                //}
+            } catch (Exception ex) {
+                log.Error("could not render", ex);
+                throw ex;
             }
             foreach (Stream stream in m_streams)
                 stream.Position = 0;
@@ -578,8 +580,10 @@ namespace OOP_Cashup
         }
 
         private void Print() {
-            if (m_streams == null || m_streams.Count == 0)
+            if (m_streams == null || m_streams.Count == 0) {
+                log.Error("m_streams is null or contains nothing.");
                 throw new Exception("Error: no stream to print.");
+            }
             PrintDocument printDoc = new PrintDocument();
             PrintDialog pd = new PrintDialog();
             var result = pd.ShowDialog();
@@ -608,34 +612,41 @@ namespace OOP_Cashup
         private void printPdf(LocalReport report) {
 
             log.Info("creating PDF");
+            try {
+                Warning[] warnings;
+                string[] streamids;
+                string mimeType;
+                string encoding;
+                string filenameExtension;
+                string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                log.Debug("PDF: creating byte array");
 
-            Warning[] warnings;
-            string[] streamids;
-            string mimeType;
-            string encoding;
-            string filenameExtension;
-            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            byte[] bytes = report.Render("PDF", null, out mimeType, out encoding, out filenameExtension,
-                out streamids, out warnings);
+                byte[] bytes = report.Render("PDF", null, out mimeType, out encoding, out filenameExtension,
+                    out streamids, out warnings);
+                foreach(Warning warn in warnings) {
+                    log.Debug("warning from report render." + warn.ToString());
+                }
 
 
 
-            if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
+                if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
 
-                log.Info("archive does not exist creating");
-                Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
+                    log.Info("PDF: archive does not exist creating");
+                    Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
 
-            } else {
-                log.Debug("archive folder exists");
-            }
-            
-            log.Debug(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"));
-            using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"),
-                FileMode.Create)) {
+                } else {
+                    log.Debug("archive folder exists");
+                }
 
-                fs.Write(bytes, 0, bytes.Length);
+                log.Debug(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"));
+                using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"),
+                    FileMode.Create)) {
+                    log.Debug("PDF: writing file.");
+                    fs.Write(bytes, 0, bytes.Length);
 
+                }
+            } catch (Exception ex) {
+                log.Error("Issue Creating PDF: ", ex);
             }
 
             log.Info("pdf saved");
@@ -708,7 +719,7 @@ R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop, c50Drop, 
 
             }
         }
-        
+
         public bool LoadFromDB(string ID) {
 
             using (OdbcConnection con = new OdbcConnection(RuntimeSettings.conString)) {

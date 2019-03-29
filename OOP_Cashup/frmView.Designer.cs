@@ -1107,7 +1107,7 @@
             this.lineShape3,
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(589, 791);
+            this.shapeContainer1.Size = new System.Drawing.Size(589, 749);
             this.shapeContainer1.TabIndex = 11;
             this.shapeContainer1.TabStop = false;
             // 
@@ -1453,7 +1453,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 791);
+            this.ClientSize = new System.Drawing.Size(589, 749);
             this.Controls.Add(this.txtbxWssCash);
             this.Controls.Add(this.txtbxCardDiscrepancy);
             this.Controls.Add(this.label34);

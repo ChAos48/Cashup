@@ -37,6 +37,7 @@ namespace OOP_Cashup
                     switch (str) {
 
                         case "-debug":
+                            log.Warn("debug flag given, skipping update");
                             goto skipupdate;
   
                     }
@@ -57,10 +58,7 @@ namespace OOP_Cashup
             log.Debug("Online Hash = " + local_hash);
 
             var temp = online_hash == local_hash;
-            //#if DEBUG
-            //            temp = true;
-            //            goto skipupdate;
-            //#endif
+           
             if (temp) {
 
                 log.Info("no update required");
@@ -74,7 +72,7 @@ namespace OOP_Cashup
                 proc.EnableRaisingEvents = true;
 
                 proc.Start();
-                Application.Exit();
+                Environment.Exit(1);
 
             } else {
                 log.Warn("cannot contact Protea.dedicated.co.za skipping update");
