@@ -14,4 +14,6 @@ V2.2.0.0
 + added some extra logs to help find a bug.
 V2.2.2.0
 * fixed the bug where it couldnt print cause of report definition is invalid(updated target framework to .net 4.5)
+V2.2.3
+* moved code to update date & time in the update loop.
 more details on github: https://github.com/ChAos48/Cashup

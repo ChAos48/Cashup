@@ -98,6 +98,12 @@ namespace OOP_Cashup
                 cu.NumChecks = int.Parse(this.txtbNumCheques.Text);
                 cu.ChecksValue = Decimal.Parse(txtbChequesValue.Text);
 
+                if (!(this.date.Value == DateTime.Today)) {
+                    this.dateTimePicker1.Value = DateTime.Today;
+                    this.dateTimePicker2.Value = DateTime.Today;
+                    this.dateTimePicker3.Value = DateTime.Today;
+                    date = dateTimePicker1;
+                }
 
                 #region regster update
 
@@ -151,6 +157,8 @@ namespace OOP_Cashup
                 txtbDrop.Text = this.drop.ToString();
                 cu.Name = this.txtbxName.Text;
                 cu.TillNum = combxRegister.Text;
+                cu.Date = DateTime.Now;
+
 
                 #region drop update
 
@@ -350,8 +358,8 @@ namespace OOP_Cashup
 
             if (!(this.date.Value == DateTime.Today)) {
                 this.dateTimePicker1.Value = DateTime.Today;
-                this.dateTimePicker1.Value = DateTime.Today;
-                this.dateTimePicker1.Value = DateTime.Today;
+                this.dateTimePicker2.Value = DateTime.Today;
+                this.dateTimePicker3.Value = DateTime.Today;
             }
 
             cu = new Cashup();

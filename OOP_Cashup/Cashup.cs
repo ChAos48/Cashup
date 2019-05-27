@@ -111,7 +111,8 @@ namespace OOP_Cashup
         public Decimal ChecksValue { get; set; }
 
         private DateTime date;
-        public DateTime Date { get { return date; } }
+        public DateTime Date {  get { return date; }
+                                set { date = value; } }
 
         private string name;
         public string Name { get { return name; } set { name = value; } }
