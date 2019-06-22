@@ -7,10 +7,10 @@ using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Drawing.Imaging;
 using System.Drawing;
-using Microsoft.Reporting.WinForms;
 using System.Reflection;
 using System.Data.Odbc;
 using Hounds;
+using Microsoft.Reporting.WinForms;
 
 namespace OOP_Cashup
 {
