@@ -12,10 +12,8 @@ using System.Data.Odbc;
 using Hounds;
 using Microsoft.Reporting.WinForms;
 
-namespace OOP_Cashup
-{
-    class Cashup
-    {
+namespace OOP_Cashup {
+    class Cashup {
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger
             (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -111,8 +109,10 @@ namespace OOP_Cashup
         public Decimal ChecksValue { get; set; }
 
         private DateTime date;
-        public DateTime Date {  get { return date; }
-                                set { date = value; } }
+        public DateTime Date {
+            get { return date; }
+            set { date = value; }
+        }
 
         private string name;
         public string Name { get { return name; } set { name = value; } }
@@ -125,7 +125,8 @@ namespace OOP_Cashup
 
         private Decimal correction;
         public decimal Correction {
-            get {
+            get
+            {
                 return correction;
             }
         }
@@ -473,7 +474,8 @@ namespace OOP_Cashup
             rv.LocalReport.ReportPath = "CashupReport.rdlc";
             try {
                 rv.LocalReport.DataSources.Add(new ReportDataSource("Cashup", new BindingSource(this, null)));
-            }catch(Exception ex) {
+            }
+            catch (Exception ex) {
                 log.Error("issue adding data source to local report rv: ", ex);
             }
             Export(rv.LocalReport);
@@ -545,12 +547,13 @@ namespace OOP_Cashup
                 <MarginRight>1cm</MarginRight>
                 <MarginBottom>1cm</MarginBottom>
             </DeviceInfo>";
-            Warning[] warnings;
+            Warning [] warnings;
             m_streams = new List<Stream>();
             try {
                 report.Render("Image", deviceInfo, CreateStream,
                    out warnings);
-            } catch (Exception ex) {
+            }
+            catch (Exception ex) {
                 log.Error("could not render", ex);
                 throw ex;
             }
@@ -560,12 +563,12 @@ namespace OOP_Cashup
 
         private void PrintPage(object sender, PrintPageEventArgs ev) {
             Metafile pageImage = new
-               Metafile(m_streams[m_currentPageIndex]);
+               Metafile(m_streams [m_currentPageIndex]);
 
             // Adjust rectangular area with printer margins.
             Rectangle adjustedRect = new Rectangle(
-                ev.PageBounds.Left - (int)ev.PageSettings.HardMarginX,
-                ev.PageBounds.Top - (int)ev.PageSettings.HardMarginY,
+                ev.PageBounds.Left - (int) ev.PageSettings.HardMarginX,
+                ev.PageBounds.Top - (int) ev.PageSettings.HardMarginY,
                 ev.PageBounds.Width,
                 ev.PageBounds.Height);
 
@@ -614,40 +617,44 @@ namespace OOP_Cashup
 
             log.Info("creating PDF");
             try {
-                Warning[] warnings;
-                string[] streamids;
+                Warning [] warnings;
+                string [] streamids;
                 string mimeType;
                 string encoding;
                 string filenameExtension;
                 string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 log.Debug("PDF: creating byte array");
 
-                byte[] bytes = report.Render("PDF", null, out mimeType, out encoding, out filenameExtension,
-                    out streamids, out warnings);
-                foreach(Warning warn in warnings) {
-                    log.Debug("warning from report render." + warn.ToString());
+                try {
+                    byte [] bytes = report.Render("PDF", null, out mimeType, out encoding, out filenameExtension,
+                        out streamids, out warnings);
+                    foreach (Warning warn in warnings) {
+                        log.Debug("warning from report render." + warn.ToString());
+                    }
+
+                    if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
+
+                        log.Info("PDF: archive does not exist creating");
+                        Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
+
+                    } else {
+                        log.Debug("archive folder exists");
+                    }
+
+                    log.Debug(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"));
+                    using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"),
+                        FileMode.Create)) {
+                        log.Debug("PDF: writing file.");
+                        fs.Write(bytes, 0, bytes.Length);
+
+                    }
                 }
-
-
-
-                if (!Directory.Exists(Path.Combine(assemblyPath, "archive"))) {
-
-                    log.Info("PDF: archive does not exist creating");
-                    Directory.CreateDirectory(Path.Combine(assemblyPath, "archive"));
-
-                } else {
-                    log.Debug("archive folder exists");
+                catch (Exception ex) {
+                    log.Error("Issue Creating PDF: ", ex);
                 }
-
-                log.Debug(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"));
-                using (FileStream fs = new FileStream(Path.Combine(assemblyPath, "archive\\" + date.ToString("ddMMyyyHHmm") + "till" + tillNum + ".pdf"),
-                    FileMode.Create)) {
-                    log.Debug("PDF: writing file.");
-                    fs.Write(bytes, 0, bytes.Length);
-
-                }
-            } catch (Exception ex) {
-                log.Error("Issue Creating PDF: ", ex);
+            }
+            catch (Exception ex) {
+                log.Error("issue creating Byte Array for PDF", ex);
             }
 
             log.Info("pdf saved");
@@ -691,7 +698,8 @@ namespace OOP_Cashup
                 try {
                     con.Open();
                     log.Debug("opened connection to DB");
-                } catch (Exception ex) {
+                }
+                catch (Exception ex) {
                     MessageBox.Show("Could not connect to the Database");
                     log.Error("cannot connect to Database.", ex);
                     return;
@@ -712,7 +720,8 @@ R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop, c50Drop, 
                     cmd.ExecuteNonQuery();
                     log.Debug("successfully excecuted mysql query.");
 
-                } catch (Exception ex) {
+                }
+                catch (Exception ex) {
                     log.Error("could not write to DB", ex);
                 }
                 con.Close();
@@ -727,7 +736,8 @@ R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop, c50Drop, 
 
                 try {
                     con.Open();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex) {
                     log.Error("Cannot connect to DB", ex);
                     return false;
                 }
@@ -738,45 +748,46 @@ R200Drop, R100Drop, R50Drop, R20Drop, R10Drop, R5Drop, R2Drop, R1Drop, c50Drop, 
 
                 while (rdr.Read()) {
                     try {
-                        this.R200Amt = int.Parse(rdr["cashup_R200Amount"].ToString());
-                        this.R100Amt = int.Parse(rdr["cashup_R100Amount"].ToString());
-                        this.R50Amt = int.Parse(rdr["cashup_R50Amount"].ToString());
-                        this.R20Amt = int.Parse(rdr["cashup_R20Amount"].ToString());
-                        this.R10Amt = int.Parse(rdr["cashup_R10Amount"].ToString());
-                        this.R5Amt = int.Parse(rdr["cashup_R5Amount"].ToString());
-                        this.R2Amt = int.Parse(rdr["cashup_R2Amount"].ToString());
-                        this.R1Amt = int.Parse(rdr["cashup_R1Amount"].ToString());
-                        this.c50Amt = int.Parse(rdr["cashup_50cAmount"].ToString());
-                        this.c20Amt = int.Parse(rdr["cashup_20cAmount"].ToString());
-                        this.c10Amt = int.Parse(rdr["cashup_10cAmount"].ToString());
+                        this.R200Amt = int.Parse(rdr ["cashup_R200Amount"].ToString());
+                        this.R100Amt = int.Parse(rdr ["cashup_R100Amount"].ToString());
+                        this.R50Amt = int.Parse(rdr ["cashup_R50Amount"].ToString());
+                        this.R20Amt = int.Parse(rdr ["cashup_R20Amount"].ToString());
+                        this.R10Amt = int.Parse(rdr ["cashup_R10Amount"].ToString());
+                        this.R5Amt = int.Parse(rdr ["cashup_R5Amount"].ToString());
+                        this.R2Amt = int.Parse(rdr ["cashup_R2Amount"].ToString());
+                        this.R1Amt = int.Parse(rdr ["cashup_R1Amount"].ToString());
+                        this.c50Amt = int.Parse(rdr ["cashup_50cAmount"].ToString());
+                        this.c20Amt = int.Parse(rdr ["cashup_20cAmount"].ToString());
+                        this.c10Amt = int.Parse(rdr ["cashup_10cAmount"].ToString());
 
-                        this.CashFloat = decimal.Parse(rdr["cashup_float"].ToString());
-                        this.TillNum = "Register #" + rdr["cashup_TillNum"].ToString();
-                        this.Name = rdr["cashup_CashierName"].ToString();
-                        date = DateTime.Parse(rdr["cashup_date"].ToString());
+                        this.CashFloat = decimal.Parse(rdr ["cashup_float"].ToString());
+                        this.TillNum = "Register #" + rdr ["cashup_TillNum"].ToString();
+                        this.Name = rdr ["cashup_CashierName"].ToString();
+                        date = DateTime.Parse(rdr ["cashup_date"].ToString());
 
-                        this.R200 = decimal.Parse(rdr["cashup_R200Value"].ToString());
-                        this.R100 = decimal.Parse(rdr["cashup_R100Value"].ToString());
-                        this.R50 = decimal.Parse(rdr["cashup_R50Value"].ToString());
-                        this.R20 = decimal.Parse(rdr["cashup_R20Value"].ToString());
-                        this.R10 = decimal.Parse(rdr["cashup_R10Value"].ToString());
-                        this.R5 = decimal.Parse(rdr["cashup_R5Value"].ToString());
-                        this.R2 = decimal.Parse(rdr["cashup_R2Value"].ToString());
-                        this.R1 = decimal.Parse(rdr["cashup_R1Value"].ToString());
-                        this.c50 = decimal.Parse(rdr["cashup_50cValue"].ToString());
-                        this.c20 = decimal.Parse(rdr["cashup_20cValue"].ToString());
-                        this.c10 = decimal.Parse(rdr["cashup_10cValue"].ToString());
-                        this.ChecksValue = decimal.Parse(rdr["cashup_ChequesValue"].ToString());
-                        this.NumChecks = int.Parse(rdr["cashup_NumCheques"].ToString());
+                        this.R200 = decimal.Parse(rdr ["cashup_R200Value"].ToString());
+                        this.R100 = decimal.Parse(rdr ["cashup_R100Value"].ToString());
+                        this.R50 = decimal.Parse(rdr ["cashup_R50Value"].ToString());
+                        this.R20 = decimal.Parse(rdr ["cashup_R20Value"].ToString());
+                        this.R10 = decimal.Parse(rdr ["cashup_R10Value"].ToString());
+                        this.R5 = decimal.Parse(rdr ["cashup_R5Value"].ToString());
+                        this.R2 = decimal.Parse(rdr ["cashup_R2Value"].ToString());
+                        this.R1 = decimal.Parse(rdr ["cashup_R1Value"].ToString());
+                        this.c50 = decimal.Parse(rdr ["cashup_50cValue"].ToString());
+                        this.c20 = decimal.Parse(rdr ["cashup_20cValue"].ToString());
+                        this.c10 = decimal.Parse(rdr ["cashup_10cValue"].ToString());
+                        this.ChecksValue = decimal.Parse(rdr ["cashup_ChequesValue"].ToString());
+                        this.NumChecks = int.Parse(rdr ["cashup_NumCheques"].ToString());
 
-                        this.wssCash = decimal.Parse(rdr["cashup_WssCash"].ToString());
-                        this.cashDiscrepancy = decimal.Parse(rdr["cashup_CashDiscrepancy"].ToString());
+                        this.wssCash = decimal.Parse(rdr ["cashup_WssCash"].ToString());
+                        this.cashDiscrepancy = decimal.Parse(rdr ["cashup_CashDiscrepancy"].ToString());
 
-                        this.wssCard = decimal.Parse(rdr["cashup_WssCard"].ToString());
-                        this.cardBanked = decimal.Parse(rdr["cashup_CardBanked"].ToString());
-                        this.cardDiscrepancy = decimal.Parse(rdr["cashup_CardDiscrepancy"].ToString());
+                        this.wssCard = decimal.Parse(rdr ["cashup_WssCard"].ToString());
+                        this.cardBanked = decimal.Parse(rdr ["cashup_CardBanked"].ToString());
+                        this.cardDiscrepancy = decimal.Parse(rdr ["cashup_CardDiscrepancy"].ToString());
 
-                    } catch (Exception ex) {
+                    }
+                    catch (Exception ex) {
                         log.Error("issue asigning values from DB.", ex);
                     }
 
