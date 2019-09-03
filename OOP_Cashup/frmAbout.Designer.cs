@@ -181,8 +181,9 @@ namespace OOP_Cashup
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAbout";
-            this.Text = "frmAbout";
+            this.Text = "About";
             this.Load += new System.EventHandler(this.frmAbout_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageAbout.ResumeLayout(false);
