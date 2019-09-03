@@ -1051,7 +1051,7 @@
             this.lineShape1,
             this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(823, 813);
+            this.shapeContainer1.Size = new System.Drawing.Size(806, 805);
             this.shapeContainer1.TabIndex = 121;
             this.shapeContainer1.TabStop = false;
             // 
@@ -1329,7 +1329,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(823, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(806, 24);
             this.menuStrip1.TabIndex = 142;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1386,7 +1386,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(823, 813);
+            this.ClientSize = new System.Drawing.Size(823, 749);
             this.Controls.Add(this.txtbCardDiscepancy);
             this.Controls.Add(this.txtbCardWSS);
             this.Controls.Add(this.txtbCardBanked);
